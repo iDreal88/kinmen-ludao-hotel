@@ -44,9 +44,9 @@ export const roomData = {
         id: "elite",
         name_zh: "精英客房 (一大床)",
         name_en: "Elite Room (1 King)",
-        price_zh: "平日 $3,300 / 假日 $3,800",
-        price_en: "Weekday $3,300 / Holiday $3,800",
-        prices: { fixed: '10,800', holiday: '3,800', weekday: '3,300' },
+        price_zh: "平日 $2,700 / 假日 $3,300",
+        price_en: "Weekday $2,700 / Holiday $3,300",
+        prices: { fixed: '10,800', holiday: '3,300', weekday: '2,700' },
         occupancy: { zh: '2人(標準入住人數)', en: '2 Guests (Standard)' },
         equipment: { zh: '吹風機,電視,冰箱,冷氣,暖氣,無線網路,熱水壺,茶包', en: 'Hairdryer, TV, Refrigerator, AC, Heating, WiFi, Kettle, Tea Bags' },
         desc_zh: "標準雙人入住空間，配備舒適一大床。房內提供冷暖氣、液晶電視、冰箱及免費無線網路，住宿包含精緻早餐，讓您感受賓至如歸的溫暖。",
@@ -72,6 +72,24 @@ export const roomData = {
         images: [
             "/room-types/ST/st1.jpg",
             "/room-types/ST/st2.jpg"
+        ]
+    },
+    family: {
+        id: "family",
+        name_zh: "親子房 (兩大床)",
+        name_en: "Family Room (2 King)",
+        price_zh: "平日 $4,400 / 假日 $4,900",
+        price_en: "Weekday $4,400 / Holiday $4,900",
+        prices: { fixed: '9,800', holiday: '4,900', weekday: '4,400' },
+        occupancy: { zh: '4人(標準入住人數)', en: '4 Guests (Standard)' },
+        equipment: { zh: '吹風機,電視,冰箱,冷氣,暖氣,無線網路,熱水壺,茶包', en: 'Hairdryer, TV, Refrigerator, AC, Heating, WiFi, Kettle, Tea Bags' },
+        desc_zh: "簡約大方的雙人空間，提供兩張單人床。房內配備冷暖氣、液晶電視、冰箱及免費無線網路，住宿包含精緻早餐，是親友同遊金門的最佳選擇。",
+        desc_en: "Simple and clean layout for 2 guests with 2 Twin beds. Equipped with AC/heating, TV, refrigerator, and free WiFi. Includes breakfast, ideal for friends traveling together.",
+        images: [
+            "/room-types/CHR/chr1.jpg",
+            "/room-types/CHR/chr2.jpg",
+            "/room-types/CHR/chr3.jpg",
+            "/room-types/CHR/chr4.jpg"
         ]
     }
 };

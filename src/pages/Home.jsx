@@ -27,7 +27,11 @@ export const Home = () => {
         '/room-types/DS/ds3.jpg',
         '/room-types/DS/ds4.jpg',
         '/room-types/ST/st1.jpg',
-        '/room-types/ST/st2.jpg'
+        '/room-types/ST/st2.jpg',
+        '/room-types/CHR/chr1.jpg',
+        '/room-types/CHR/chr2.jpg',
+        '/room-types/CHR/chr3.jpg',
+        '/room-types/CHR/chr4.jpg'
     ];
 
     return (
@@ -135,6 +139,24 @@ export const Home = () => {
                             <div className="room-card-footer" style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
                                 <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_boutique_price')}</span>
                                 <Link to="/room/boutique" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                                    <span>{t('view_details')}</span> →
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {/* Family Room */}
+                    <div className="room-card">
+                        <div className="room-img">
+                            <img src="/room-types/CHR/chr1.jpg" alt="Family Room" />
+                        </div>
+                        <div className="room-info">
+                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_boutique_name')}</h3>
+                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_boutique_desc')}</p>
+                            <div className="room-card-footer" style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_boutique_price')}</span>
+                                <Link to="/room/family" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
                                     <span>{t('view_details')}</span> →
                                 </Link>
                             </div>
