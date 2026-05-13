@@ -1,4 +1,4 @@
-/* Google Fonts are now loaded in index.html for better performance */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;500;700&family=Ma+Shan+Zheng&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -38,9 +38,7 @@ h1, h2, h3, h4 {
 }
 
 .traditional-font {
-  font-family: 'Noto Serif TC', serif;
-  font-weight: 900;
-  letter-spacing: 2px;
+  font-family: 'Ma Shan Zheng', cursive;
 }
 
 a {
