@@ -170,6 +170,7 @@ nav ul li a:hover::after {
   font-weight: 600;
   transition: var(--transition);
   border: 1px solid var(--primary);
+  white-space: nowrap;
 }
 
 .btn-book:hover {
@@ -680,10 +681,14 @@ footer {
 
 @media (max-width: 768px) {
   header { padding: 1rem 5%; }
+  .logo img { height: 40px; }
+  .header-right { gap: 0.8rem; }
+  .lang-switcher { padding: 0.2rem; font-size: 0.75rem; }
+  .lang-btn { padding: 0.2rem 0.5rem; }
   section { padding: 4rem 5%; }
   .footer-grid { grid-template-columns: 1fr; }
   .room-card-footer { flex-direction: column; align-items: flex-start; }
-  .btn-book { padding: 0.8rem 1.5rem; font-size: 0.95rem; }
+  .btn-book { padding: 0.6rem 1rem; font-size: 0.85rem; }
 }
 
 /* Page Transitions */
