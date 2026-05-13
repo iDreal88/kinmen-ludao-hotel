@@ -71,9 +71,7 @@ export const roomData = {
         desc_en: "Simple and clean layout for 2 guests with 2 Twin beds. Equipped with AC/heating, TV, refrigerator, and free WiFi. Includes breakfast, ideal for friends traveling together.",
         images: [
             "/room-types/ST/st1.jpg",
-            "/room-types/ST/st2.jpg",
-            "/room-types/ST/st3.jpg",
-            "/room-types/ST/st4.jpg"
+            "/room-types/ST/st2.jpg"
         ]
     }
 };
