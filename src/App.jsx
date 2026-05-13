@@ -1,0 +1,41 @@
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { Home } from './pages/Home';
+import { RoomDetail } from './pages/RoomDetail';
+import { LanguageProvider } from './context/LanguageContext';
+
+function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // slight delay for rendering
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
+  return (
+    <LanguageProvider>
+      <div className="App">
+        <Header />
+        <div key={location.pathname} className="page-transition">
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/room/:id" element={<RoomDetail />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </LanguageProvider>
+  );
+}
+
+export default App;
