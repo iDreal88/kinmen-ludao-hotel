@@ -232,7 +232,7 @@ export const Home = () => {
                     </ul>
                     <div style={{ marginTop: '2.5rem' }}>
                         <h4 style={{ marginBottom: '1rem', color: 'var(--primary-dark)', fontSize: '1.1rem' }}>{t('social_media')}</h4>
-                        <div style={{ display: 'flex', gap: '1rem' }}>
+                        <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
                             <a href="https://line.me/ti/p/KYU_P86UPK#~" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', background: '#00B900', color: 'white', borderRadius: '50%', textDecoration: 'none', fontSize: '1.5rem', transition: 'transform 0.3s', boxShadow: '0 4px 10px rgba(0, 185, 0, 0.2)' }}>
                                 <i className="fab fa-line"></i>
                             </a>
@@ -242,6 +242,20 @@ export const Home = () => {
                             <a href="https://www.facebook.com/kmldh/" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', background: '#1877F2', color: 'white', borderRadius: '50%', textDecoration: 'none', fontSize: '1.5rem', transition: 'transform 0.3s', boxShadow: '0 4px 10px rgba(24, 119, 242, 0.2)' }}>
                                 <i className="fab fa-facebook-f"></i>
                             </a>
+                        </div>
+                        
+                        {/* Dynamic QR Codes */}
+                        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+                            <div style={{ textAlign: 'center', background: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://line.me/ti/p/KYU_P86UPK" alt="LINE QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
+                                <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#00B900', fontSize: '1.1rem' }}>LINE 客服</div>
+                                <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>陸島前台客服</div>
+                            </div>
+                            <div style={{ textAlign: 'center', background: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg" alt="WeChat QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
+                                <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#07C160', fontSize: '1.1rem' }}>微信 客服</div>
+                                <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>陸島前台客服</div>
+                            </div>
                         </div>
                     </div>
                 </div>
