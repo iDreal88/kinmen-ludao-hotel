@@ -253,8 +253,13 @@ export const Home = () => {
                             </div>
                             <div style={{ textAlign: 'center', background: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
                                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg" alt="WeChat QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
-                                <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#07C160', fontSize: '1.1rem' }}>微信 客服</div>
+                                <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#07C160', fontSize: '1.1rem' }}>WeChat 客服</div>
                                 <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>陸島前台客服</div>
+                            </div>
+                            <div style={{ textAlign: 'center', background: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.facebook.com/kmldh/" alt="Facebook QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
+                                <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#1877F2', fontSize: '1.1rem' }}>Facebook</div>
+                                <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginTop: '0.2rem' }}>陸島酒店粉專</div>
                             </div>
                         </div>
                     </div>
