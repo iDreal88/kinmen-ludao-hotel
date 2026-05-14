@@ -31,7 +31,7 @@ export const translations = {
         room_boutique_desc: "簡約大方的雙人空間，提供兩張單人床。房內配備冷暖氣、液晶電視、冰箱及免費無線網路，住宿包含精緻早餐，是親友同遊金門的最佳選擇。",
         room_family_name: "親子房 (兩大床)",
         room_family_price: "平日 $4,400 / 假日 $4,900",
-        room_family_desc: "簡約大方的雙人空間，提供兩大床。房內配備冷暖氣、液晶電視、冰箱及免費無線網路，住宿包含精緻早餐，是親友同遊金門的最佳選擇。",
+        room_family_desc: "簡約大方的適合家住空間，提供兩張加大雙人床。房內配備冷暖氣、液晶電視、冰箱及免費無線網路，住宿包含精緻早餐，是親友同遊金門的最佳選擇。",
         night: "/ 晚",
         view_details: "詳細資訊",
         gallery_title: "飯店相簿",

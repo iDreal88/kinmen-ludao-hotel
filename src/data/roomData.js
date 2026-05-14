@@ -83,7 +83,7 @@ export const roomData = {
         prices: { fixed: '9,800', holiday: '4,900', weekday: '4,400' },
         occupancy: { zh: '4人(標準入住人數)', en: '4 Guests (Standard)' },
         equipment: { zh: '吹風機,電視,冰箱,冷氣,暖氣,無線網路,熱水壺,茶包', en: 'Hairdryer, TV, Refrigerator, AC, Heating, WiFi, Kettle, Tea Bags' },
-        desc_zh: "簡約大方的雙人空間，提供兩張單人床。房內配備冷暖氣、液晶電視、冰箱及免費無線網路，住宿包含精緻早餐，是親友同遊金門的最佳選擇。",
+        desc_zh: "簡約大方的適合家住空間，提供兩張加大雙人床。房內配備冷暖氣、液晶電視、冰箱及免費無線網路，住宿包含精緻早餐，是親友同遊金門的最佳選擇。",
         desc_en: "Simple and clean layout for 2 guests with 2 Twin beds. Equipped with AC/heating, TV, refrigerator, and free WiFi. Includes breakfast, ideal for friends traveling together.",
         images: [
             "/room-types/CHR/chr1.jpg",
