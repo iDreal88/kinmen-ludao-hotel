@@ -82,68 +82,68 @@ export const Home = () => {
                     <p style={{ marginTop: '1rem', color: 'var(--text-light)' }}>{t('rooms_subtitle')}</p>
                 </div>
                 <div className="rooms-grid">
-                    {/* Executive Suite */}
+                    {/* vip */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/VIP/vip1.jpg" alt="Executive Suite" />
+                            <img src="/room-types/VIP/vip1.jpg" alt="vip" />
                         </div>
                         <div className="room-info">
-                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_exec_name')}</h3>
-                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_exec_desc')}</p>
+                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_vip_name')}</h3>
+                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_vip_desc')}</p>
                             <div className="room-card-footer" style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_exec_price')}</span>
-                                <Link to="/room/exec" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_vip_price')}</span>
+                                <Link to="/room/vip" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
                                     <span>{t('view_details')}</span> →
                                 </Link>
                             </div>
                         </div>
                     </div>
 
-                    {/* Elegant Room */}
+                    {/* trp */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/TRP/trp1.jpg" alt="Elegant Room" />
+                            <img src="/room-types/TRP/trp1.jpg" alt="trp" />
                         </div>
                         <div className="room-info">
-                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_elegant_name')}</h3>
-                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_elegant_desc')}</p>
+                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_trp_name')}</h3>
+                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_trp_desc')}</p>
                             <div className="room-card-footer" style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_elegant_price')}</span>
-                                <Link to="/room/elegant" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_trp_price')}</span>
+                                <Link to="/room/trp" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
                                     <span>{t('view_details')}</span> →
                                 </Link>
                             </div>
                         </div>
                     </div>
 
-                    {/* Elite Room */}
+                    {/* ds */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/DS/ds1.jpg" alt="Elite Room" />
+                            <img src="/room-types/DS/ds1.jpg" alt="ds" />
                         </div>
                         <div className="room-info">
-                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_elite_name')}</h3>
-                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_elite_desc')}</p>
+                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_ds_name')}</h3>
+                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_ds_desc')}</p>
                             <div className="room-card-footer" style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_elite_price')}</span>
-                                <Link to="/room/elite" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_ds_price')}</span>
+                                <Link to="/room/ds" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
                                     <span>{t('view_details')}</span> →
                                 </Link>
                             </div>
                         </div>
                     </div>
 
-                    {/* Boutique Room */}
+                    {/* st */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/ST/st1.jpg" alt="Boutique Room" />
+                            <img src="/room-types/ST/st1.jpg" alt="st" />
                         </div>
                         <div className="room-info">
-                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_boutique_name')}</h3>
-                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_boutique_desc')}</p>
+                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_st_name')}</h3>
+                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_st_desc')}</p>
                             <div className="room-card-footer" style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_boutique_price')}</span>
-                                <Link to="/room/boutique" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_st_price')}</span>
+                                <Link to="/room/st" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
                                     <span>{t('view_details')}</span> →
                                 </Link>
                             </div>
@@ -151,17 +151,34 @@ export const Home = () => {
                     </div>
 
 
-                    {/* Family Room */}
+                    {/* chr */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/CHR/chr1.jpg" alt="Family Room" />
+                            <img src="/room-types/CHR/chr1.jpg" alt="chr" />
                         </div>
                         <div className="room-info">
-                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_family_name')}</h3>
-                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_family_desc')}</p>
+                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_chr_name')}</h3>
+                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_chr_desc')}</p>
                             <div className="room-card-footer" style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_family_price')}</span>
-                                <Link to="/room/family" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_chr_price')}</span>
+                                <Link to="/room/chr" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                                    <span>{t('view_details')}</span> →
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* tsb */}
+                    <div className="room-card">
+                        <div className="room-img">
+                            <img src="/room-types/TSB/tsb1.jpg" alt="tsb" />
+                        </div>
+                        <div className="room-info">
+                            <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_tsb_name')}</h3>
+                            <p style={{ color: 'var(--text-light)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', flexGrow: 1 }}>{t('room_tsb_desc')}</p>
+                            <div className="room-card-footer" style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                                <span className="room-price" style={{ fontSize: '1.1rem', whiteSpace: 'nowrap' }}>{t('room_tsb_price')}</span>
+                                <Link to="/room/tsb" className="btn-details" style={{ textDecoration: 'none', color: 'inherit', whiteSpace: 'nowrap', flexShrink: 0 }}>
                                     <span>{t('view_details')}</span> →
                                 </Link>
                             </div>
