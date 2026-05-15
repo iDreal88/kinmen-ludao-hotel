@@ -18,9 +18,7 @@ export const roomData = {
             "/room-types/VIP/vip1.jpg",
             "/room-types/VIP/vip2.jpg",
             "/room-types/VIP/vip3.jpg",
-            "/room-types/VIP/vip4.jpg",
-            "/room-types/VIP/vip5.jpg",
-            "/room-types/VIP/vip6.jpg"
+            "/room-types/VIP/vip4.jpg"
         ]
     },
     trp: {
@@ -41,14 +39,7 @@ export const roomData = {
         images: [
             "/room-types/TRP/trp1.jpg",
             "/room-types/TRP/trp2.jpg",
-            "/room-types/TRP/trp3.jpg",
-            "/room-types/TRP/trp4.jpg",
-            "/room-types/TRP/trp5.jpg",
-            "/room-types/TRP/trp6.jpg",
-            "/room-types/TRP/trp7.jpg",
-            "/room-types/TRP/trp8.jpg",
-            "/room-types/TRP/trp9.jpg",
-            "/room-types/TRP/trp10.jpg"
+            "/room-types/TRP/trp3.jpg"
         ]
     },
     ds: {
@@ -69,9 +60,7 @@ export const roomData = {
         images: [
             "/room-types/DS/ds1.jpg",
             "/room-types/DS/ds2.jpg",
-            "/room-types/DS/ds3.jpg",
-            "/room-types/DS/ds4.jpg",
-            "/room-types/DS/ds5.jpg"
+            "/room-types/DS/ds3.jpg"
         ]
     },
     st: {
