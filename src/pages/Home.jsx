@@ -264,6 +264,9 @@ export const Home = () => {
                             <a href="https://www.facebook.com/kmldh/" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', background: '#1877F2', color: 'white', borderRadius: '50%', textDecoration: 'none', fontSize: '1.5rem', transition: 'transform 0.3s', boxShadow: '0 4px 10px rgba(24, 119, 242, 0.2)' }}>
                                 <i className="fab fa-facebook-f"></i>
                             </a>
+                            <a href="https://www.instagram.com/kmludao" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: 'white', borderRadius: '50%', textDecoration: 'none', fontSize: '1.5rem', transition: 'transform 0.3s', boxShadow: '0 4px 10px rgba(225, 48, 108, 0.2)' }}>
+                                <i className="fab fa-instagram"></i>
+                            </a>
                         </div>
 
                         {/* Dynamic QR Codes */}
@@ -285,6 +288,12 @@ export const Home = () => {
                                     <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.facebook.com/kmldh/" alt="Facebook QR Code" style={{ width: '120px', height: '120px', display: 'block' }} />
                                 </div>
                                 <div style={{ marginTop: '0.8rem', fontWeight: '600', color: 'var(--text)', fontSize: '1.1rem', letterSpacing: '0.5px' }}>{t('qr_fb_title')}</div>
+                            </div>
+                            <div style={{ textAlign: 'center', backgroundColor: 'var(--card-bg)', padding: '1rem', borderRadius: '15px', border: '1px solid var(--glass-dark)', boxShadow: 'var(--shadow)' }}>
+                                <div style={{ background: 'white', padding: '10px', borderRadius: '10px', display: 'inline-block' }}>
+                                    <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/kmludao" alt="Instagram QR Code" style={{ width: '120px', height: '120px', display: 'block' }} />
+                                </div>
+                                <div style={{ marginTop: '0.8rem', fontWeight: '600', color: 'var(--text)', fontSize: '1.1rem', letterSpacing: '0.5px' }}>{t('qr_ig_title')}</div>
                             </div>
                         </div>
                     </div>
