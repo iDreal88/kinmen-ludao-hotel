@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 
 export const Header = () => {
     const { lang, setLang, t } = useLanguage();
+    const { theme, toggleTheme } = useTheme();
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
@@ -39,6 +41,9 @@ export const Header = () => {
             <div className="header-right">
                 <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
                     <i className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+                </div>
+                <div className="theme-toggle" onClick={toggleTheme} style={{ cursor: 'pointer', marginRight: '1rem', fontSize: '1.2rem', color: 'var(--primary)', display: 'flex', alignItems: 'center' }}>
+                    <i className={`fas ${theme === 'light' ? 'fa-moon' : 'fa-sun'}`}></i>
                 </div>
                 <div className="lang-switcher">
                     <span 

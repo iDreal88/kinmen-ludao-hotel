@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { RoomDetail } from './pages/RoomDetail';
 import { LanguageProvider } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   const location = useLocation();
@@ -23,18 +24,20 @@ function App() {
   }, [location]);
 
   return (
-    <LanguageProvider>
-      <div className="App">
-        <Header />
-        <div key={location.pathname} className="page-transition">
-          <Routes location={location}>
-            <Route path="/" element={<Home />} />
-            <Route path="/room/:id" element={<RoomDetail />} />
-          </Routes>
+    <ThemeProvider>
+      <LanguageProvider>
+        <div className="App">
+          <Header />
+          <div key={location.pathname} className="page-transition">
+            <Routes location={location}>
+              <Route path="/" element={<Home />} />
+              <Route path="/room/:id" element={<RoomDetail />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </LanguageProvider>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

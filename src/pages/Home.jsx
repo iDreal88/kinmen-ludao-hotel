@@ -49,7 +49,7 @@ export const Home = () => {
                     <h1 className="traditional-font">{t('hero_title')}</h1>
                     <p>{t('hero_subtitle')}</p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-                        <a href="#rooms" className="btn-book" style={{ background: 'white', color: 'var(--primary)' }}>{t('hero_btn_explore')}</a>
+                        <a href="#rooms" className="btn-book" style={{ background: 'var(--card-bg)', color: 'var(--primary)' }}>{t('hero_btn_explore')}</a>
                         <a href="#gallery" className="btn-book">{t('hero_btn_gallery')}</a>
                     </div>
                 </div>
@@ -188,7 +188,7 @@ export const Home = () => {
             </section>
 
             {/* Gallery Section */}
-            <section id="gallery" style={{ background: '#fdfbf7' }}>
+            <section id="gallery" style={{ backgroundColor: 'var(--bg)' }}>
                 <div className="section-title">
                     <h2>{t('gallery_title')}</h2>
                     <div className="underline"></div>
@@ -268,15 +268,15 @@ export const Home = () => {
 
                         {/* Dynamic QR Codes */}
                         <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-                            <div style={{ textAlign: 'center', background: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                            <div style={{ textAlign: 'center', backgroundColor: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
                                 <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://line.me/ti/p/KYU_P86UPK" alt="LINE QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
                                 <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#00B900', fontSize: '1.1rem' }}>{t('qr_line_title')}</div>
                             </div>
-                            <div style={{ textAlign: 'center', background: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                            <div style={{ textAlign: 'center', backgroundColor: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
                                 <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg" alt="WeChat QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
                                 <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#07C160', fontSize: '1.1rem' }}>{t('qr_wechat_title')}</div>
                             </div>
-                            <div style={{ textAlign: 'center', background: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
+                            <div style={{ textAlign: 'center', backgroundColor: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
                                 <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.facebook.com/kmldh/" alt="Facebook QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
                                 <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#1877F2', fontSize: '1.1rem' }}>{t('qr_fb_title')}</div>
                             </div>

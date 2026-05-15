@@ -32,14 +32,14 @@ export const RoomDetail = () => {
     }
 
     return (
-        <main id="roomDetailsMain" style={{ paddingTop: '100px', paddingBottom: '5rem', minHeight: 'calc(100vh - 200px)', background: '#fdfbf7' }}>
+        <main id="roomDetailsMain" style={{ paddingTop: '100px', paddingBottom: '5rem', minHeight: 'calc(100vh - 200px)', backgroundColor: 'var(--bg)' }}>
             <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 15px' }}>
                 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
                     <h1 className="traditional-font" style={{ fontSize: '2.2rem', color: 'var(--primary-dark)', margin: 0 }}>
                         {tr(room.name_zh, room.name_en, room.name_cn, room.name_ja)}
                     </h1>
-                    <Link to="/#rooms" style={{ textDecoration: 'none', padding: '0.6rem 1.2rem', background: 'var(--bg)', borderRadius: '30px', color: 'var(--primary)', fontWeight: '600', fontSize: '0.95rem', border: '1px solid rgba(139,69,19,0.1)', transition: 'all 0.3s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseOver={e => {e.currentTarget.style.background='var(--primary)'; e.currentTarget.style.color='white';}} onMouseOut={e => {e.currentTarget.style.background='var(--bg)'; e.currentTarget.style.color='var(--primary)';}}>
+                    <Link to="/#rooms" style={{ textDecoration: 'none', padding: '0.6rem 1.2rem', backgroundColor: 'var(--bg)', borderRadius: '30px', color: 'var(--primary)', fontWeight: '600', fontSize: '0.95rem', border: '1px solid rgba(139,69,19,0.1)', transition: 'all 0.3s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseOver={e => {e.currentTarget.style.background='var(--primary)'; e.currentTarget.style.color='white';}} onMouseOut={e => {e.currentTarget.style.background='var(--bg)'; e.currentTarget.style.color='var(--primary)';}}>
                         {tr('← 返回列表', '← Back to Rooms', '← 返回列表', '← お部屋に戻る')}
                     </Link>
                 </div>
@@ -66,15 +66,15 @@ export const RoomDetail = () => {
                     <span>{tr('房價資訊', 'Pricing Information', '房价资讯', '料金情報')}</span>
                 </h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem', marginBottom: '4rem' }}>
-                    <div style={{ background: 'white', border: '1px solid rgba(139,69,19,0.1)', borderRadius: '12px', padding: '2rem 1.5rem', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', transition: 'transform 0.3s' }} onMouseOver={e => e.currentTarget.style.transform='translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}>
+                    <div style={{ background: 'var(--card-bg)', border: '1px solid rgba(139,69,19,0.1)', borderRadius: '12px', padding: '2rem 1.5rem', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', transition: 'transform 0.3s' }} onMouseOver={e => e.currentTarget.style.transform='translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}>
                         <h4 style={{ color: 'var(--text-light)', marginBottom: '0.8rem', fontSize: '1.1rem' }}>{tr('定價', 'List Price', '定价', '定価')}</h4>
                         <p style={{ color: 'var(--primary-dark)', fontSize: '1.8rem', fontWeight: '700' }}>NT$ {room.prices.fixed}</p>
                     </div>
-                    <div style={{ background: 'white', border: '1px solid rgba(139,69,19,0.1)', borderRadius: '12px', padding: '2rem 1.5rem', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', transition: 'transform 0.3s' }} onMouseOver={e => e.currentTarget.style.transform='translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}>
+                    <div style={{ background: 'var(--card-bg)', border: '1px solid rgba(139,69,19,0.1)', borderRadius: '12px', padding: '2rem 1.5rem', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', transition: 'transform 0.3s' }} onMouseOver={e => e.currentTarget.style.transform='translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}>
                         <h4 style={{ color: 'var(--text-light)', marginBottom: '0.8rem', fontSize: '1.1rem' }}>{tr('假日', 'Holiday', '假日', '休日')}</h4>
                         <p style={{ color: 'var(--primary-dark)', fontSize: '1.8rem', fontWeight: '700' }}>NT$ {room.prices.holiday}</p>
                     </div>
-                    <div style={{ background: 'white', border: '1px solid rgba(139,69,19,0.1)', borderRadius: '12px', padding: '2rem 1.5rem', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', transition: 'transform 0.3s' }} onMouseOver={e => e.currentTarget.style.transform='translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}>
+                    <div style={{ background: 'var(--card-bg)', border: '1px solid rgba(139,69,19,0.1)', borderRadius: '12px', padding: '2rem 1.5rem', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', transition: 'transform 0.3s' }} onMouseOver={e => e.currentTarget.style.transform='translateY(-5px)'} onMouseOut={e => e.currentTarget.style.transform='translateY(0)'}>
                         <h4 style={{ color: 'var(--text-light)', marginBottom: '0.8rem', fontSize: '1.1rem' }}>{tr('平日', 'Weekday', '平日', '平日')}</h4>
                         <p style={{ color: 'var(--primary-dark)', fontSize: '1.8rem', fontWeight: '700' }}>NT$ {room.prices.weekday}</p>
                     </div>
@@ -85,7 +85,7 @@ export const RoomDetail = () => {
                     <span style={{ width: '5px', height: '24px', background: 'var(--primary)', display: 'inline-block', borderRadius: '3px' }}></span>
                     <span>{tr('客房資訊', 'Room Information', '客房资讯', '客室情報')}</span>
                 </h2>
-                <div style={{ background: 'white', borderRadius: '16px', padding: '2rem', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', marginBottom: '4rem' }}>
+                <div style={{ background: 'var(--card-bg)', borderRadius: '16px', padding: '2rem', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', marginBottom: '4rem' }}>
                     <div style={{ display: 'grid', gridTemplateColumns: '140px 1fr', padding: '1.2rem 0', borderBottom: '1px solid rgba(0,0,0,0.05)', alignItems: 'center' }}>
                         <div style={{ fontWeight: '600', color: 'var(--primary)', fontSize: '1.05rem' }}>{tr('房型人數：', 'Occupancy:', '房型人数：', '宿泊人数：')}</div>
                         <div style={{ color: 'var(--text)' }}>{tr(room.occupancy.zh, room.occupancy.en, room.occupancy.cn, room.occupancy.ja)}</div>
@@ -113,7 +113,7 @@ export const RoomDetail = () => {
                     <span style={{ width: '5px', height: '24px', background: 'var(--primary)', display: 'inline-block', borderRadius: '3px' }}></span>
                     <span>{tr('訂房說明', 'Booking Policy', '订房说明', '予約ポリシー')}</span>
                 </h2>
-                <div style={{ background: 'var(--bg)', borderRadius: '16px', padding: '3rem', marginBottom: '3rem', boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.02)' }}>
+                <div style={{ backgroundColor: 'var(--bg)', borderRadius: '16px', padding: '3rem', marginBottom: '3rem', boxShadow: 'inset 0 2px 10px rgba(0,0,0,0.02)' }}>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
                         
                         <div>
@@ -131,7 +131,7 @@ export const RoomDetail = () => {
                             </ul>
 
                             <h4 style={{ color: 'var(--primary)', fontSize: '1.1rem', fontWeight: '700', marginBottom: '1rem' }}>{tr('【匯款資訊－ATM轉帳/匯款】', '【Remittance Information】', '【汇款资讯－ATM转帐/汇款】', '【お振込情報】')}</h4>
-                            <div style={{ background: 'white', padding: '1.5rem', borderRadius: '8px', borderLeft: '3px solid #D32F2F', marginBottom: '2rem' }}>
+                            <div style={{ background: 'var(--card-bg)', padding: '1.5rem', borderRadius: '8px', borderLeft: '3px solid #D32F2F', marginBottom: '2rem' }}>
                                 <p style={{ color: 'var(--text)', lineHeight: '1.8', marginBottom: '0.5rem' }} dangerouslySetInnerHTML={{ __html: tr('銀行代碼：<br>銀行帳號：<br>匯款銀行：<br>匯款戶名：', 'Bank Code:<br>Bank Account:<br>Remittance Bank:<br>Account Name:', '银行代码：<br>银行帐号：<br>汇款银行：<br>汇款户名：', '銀行コード：<br>口座番号：<br>振込先銀行：<br>口座名義：') }}></p>
                                 <p style={{ color: '#D32F2F', fontWeight: '600', fontSize: '0.95rem', marginTop: '1rem' }}>{tr('※匯款後請務必來電確認【電話：0911-665-175】', '※Please call to confirm after remittance [Phone: 0911-665-175]', '※汇款后请务必来电确认【电话：0911-665-175】', '※お振込後、必ずお電話でご確認ください [電話：0911-665-175]')}</p>
                             </div>
