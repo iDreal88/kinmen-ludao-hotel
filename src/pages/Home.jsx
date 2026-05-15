@@ -25,6 +25,18 @@ export const Home = () => {
         '/room-types/LOBBY/lobby14.jpg',
         '/room-types/LOBBY/lobby15.jpg',
         '/room-types/LOBBY/lobby16.jpg',
+        '/room-types/BREAKFAST/breakfast1.jpg',
+        '/room-types/BREAKFAST/breakfast2.jpg',
+        '/room-types/BREAKFAST/breakfast3.jpg',
+        '/room-types/BREAKFAST/breakfast4.jpg',
+        '/room-types/BREAKFAST/breakfast5.jpg',
+        '/room-types/BREAKFAST/breakfast6.jpg',
+        '/room-types/BREAKFAST/breakfast7.jpg',
+        '/room-types/BREAKFAST/breakfast8.jpg',
+        '/room-types/BREAKFAST/breakfast9.jpg',
+        '/room-types/BREAKFAST/breakfast10.jpg',
+        '/room-types/BREAKFAST/breakfast11.jpg',
+        '/room-types/BREAKFAST/breakfast12.jpg',
     ];
 
     return (
