@@ -39,7 +39,7 @@ export const RoomDetail = () => {
                     <h1 className="traditional-font" style={{ fontSize: '2.2rem', color: 'var(--primary-dark)', margin: 0 }}>
                         {tr(room.name_zh, room.name_en, room.name_cn, room.name_ja)}
                     </h1>
-                    <Link to="/#rooms" style={{ textDecoration: 'none', padding: '0.6rem 1.2rem', backgroundColor: 'var(--bg)', borderRadius: '30px', color: 'var(--primary)', fontWeight: '600', fontSize: '0.95rem', border: '1px solid rgba(139,69,19,0.1)', transition: 'all 0.3s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseOver={e => {e.currentTarget.style.background='var(--primary)'; e.currentTarget.style.color='white';}} onMouseOut={e => {e.currentTarget.style.background='var(--bg)'; e.currentTarget.style.color='var(--primary)';}}>
+                    <Link to="/#rooms" style={{ textDecoration: 'none', padding: '0.6rem 1.2rem', backgroundColor: 'var(--bg)', borderRadius: '30px', color: 'var(--primary)', fontWeight: '600', fontSize: '0.95rem', border: '1px solid rgba(139,69,19,0.1)', transition: 'all 0.3s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseOver={e => {e.currentTarget.style.background='var(--primary)'; e.currentTarget.style.color='var(--btn-text)';}} onMouseOut={e => {e.currentTarget.style.background='var(--bg)'; e.currentTarget.style.color='var(--primary)';}}>
                         {tr('← 返回列表', '← Back to Rooms', '← 返回列表', '← お部屋に戻る')}
                     </Link>
                 </div>
