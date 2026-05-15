@@ -268,17 +268,23 @@ export const Home = () => {
 
                         {/* Dynamic QR Codes */}
                         <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-                            <div style={{ textAlign: 'center', backgroundColor: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-                                <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://line.me/ti/p/KYU_P86UPK" alt="LINE QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
-                                <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#00B900', fontSize: '1.1rem' }}>{t('qr_line_title')}</div>
+                            <div style={{ textAlign: 'center', backgroundColor: 'var(--card-bg)', padding: '1rem', borderRadius: '15px', border: '1px solid var(--glass-dark)', boxShadow: 'var(--shadow)' }}>
+                                <div style={{ background: 'white', padding: '10px', borderRadius: '10px', display: 'inline-block' }}>
+                                    <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://line.me/ti/p/KYU_P86UPK" alt="LINE QR Code" style={{ width: '120px', height: '120px', display: 'block' }} />
+                                </div>
+                                <div style={{ marginTop: '0.8rem', fontWeight: '600', color: 'var(--text)', fontSize: '1.1rem', letterSpacing: '0.5px' }}>{t('qr_line_title')}</div>
                             </div>
-                            <div style={{ textAlign: 'center', backgroundColor: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-                                <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg" alt="WeChat QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
-                                <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#07C160', fontSize: '1.1rem' }}>{t('qr_wechat_title')}</div>
+                            <div style={{ textAlign: 'center', backgroundColor: 'var(--card-bg)', padding: '1rem', borderRadius: '15px', border: '1px solid var(--glass-dark)', boxShadow: 'var(--shadow)' }}>
+                                <div style={{ background: 'white', padding: '10px', borderRadius: '10px', display: 'inline-block' }}>
+                                    <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg" alt="WeChat QR Code" style={{ width: '120px', height: '120px', display: 'block' }} />
+                                </div>
+                                <div style={{ marginTop: '0.8rem', fontWeight: '600', color: 'var(--text)', fontSize: '1.1rem', letterSpacing: '0.5px' }}>{t('qr_wechat_title')}</div>
                             </div>
-                            <div style={{ textAlign: 'center', backgroundColor: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-                                <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.facebook.com/kmldh/" alt="Facebook QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
-                                <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#1877F2', fontSize: '1.1rem' }}>{t('qr_fb_title')}</div>
+                            <div style={{ textAlign: 'center', backgroundColor: 'var(--card-bg)', padding: '1rem', borderRadius: '15px', border: '1px solid var(--glass-dark)', boxShadow: 'var(--shadow)' }}>
+                                <div style={{ background: 'white', padding: '10px', borderRadius: '10px', display: 'inline-block' }}>
+                                    <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.facebook.com/kmldh/" alt="Facebook QR Code" style={{ width: '120px', height: '120px', display: 'block' }} />
+                                </div>
+                                <div style={{ marginTop: '0.8rem', fontWeight: '600', color: 'var(--text)', fontSize: '1.1rem', letterSpacing: '0.5px' }}>{t('qr_fb_title')}</div>
                             </div>
                         </div>
                     </div>
