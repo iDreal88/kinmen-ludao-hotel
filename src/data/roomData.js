@@ -15,7 +15,11 @@ export const roomData = {
             "/room-types/VIP/vip2.jpg",
             "/room-types/VIP/vip3.jpg",
             "/room-types/VIP/vip4.jpg",
-            "/room-types/VIP/vip5.jpg"
+            "/room-types/VIP/vip5.jpg",
+            "/room-types/VIP/vip6.jpg",
+            "/room-types/VIP/vip7.jpg",
+            "/room-types/VIP/vip8.jpg",
+            "/room-types/VIP/vip9.jpg"
         ]
     },
     elegant: {
@@ -37,7 +41,9 @@ export const roomData = {
             "/room-types/TRP/trp5.jpg",
             "/room-types/TRP/trp6.jpg",
             "/room-types/TRP/trp7.jpg",
-            "/room-types/TRP/trp8.jpg"
+            "/room-types/TRP/trp8.jpg",
+            "/room-types/TRP/trp9.jpg",
+            "/room-types/TRP/trp10.jpg"
         ]
     },
     elite: {
@@ -55,7 +61,8 @@ export const roomData = {
             "/room-types/DS/ds1.jpg",
             "/room-types/DS/ds2.jpg",
             "/room-types/DS/ds3.jpg",
-            "/room-types/DS/ds4.jpg"
+            "/room-types/DS/ds4.jpg",
+            "/room-types/DS/ds5.jpg"
         ]
     },
     boutique: {
@@ -71,7 +78,9 @@ export const roomData = {
         desc_en: "Simple and clean layout for 2 guests with 2 Twin beds. Equipped with AC/heating, TV, refrigerator, and free WiFi. Includes breakfast, ideal for friends traveling together.",
         images: [
             "/room-types/ST/st1.jpg",
-            "/room-types/ST/st2.jpg"
+            "/room-types/ST/st2.jpg",
+            "/room-types/ST/st3.jpg",
+            "/room-types/ST/st4.jpg"
         ]
     },
     family: {
@@ -89,7 +98,12 @@ export const roomData = {
             "/room-types/CHR/chr1.jpg",
             "/room-types/CHR/chr2.jpg",
             "/room-types/CHR/chr3.jpg",
-            "/room-types/CHR/chr4.jpg"
+            "/room-types/CHR/chr4.jpg",
+            "/room-types/CHR/chr5.jpg",
+            "/room-types/CHR/chr6.jpg",
+            "/room-types/CHR/chr7.jpg",
+            "/room-types/CHR/chr8.jpg",
+            "/room-types/CHR/chr9.jpg"
         ]
     }
 };
