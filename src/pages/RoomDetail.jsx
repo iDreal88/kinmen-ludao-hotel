@@ -48,13 +48,13 @@ export const RoomDetail = () => {
                 <div className="room-gallery-container" style={{ marginBottom: '4rem' }}>
                     {/* Main Image */}
                     <div style={{ width: '100%', height: '500px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 25px rgba(0,0,0,0.1)' }}>
-                        <img src={featuredImg || room.images[0]} alt={room.name_zh} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s', opacity: 1 }} onMouseOver={e => e.currentTarget.style.transform='scale(1.02)'} onMouseOut={e => e.currentTarget.style.transform='scale(1)'} />
+                        <img loading="lazy" src={featuredImg || room.images[0]} alt={room.name_zh} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s', opacity: 1 }} onMouseOver={e => e.currentTarget.style.transform='scale(1.02)'} onMouseOut={e => e.currentTarget.style.transform='scale(1)'} />
                     </div>
                     {/* Thumbnails Grid */}
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', alignContent: 'start' }}>
                         {room.images.map((imgSrc, i) => (
                             <div key={i} style={{ borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 10px rgba(0,0,0,0.05)', cursor: 'pointer', aspectRatio: '4/3', border: featuredImg === imgSrc ? '2px solid var(--primary)' : 'none' }} onClick={() => setFeaturedImg(imgSrc)}>
-                                <img src={imgSrc} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} onMouseOver={e => e.currentTarget.style.transform='scale(1.05)'} onMouseOut={e => e.currentTarget.style.transform='scale(1)'} alt={`Thumbnail ${i}`} />
+                                <img loading="lazy" src={imgSrc} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} onMouseOver={e => e.currentTarget.style.transform='scale(1.05)'} onMouseOut={e => e.currentTarget.style.transform='scale(1)'} alt={`Thumbnail ${i}`} />
                             </div>
                         ))}
                     </div>

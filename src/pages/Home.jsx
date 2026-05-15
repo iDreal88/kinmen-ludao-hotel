@@ -58,7 +58,7 @@ export const Home = () => {
             {/* About Section */}
             <section id="about" className="about">
                 <div className="about-img">
-                    <img src="/images/lobby_sky.jpg" alt="Lobby Sky View" />
+                    <img loading="lazy" src="/images/lobby_sky.jpg" alt="Lobby Sky View" />
                 </div>
                 <div className="about-content">
                     <div className="section-title" style={{ textAlign: 'left', marginBottom: '2rem' }}>
@@ -85,7 +85,7 @@ export const Home = () => {
                     {/* vip */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/VIP/vip1.jpg" alt="vip" />
+                            <img loading="lazy" src="/room-types/VIP/vip1.jpg" alt="vip" />
                         </div>
                         <div className="room-info">
                             <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_vip_name')}</h3>
@@ -102,7 +102,7 @@ export const Home = () => {
                     {/* trp */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/TRP/trp1.jpg" alt="trp" />
+                            <img loading="lazy" src="/room-types/TRP/trp1.jpg" alt="trp" />
                         </div>
                         <div className="room-info">
                             <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_trp_name')}</h3>
@@ -119,7 +119,7 @@ export const Home = () => {
                     {/* ds */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/DS/ds1.jpg" alt="ds" />
+                            <img loading="lazy" src="/room-types/DS/ds1.jpg" alt="ds" />
                         </div>
                         <div className="room-info">
                             <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_ds_name')}</h3>
@@ -136,7 +136,7 @@ export const Home = () => {
                     {/* st */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/ST/st1.jpg" alt="st" />
+                            <img loading="lazy" src="/room-types/ST/st1.jpg" alt="st" />
                         </div>
                         <div className="room-info">
                             <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_st_name')}</h3>
@@ -154,7 +154,7 @@ export const Home = () => {
                     {/* chr */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/CHR/chr1.jpg" alt="chr" />
+                            <img loading="lazy" src="/room-types/CHR/chr1.jpg" alt="chr" />
                         </div>
                         <div className="room-info">
                             <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_chr_name')}</h3>
@@ -171,7 +171,7 @@ export const Home = () => {
                     {/* tsb */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/TSB/tsb1.jpg" alt="tsb" />
+                            <img loading="lazy" src="/room-types/TSB/tsb1.jpg" alt="tsb" />
                         </div>
                         <div className="room-info">
                             <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_tsb_name')}</h3>
@@ -269,15 +269,15 @@ export const Home = () => {
                         {/* Dynamic QR Codes */}
                         <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                             <div style={{ textAlign: 'center', background: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://line.me/ti/p/KYU_P86UPK" alt="LINE QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
+                                <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://line.me/ti/p/KYU_P86UPK" alt="LINE QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
                                 <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#00B900', fontSize: '1.1rem' }}>{t('qr_line_title')}</div>
                             </div>
                             <div style={{ textAlign: 'center', background: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg" alt="WeChat QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
+                                <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg" alt="WeChat QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
                                 <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#07C160', fontSize: '1.1rem' }}>{t('qr_wechat_title')}</div>
                             </div>
                             <div style={{ textAlign: 'center', background: 'var(--bg)', padding: '1rem', borderRadius: '15px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)' }}>
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.facebook.com/kmldh/" alt="Facebook QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
+                                <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.facebook.com/kmldh/" alt="Facebook QR Code" style={{ width: '120px', height: '120px', borderRadius: '10px' }} />
                                 <div className="traditional-font" style={{ marginTop: '0.8rem', fontWeight: 'bold', color: '#1877F2', fontSize: '1.1rem' }}>{t('qr_fb_title')}</div>
                             </div>
                         </div>
@@ -293,7 +293,7 @@ export const Home = () => {
                 <div className="modal active" onClick={() => setLightboxImg(null)}>
                     <div className="modal-content" onClick={e => e.stopPropagation()}>
                         <span className="modal-close" onClick={() => setLightboxImg(null)}>&times;</span>
-                        <img src={lightboxImg} alt="Enlarged view" className="modal-img" />
+                        <img loading="lazy" src={lightboxImg} alt="Enlarged view" className="modal-img" />
                     </div>
                 </div>,
                 document.body
