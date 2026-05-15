@@ -107,33 +107,45 @@ header.scrolled {
   gap: 1.5rem;
 }
 
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
+.theme-toggle {
   cursor: pointer;
+  font-size: 1.2rem;
   color: var(--primary);
+  display: flex;
+  align-items: center;
   transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
 }
 
 .lang-switcher {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.2rem;
   background: rgba(255,255,255,0.15);
-  padding: 0.3rem;
+  padding: 0.2rem;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   backdrop-filter: blur(5px);
   color: white;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 header.scrolled .lang-switcher {
-  background: rgba(0,0,0,0.05);
+  background: var(--glass-dark);
+  color: var(--text);
+  border-color: rgba(0,0,0,0.05);
+}
+
+[data-theme='dark'] header.scrolled .lang-switcher {
+  background: rgba(255,255,255,0.05);
   color: var(--text);
 }
 
 .lang-btn {
-  padding: 0.3rem 0.8rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 15px;
   cursor: pointer;
   transition: var(--transition);
@@ -650,22 +662,52 @@ footer {
   visibility: visible;
 }
 
-/* Responsive Classes */
-.room-gallery-container {
-  display: grid;
-  grid-template-columns: 2.2fr 1fr;
-  gap: 1.5rem;
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.mobile-nav-controls {
+  display: none;
+  width: 100%;
+  padding: 0 2rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 992px) {
-  .hero-content h1 { font-size: 3rem; }
+  .hero-content h1 { font-size: 2.8rem; }
   .about { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   
   .hamburger {
     display: block;
+    order: 4; /* Keep hamburger on the far right */
   }
   
+  .mobile-nav-controls {
+    display: block;
+  }
+
+  .mobile-nav-controls .lang-switcher {
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,0.05);
+    color: var(--text);
+    border: 1px solid rgba(0,0,0,0.1);
+    margin: 0 auto;
+    width: fit-content;
+    padding: 0.5rem;
+  }
+
+  [data-theme='dark'] .mobile-nav-controls .lang-switcher {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.1);
+    color: var(--text);
+  }
+
   nav {
     position: absolute;
     top: 100%;
@@ -679,6 +721,7 @@ footer {
     align-items: center;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 0.4s ease-in-out, padding 0.4s ease;
+    z-index: 999;
   }
   
   nav.open {
@@ -699,15 +742,27 @@ footer {
 }
 
 @media (max-width: 768px) {
-  header { padding: 1rem 5%; }
-  .logo img { height: 40px; }
+  header { padding: 0.8rem 5%; }
+  .logo img { height: 35px; }
   .header-right { gap: 0.8rem; }
-  .lang-switcher { padding: 0.2rem; font-size: 0.75rem; }
-  .lang-btn { padding: 0.2rem 0.5rem; }
-  section { padding: 4rem 5%; }
+  
+  /* Hide the crowded header elements and let the mobile menu handle them */
+  header .header-right .lang-switcher,
+  header .header-right .btn-book {
+    display: none;
+  }
+
+  header .header-right .theme-toggle {
+    margin-right: 0.5rem;
+  }
+  
+  section { padding: 3rem 5%; }
   .footer-grid { grid-template-columns: 1fr; }
   .room-card-footer { flex-direction: column; align-items: flex-start; }
-  .btn-book { padding: 0.6rem 1rem; font-size: 0.85rem; }
+}
+
+@media (max-width: 480px) {
+  .header-right { gap: 0.5rem; }
 }
 
 /* Page Transitions */
