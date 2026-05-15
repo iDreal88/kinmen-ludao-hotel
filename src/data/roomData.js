@@ -14,12 +14,7 @@ export const roomData = {
             "/room-types/VIP/vip1.jpg",
             "/room-types/VIP/vip2.jpg",
             "/room-types/VIP/vip3.jpg",
-            "/room-types/VIP/vip4.jpg",
-            "/room-types/VIP/vip5.jpg",
-            "/room-types/VIP/vip6.jpg",
-            "/room-types/VIP/vip7.jpg",
-            "/room-types/VIP/vip8.jpg",
-            "/room-types/VIP/vip9.jpg"
+            "/room-types/VIP/vip4.jpg"
         ]
     },
     elegant: {
@@ -34,16 +29,9 @@ export const roomData = {
         desc_zh: "適合3人入住的典雅空間，配備一大一小床。房內提供冷暖氣、液晶電視、冰箱及免費無線網路，住宿包含精緻早餐，適合家庭出遊或商務旅客。",
         desc_en: "Elegant space for up to 3 guests, featuring 1 King and 1 Single bed. Equipped with AC/heating, TV, refrigerator, and free WiFi. Includes breakfast, perfect for families or business travelers.",
         images: [
-            "/room-types/TRP/trp3.jpg",
-            "/room-types/TRP/trp2.jpg",
             "/room-types/TRP/trp1.jpg",
-            "/room-types/TRP/trp4.jpg",
-            "/room-types/TRP/trp5.jpg",
-            "/room-types/TRP/trp6.jpg",
-            "/room-types/TRP/trp7.jpg",
-            "/room-types/TRP/trp8.jpg",
-            "/room-types/TRP/trp9.jpg",
-            "/room-types/TRP/trp10.jpg"
+            "/room-types/TRP/trp2.jpg",
+            "/room-types/TRP/trp3.jpg"
         ]
     },
     elite: {
@@ -60,9 +48,7 @@ export const roomData = {
         images: [
             "/room-types/DS/ds1.jpg",
             "/room-types/DS/ds2.jpg",
-            "/room-types/DS/ds3.jpg",
-            "/room-types/DS/ds4.jpg",
-            "/room-types/DS/ds5.jpg"
+            "/room-types/DS/ds3.jpg"
         ]
     },
     boutique: {
@@ -78,9 +64,7 @@ export const roomData = {
         desc_en: "Simple and clean layout for 2 guests with 2 Twin beds. Equipped with AC/heating, TV, refrigerator, and free WiFi. Includes breakfast, ideal for friends traveling together.",
         images: [
             "/room-types/ST/st1.jpg",
-            "/room-types/ST/st2.jpg",
-            "/room-types/ST/st3.jpg",
-            "/room-types/ST/st4.jpg"
+            "/room-types/ST/st2.jpg"
         ]
     },
     family: {
