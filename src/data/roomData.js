@@ -84,10 +84,7 @@ export const roomData = {
             "/room-types/CHR/chr3.jpg",
             "/room-types/CHR/chr4.jpg",
             "/room-types/CHR/chr5.jpg",
-            "/room-types/CHR/chr6.jpg",
-            "/room-types/CHR/chr7.jpg",
-            "/room-types/CHR/chr8.jpg",
-            "/room-types/CHR/chr9.jpg"
+            "/room-types/CHR/chr6.jpg"
         ]
     }
 };
