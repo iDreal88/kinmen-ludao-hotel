@@ -45,13 +45,25 @@ export const Header = () => {
                         className={`lang-btn ${lang === 'zh' ? 'active' : ''}`} 
                         onClick={() => setLang('zh')}
                     >
-                        中文
+                        繁
+                    </span>
+                    <span 
+                        className={`lang-btn ${lang === 'cn' ? 'active' : ''}`} 
+                        onClick={() => setLang('cn')}
+                    >
+                        简
                     </span>
                     <span 
                         className={`lang-btn ${lang === 'en' ? 'active' : ''}`} 
                         onClick={() => setLang('en')}
                     >
                         EN
+                    </span>
+                    <span 
+                        className={`lang-btn ${lang === 'ja' ? 'active' : ''}`} 
+                        onClick={() => setLang('ja')}
+                    >
+                        JP
                     </span>
                 </div>
                 <a href="tel:+88682320048" className="btn-book">{t('btn_book')}</a>
