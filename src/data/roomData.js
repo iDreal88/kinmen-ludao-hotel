@@ -1,6 +1,6 @@
 export const roomData = {
-    exec: {
-        id: "exec",
+    vip: {
+        id: "vip",
         name_zh: "行政套房 (一大床)",
         name_en: "Executive Suite (1 King)",
         name_cn: "行政套房 (一大床)",
@@ -18,11 +18,13 @@ export const roomData = {
             "/room-types/VIP/vip1.jpg",
             "/room-types/VIP/vip2.jpg",
             "/room-types/VIP/vip3.jpg",
-            "/room-types/VIP/vip4.jpg"
+            "/room-types/VIP/vip4.jpg",
+            "/room-types/VIP/vip5.jpg",
+            "/room-types/VIP/vip6.jpg"
         ]
     },
-    elegant: {
-        id: "elegant",
+    trp: {
+        id: "trp",
         name_zh: "典雅客房 (一大一小床)",
         name_en: "Elegant Room (1 King + 1 Single)",
         name_cn: "典雅客房 (一大一小床)",
@@ -39,11 +41,18 @@ export const roomData = {
         images: [
             "/room-types/TRP/trp1.jpg",
             "/room-types/TRP/trp2.jpg",
-            "/room-types/TRP/trp3.jpg"
+            "/room-types/TRP/trp3.jpg",
+            "/room-types/TRP/trp4.jpg",
+            "/room-types/TRP/trp5.jpg",
+            "/room-types/TRP/trp6.jpg",
+            "/room-types/TRP/trp7.jpg",
+            "/room-types/TRP/trp8.jpg",
+            "/room-types/TRP/trp9.jpg",
+            "/room-types/TRP/trp10.jpg"
         ]
     },
-    elite: {
-        id: "elite",
+    ds: {
+        id: "ds",
         name_zh: "精英客房 (一大床)",
         name_en: "Elite Room (1 King)",
         name_cn: "精英客房 (一大床)",
@@ -60,11 +69,13 @@ export const roomData = {
         images: [
             "/room-types/DS/ds1.jpg",
             "/room-types/DS/ds2.jpg",
-            "/room-types/DS/ds3.jpg"
+            "/room-types/DS/ds3.jpg",
+            "/room-types/DS/ds4.jpg",
+            "/room-types/DS/ds5.jpg"
         ]
     },
-    boutique: {
-        id: "boutique",
+    st: {
+        id: "st",
         name_zh: "精緻客房 (兩小床)",
         name_en: "Boutique Room (2 Twin)",
         name_cn: "精致客房 (两小床)",
@@ -83,8 +94,8 @@ export const roomData = {
             "/room-types/ST/st2.jpg"
         ]
     },
-    family: {
-        id: "family",
+    chr: {
+        id: "chr",
         name_zh: "親子房 (兩大床)",
         name_en: "Family Room (2 King)",
         name_cn: "亲子房 (两大床)",
@@ -105,6 +116,26 @@ export const roomData = {
             "/room-types/CHR/chr4.jpg",
             "/room-types/CHR/chr5.jpg",
             "/room-types/CHR/chr6.jpg"
+        ]
+    },
+    tsb: {
+        id: "tsb",
+        name_zh: "三人房 (三單床)",
+        name_en: "Triple Room (3 Single Beds)",
+        name_cn: "三人房 (三单床)",
+        name_ja: "トリプルルーム (シングル3台)",
+        price_zh: "平日 $3,300 / 假日 $3,800",
+        price_en: "Weekday $3,300 / Holiday $3,800",
+        prices: { fixed: '10,800', holiday: '3,800', weekday: '3,300' },
+        occupancy: { zh: '3人(標準入住人數)', en: '3 Guests (Standard)', cn: '3人(标准入住人数)', ja: '3名(標準定員)' },
+        equipment: { zh: '吹風機,電視,冰箱,冷氣,暖氣,無線網路,熱水壺,茶包', en: 'Hairdryer, TV, Refrigerator, AC, Heating, WiFi, Kettle, Tea Bags', cn: '吹风机,电视,冰箱,冷气,暖气,无线网路,热水壶,茶包', ja: 'ヘアドライヤー, テレビ, 冷蔵庫, 冷暖房, WiFi, 電気ケトル, ティーバッグ' },
+        desc_zh: "提供三張單人床的三人空間。房內配備冷暖氣、液晶電視、冰箱及免費無線網路，住宿包含精緻早餐，是親友同遊金門的最佳選擇。",
+        desc_en: "Triple room space with 3 Single beds. Equipped with AC/heating, TV, refrigerator, and free WiFi. Includes breakfast, ideal for friends traveling together.",
+        desc_cn: "提供三张单人床的三人空间。房内配备冷暖气、液晶电视、冰箱及免费无线网络，住宿包含精致早餐，是亲友同游金门的最佳选择。",
+        desc_ja: "シングルベッド3台を備えたトリプルルーム。冷暖房、テレビ、冷蔵庫、無料Wi-Fi完備。朝食付きで、ご友人との旅行に最適です。",
+        images: [
+            "/room-types/TSB/tsb1.jpg",
+            "/room-types/TSB/tsb2.jpg"
         ]
     }
 };
