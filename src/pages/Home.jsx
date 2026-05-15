@@ -102,7 +102,7 @@ export const Home = () => {
                     {/* Elegant Room */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/TRP/trp3.jpg" alt="Elegant Room" />
+                            <img src="/room-types/TRP/trp1.jpg" alt="Elegant Room" />
                         </div>
                         <div className="room-info">
                             <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_elegant_name')}</h3>
@@ -136,7 +136,7 @@ export const Home = () => {
                     {/* Boutique Room */}
                     <div className="room-card">
                         <div className="room-img">
-                            <img src="/room-types/ST/st2.jpg" alt="Boutique Room" />
+                            <img src="/room-types/ST/st1.jpg" alt="Boutique Room" />
                         </div>
                         <div className="room-info">
                             <h3 className="traditional-font" style={{ textAlign: 'left', marginBottom: '0.5rem' }}>{t('room_boutique_name')}</h3>
