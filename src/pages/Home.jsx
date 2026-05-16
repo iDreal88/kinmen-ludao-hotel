@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { createPortal } from 'react-dom';
 import { useLanguage } from '../context/LanguageContext';
+
 import { Lightbox } from '../components/Lightbox';
 
 export const Home = () => {

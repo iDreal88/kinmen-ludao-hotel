@@ -860,12 +860,15 @@ footer {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   white-space: nowrap;
+  border: none;
+  outline: none;
 }
 
 .chat-option-btn:hover { transform: translateX(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
 .chat-option-btn i { font-size: 1.2rem; }
 .line-btn { background: #00B900; }
-.wechat-btn { background: #07C160; box-shadow: none; }
+.wechat-btn { background: #07C160; box-shadow: none !important; }
+.wechat-btn:hover { box-shadow: none !important; }
 .phone-btn { background: var(--primary); }
 
 /* ==========================================
@@ -999,7 +1002,8 @@ footer {
 }
 .success-btn:hover { transform: translateY(-2px); }
 .line-success-btn { background: #00B900; }
-.wechat-success-btn { background: #07C160; box-shadow: none; }
+.wechat-success-btn { background: #07C160; box-shadow: none !important; }
+.wechat-success-btn:hover { box-shadow: none !important; }
 .phone-success-btn { background: var(--primary); }
 
 @media (max-width: 600px) {
