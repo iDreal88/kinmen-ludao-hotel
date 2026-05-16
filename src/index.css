@@ -867,8 +867,8 @@ footer {
 .chat-option-btn:hover { transform: translateX(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
 .chat-option-btn i { font-size: 1.2rem; }
 .line-btn { background: #00B900; }
-.wechat-btn { background: #07C160; box-shadow: none !important; border: none !important; outline: none !important; }
-.wechat-btn:hover { box-shadow: none !important; border: none !important; }
+.wechat-btn { background: #07C160; box-shadow: none !important; }
+.wechat-btn:hover { box-shadow: none !important; }
 .phone-btn { background: var(--primary); }
 
 /* ==========================================
@@ -928,7 +928,7 @@ footer {
 .booking-close-btn:hover { color: var(--primary); }
 
 .booking-form {
-  padding: 1.5rem 2rem 3rem;
+  padding: 1.8rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -976,25 +976,14 @@ footer {
 
 .booking-submit-btn {
   width: 100%;
-  padding: 1.1rem;
-  font-size: 1.1rem;
+  padding: 1rem;
+  font-size: 1.05rem;
   border-radius: 12px;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  border: none;
-  cursor: pointer;
-  background: var(--primary-dark);
-  color: white;
-  transition: var(--transition);
-}
-.booking-submit-btn:hover {
-  background: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
 }
 
 /* Success State */
@@ -1010,15 +999,11 @@ footer {
   display: inline-flex; align-items: center; gap: 0.5rem;
   padding: 0.8rem 1.5rem; border-radius: 30px; color: white;
   font-weight: 600; text-decoration: none; transition: transform 0.2s;
-  border: none !important;
-  outline: none !important;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 .success-btn:hover { transform: translateY(-2px); }
 .line-success-btn { background: #00B900; }
-.wechat-success-btn { background: #07C160 !important; box-shadow: none !important; border: none !important; outline: none !important; }
-.wechat-success-btn:hover { box-shadow: none !important; border: none !important; transform: translateY(-2px); }
+.wechat-success-btn { background: #07C160; box-shadow: none !important; }
+.wechat-success-btn:hover { box-shadow: none !important; }
 .phone-success-btn { background: var(--primary); }
 
 @media (max-width: 600px) {
