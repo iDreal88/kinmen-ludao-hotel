@@ -32,8 +32,8 @@ export const RoomDetail = () => {
     }
 
     return (
-        <main id="roomDetailsMain" style={{ paddingTop: '140px', paddingBottom: '5rem', minHeight: 'calc(100vh - 200px)', backgroundColor: 'var(--bg)' }}>
-            <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+        <main id="roomDetailsMain" style={{ paddingTop: '200px', paddingBottom: '5rem', minHeight: 'calc(100vh - 200px)', backgroundColor: 'var(--bg)' }}>
+            <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 25px' }}>
                 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1.5rem' }}>
                     <h1 className="traditional-font" style={{ fontSize: '2.5rem', color: 'var(--primary-dark)', margin: 0 }}>
