@@ -44,7 +44,16 @@ export const Header = () => {
                         <span className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</span>
                         <span className={`lang-btn ${lang === 'ja' ? 'active' : ''}`} onClick={() => setLang('ja')}>JP</span>
                     </div>
-                    <a href="tel:+88682320048" className="btn-book" style={{ display: 'block', marginTop: '1.5rem', textAlign: 'center' }}>{t('btn_book')}</a>
+                    <button 
+                        onClick={() => {
+                            setMenuOpen(false);
+                            window.dispatchEvent(new CustomEvent('openBookingModal', {}));
+                        }} 
+                        className="btn-book" 
+                        style={{ display: 'block', width: '100%', marginTop: '1.5rem', textAlign: 'center', border: 'none', cursor: 'pointer' }}
+                    >
+                        {t('btn_book')}
+                    </button>
                 </div>
             </nav>
             <div className="header-right">
