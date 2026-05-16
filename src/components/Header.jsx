@@ -57,7 +57,7 @@ export const Header = () => {
                     <span className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</span>
                     <span className={`lang-btn ${lang === 'ja' ? 'active' : ''}`} onClick={() => setLang('ja')}>JP</span>
                 </div>
-                <a href="tel:+88682320048" className="btn-book">{t('btn_book')}</a>
+                <button className="btn-book" onClick={() => window.dispatchEvent(new CustomEvent('openBookingModal', {}))} style={{ border: 'none', cursor: 'pointer' }}>{t('btn_book')}</button>
                 <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
                     <i className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'}`}></i>
                 </div>

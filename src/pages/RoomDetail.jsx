@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { roomData } from '../data/roomData';
+import { Lightbox } from '../components/Lightbox';
 
 export const RoomDetail = () => {
     const { id } = useParams();
     const { lang } = useLanguage();
     const room = roomData[id];
     const [featuredImg, setFeaturedImg] = useState('');
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [lightboxIndex, setLightboxIndex] = useState(0);
     const tr = (zh, en, cn, ja) => {
         if (lang === 'en') return en;
         if (lang === 'ja') return ja;
@@ -46,14 +49,17 @@ export const RoomDetail = () => {
                 
                 {/* Gallery Section */}
                 <div className="room-gallery-container">
-                    {/* Main Image */}
-                    <div className="room-gallery-main-img" style={{ width: '100%', height: '500px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 25px rgba(0,0,0,0.1)' }}>
-                        <img loading="lazy" src={featuredImg || room.images[0]} alt={room.name_zh} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s', opacity: 1 }} onMouseOver={e => e.currentTarget.style.transform='scale(1.02)'} onMouseOut={e => e.currentTarget.style.transform='scale(1)'} />
+                    {/* Main Image - click to open lightbox */}
+                    <div className="room-gallery-main-img" style={{ width: '100%', height: '500px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 25px rgba(0,0,0,0.1)', cursor: 'zoom-in', position: 'relative' }} onClick={() => { setLightboxIndex(room.images.indexOf(featuredImg || room.images[0])); setLightboxOpen(true); }}>
+                        <img loading="lazy" src={featuredImg || room.images[0]} alt={room.name_zh} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }} onMouseOver={e => e.currentTarget.style.transform='scale(1.02)'} onMouseOut={e => e.currentTarget.style.transform='scale(1)'} />
+                        <div style={{ position: 'absolute', bottom: '1rem', right: '1rem', background: 'rgba(0,0,0,0.5)', color: 'white', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', backdropFilter: 'blur(4px)' }}>
+                            <i className="fas fa-expand"></i> {tr('點擊放大', 'Click to expand', '点击放大', '拡大する')}
+                        </div>
                     </div>
-                    {/* Thumbnails Grid */}
+                    {/* Thumbnails Grid - click to open lightbox at that index */}
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', alignContent: 'start' }}>
                         {room.images.map((imgSrc, i) => (
-                            <div key={i} style={{ borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 10px rgba(0,0,0,0.05)', cursor: 'pointer', aspectRatio: '4/3', border: featuredImg === imgSrc ? '2px solid var(--primary)' : 'none' }} onClick={() => setFeaturedImg(imgSrc)}>
+                            <div key={i} style={{ borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 10px rgba(0,0,0,0.05)', cursor: 'zoom-in', aspectRatio: '4/3', border: featuredImg === imgSrc ? '2px solid var(--primary)' : 'none', position: 'relative' }} onClick={() => { setFeaturedImg(imgSrc); setLightboxIndex(i); setLightboxOpen(true); }}>
                                 <img loading="lazy" src={imgSrc} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} onMouseOver={e => e.currentTarget.style.transform='scale(1.05)'} onMouseOut={e => e.currentTarget.style.transform='scale(1)'} alt={`Thumbnail ${i}`} />
                             </div>
                         ))}
@@ -159,10 +165,21 @@ export const RoomDetail = () => {
                 </div>
                 
                 <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-                     <a href="tel:+88682320048" className="btn-book" style={{ display: 'inline-block', textDecoration: 'none', padding: '1.2rem 4rem', fontSize: '1.2rem', borderRadius: '30px', boxShadow: '0 10px 25px rgba(139, 69, 19, 0.25)', transition: 'all 0.3s' }}>
-                         {tr('立即來電訂房', 'Call to Book', '立即来电订房', '今すぐ電話予約')}
-                     </a>
+                     <button className="btn-book" style={{ display: 'inline-block', padding: '1.2rem 4rem', fontSize: '1.2rem', borderRadius: '30px', boxShadow: '0 10px 25px rgba(139, 69, 19, 0.25)', transition: 'all 0.3s', border: 'none', cursor: 'pointer' }}
+                         onClick={() => window.dispatchEvent(new CustomEvent('openBookingModal', { detail: { roomId: room.id } }))}>
+                         {tr('立即預訂此房型', 'Book This Room', '立即预订此房型', 'この部屋を予約する')}
+                     </button>
                 </div>
+
+                {lightboxOpen && (
+                    <Lightbox
+                        images={room.images}
+                        currentIndex={lightboxIndex}
+                        onClose={() => setLightboxOpen(false)}
+                        onPrev={() => setLightboxIndex(i => (i - 1 + room.images.length) % room.images.length)}
+                        onNext={() => setLightboxIndex(i => (i + 1) % room.images.length)}
+                    />
+                )}
             </div>
         </main>
     );

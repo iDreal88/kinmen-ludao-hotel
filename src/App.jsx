@@ -6,6 +6,8 @@ import { Home } from './pages/Home';
 import { RoomDetail } from './pages/RoomDetail';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
+import { FloatingChat } from './components/FloatingChat';
+import { BookingModal } from './components/BookingModal';
 
 function App() {
   const location = useLocation();
@@ -14,10 +16,8 @@ function App() {
     if (location.hash) {
       setTimeout(() => {
         const element = document.getElementById(location.hash.slice(1));
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100); // slight delay for rendering
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     } else {
       window.scrollTo(0, 0);
     }
@@ -35,6 +35,8 @@ function App() {
             </Routes>
           </div>
           <Footer />
+          <FloatingChat />
+          <BookingModal />
         </div>
       </LanguageProvider>
     </ThemeProvider>
