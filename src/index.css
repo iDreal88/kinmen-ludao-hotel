@@ -871,7 +871,9 @@ footer {
   background: #07C160; 
   box-shadow: none !important; 
   outline: none !important; 
-  border: none !important; 
+  border: 0 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
 }
 .phone-btn { background: var(--primary); }
 
@@ -1010,7 +1012,9 @@ footer {
   background: #07C160; 
   box-shadow: none !important; 
   outline: none !important; 
-  border: none !important; 
+  border: 0 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
 }
 .phone-success-btn { background: var(--primary); }
 

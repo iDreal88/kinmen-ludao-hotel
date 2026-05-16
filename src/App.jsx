@@ -28,7 +28,7 @@ function App() {
       <LanguageProvider>
         <div className="App">
           {/* Pre-load WeChat QR for instant display */}
-          <img src={`https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=${encodeURIComponent('https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg')}`} style={{ display: 'none' }} alt="preload" />
+          <img src={`https://quickchart.io/qr?text=${encodeURIComponent('https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg')}&size=250`} style={{ display: 'none' }} alt="preload" />
           <Header />
           <div key={location.pathname} className="page-transition">
             <Routes location={location}>

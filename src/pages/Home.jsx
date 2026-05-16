@@ -11,7 +11,7 @@ export const Home = () => {
     const [showWechatQR, setShowWechatQR] = useState(false);
 
     const WECHAT_URL = 'https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg';
-    const WECHAT_QR = `https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=${encodeURIComponent(WECHAT_URL)}`;
+    const WECHAT_QR = `https://quickchart.io/qr?text=${encodeURIComponent(WECHAT_URL)}&size=250`;
 
 
     // Some mock gallery images based on vanilla implementation

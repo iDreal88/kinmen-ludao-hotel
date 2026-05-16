@@ -4,7 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { roomData } from '../data/roomData';
 
 const WECHAT_URL = 'https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg';
-const WECHAT_QR = `https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=${encodeURIComponent(WECHAT_URL)}`;
+const WECHAT_QR = `https://quickchart.io/qr?text=${encodeURIComponent(WECHAT_URL)}&size=250`;
 
 
 export const BookingModal = () => {
