@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { createPortal } from 'react-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { Lightbox } from '../components/Lightbox';
 
 export const Home = () => {
     const { t } = useLanguage();
-    const [lightboxImg, setLightboxImg] = useState(null);
+    const [lightboxIndex, setLightboxIndex] = useState(null);
 
     // Some mock gallery images based on vanilla implementation
     const galleryImages = [
@@ -201,7 +201,7 @@ export const Home = () => {
                             src={img}
                             alt={`Gallery ${i}`}
                             style={{ width: '100%', height: '250px', objectFit: 'cover', borderRadius: '15px', cursor: 'pointer', transition: 'transform 0.3s' }}
-                            onClick={() => setLightboxImg(img)}
+                            onClick={() => setLightboxIndex(i)}
                             onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
                             onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
                         />
@@ -269,33 +269,6 @@ export const Home = () => {
                             </a>
                         </div>
 
-                        {/* Dynamic QR Codes */}
-                        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-                            <div style={{ textAlign: 'center', backgroundColor: 'var(--card-bg)', padding: '1rem', borderRadius: '15px', border: '1px solid var(--glass-dark)', boxShadow: 'var(--shadow)' }}>
-                                <div style={{ background: 'white', padding: '10px', borderRadius: '10px', display: 'inline-block' }}>
-                                    <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://line.me/ti/p/KYU_P86UPK" alt="LINE QR Code" style={{ width: '120px', height: '120px', display: 'block' }} />
-                                </div>
-                                <div style={{ marginTop: '0.8rem', fontWeight: '600', color: 'var(--text)', fontSize: '1.1rem', letterSpacing: '0.5px' }}>{t('qr_line_title')}</div>
-                            </div>
-                            <div style={{ textAlign: 'center', backgroundColor: 'var(--card-bg)', padding: '1rem', borderRadius: '15px', border: '1px solid var(--glass-dark)', boxShadow: 'var(--shadow)' }}>
-                                <div style={{ background: 'white', padding: '10px', borderRadius: '10px', display: 'inline-block' }}>
-                                    <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg" alt="WeChat QR Code" style={{ width: '120px', height: '120px', display: 'block' }} />
-                                </div>
-                                <div style={{ marginTop: '0.8rem', fontWeight: '600', color: 'var(--text)', fontSize: '1.1rem', letterSpacing: '0.5px' }}>{t('qr_wechat_title')}</div>
-                            </div>
-                            <div style={{ textAlign: 'center', backgroundColor: 'var(--card-bg)', padding: '1rem', borderRadius: '15px', border: '1px solid var(--glass-dark)', boxShadow: 'var(--shadow)' }}>
-                                <div style={{ background: 'white', padding: '10px', borderRadius: '10px', display: 'inline-block' }}>
-                                    <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.facebook.com/kmldh/" alt="Facebook QR Code" style={{ width: '120px', height: '120px', display: 'block' }} />
-                                </div>
-                                <div style={{ marginTop: '0.8rem', fontWeight: '600', color: 'var(--text)', fontSize: '1.1rem', letterSpacing: '0.5px' }}>{t('qr_fb_title')}</div>
-                            </div>
-                            <div style={{ textAlign: 'center', backgroundColor: 'var(--card-bg)', padding: '1rem', borderRadius: '15px', border: '1px solid var(--glass-dark)', boxShadow: 'var(--shadow)' }}>
-                                <div style={{ background: 'white', padding: '10px', borderRadius: '10px', display: 'inline-block' }}>
-                                    <img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/kmludao" alt="Instagram QR Code" style={{ width: '120px', height: '120px', display: 'block' }} />
-                                </div>
-                                <div style={{ marginTop: '0.8rem', fontWeight: '600', color: 'var(--text)', fontSize: '1.1rem', letterSpacing: '0.5px' }}>{t('qr_ig_title')}</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div className="about-img" style={{ borderRadius: '20px', overflow: 'hidden', height: '400px', boxShadow: 'var(--shadow)' }}>
@@ -303,15 +276,14 @@ export const Home = () => {
                 </div>
             </section>
 
-            {/* Lightbox */}
-            {lightboxImg && typeof document !== 'undefined' && createPortal(
-                <div className="modal active" onClick={() => setLightboxImg(null)}>
-                    <div className="modal-content" onClick={e => e.stopPropagation()}>
-                        <span className="modal-close" onClick={() => setLightboxImg(null)}>&times;</span>
-                        <img loading="lazy" src={lightboxImg} alt="Enlarged view" className="modal-img" />
-                    </div>
-                </div>,
-                document.body
+            {lightboxIndex !== null && (
+                <Lightbox
+                    images={galleryImages}
+                    currentIndex={lightboxIndex}
+                    onClose={() => setLightboxIndex(null)}
+                    onPrev={() => setLightboxIndex(i => (i - 1 + galleryImages.length) % galleryImages.length)}
+                    onNext={() => setLightboxIndex(i => (i + 1) % galleryImages.length)}
+                />
             )}
         </main>
     );
