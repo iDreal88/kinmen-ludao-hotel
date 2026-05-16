@@ -677,6 +677,15 @@ footer {
   margin-top: 2rem;
 }
 
+/* Room Detail Gallery */
+.room-gallery-container {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
 @media (max-width: 992px) {
   .hero-content h1 { font-size: 2.8rem; }
   .about { grid-template-columns: 1fr; }
@@ -738,6 +747,10 @@ footer {
 
   .room-gallery-container {
     grid-template-columns: 1fr;
+  }
+
+  .room-gallery-main-img {
+    height: 350px !important;
   }
 }
 
