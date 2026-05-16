@@ -867,8 +867,12 @@ footer {
 .chat-option-btn:hover { transform: translateX(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
 .chat-option-btn i { font-size: 1.2rem; }
 .line-btn { background: #00B900; }
-.wechat-btn { background: #07C160; box-shadow: none !important; }
-.wechat-btn:hover { box-shadow: none !important; }
+.wechat-btn, .wechat-btn:hover, .wechat-btn:focus, .wechat-btn:active { 
+  background: #07C160; 
+  box-shadow: none !important; 
+  outline: none !important; 
+  border: none !important; 
+}
 .phone-btn { background: var(--primary); }
 
 /* ==========================================
@@ -1002,8 +1006,12 @@ footer {
 }
 .success-btn:hover { transform: translateY(-2px); }
 .line-success-btn { background: #00B900; }
-.wechat-success-btn { background: #07C160; box-shadow: none !important; }
-.wechat-success-btn:hover { box-shadow: none !important; }
+.wechat-success-btn, .wechat-success-btn:hover, .wechat-success-btn:focus, .wechat-success-btn:active { 
+  background: #07C160; 
+  box-shadow: none !important; 
+  outline: none !important; 
+  border: none !important; 
+}
 .phone-success-btn { background: var(--primary); }
 
 @media (max-width: 600px) {
@@ -1125,3 +1133,9 @@ footer {
   transition: color 0.2s;
 }
 .wechat-qr-close:hover { color: var(--primary); }
+
+/* Global button reset to prevent accidental outlines/borders */
+button:focus, button:active, a:focus, a:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}

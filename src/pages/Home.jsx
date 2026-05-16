@@ -11,7 +11,7 @@ export const Home = () => {
     const [showWechatQR, setShowWechatQR] = useState(false);
 
     const WECHAT_URL = 'https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg';
-    const WECHAT_QR = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(WECHAT_URL)}`;
+    const WECHAT_QR = `https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=${encodeURIComponent(WECHAT_URL)}`;
 
 
     // Some mock gallery images based on vanilla implementation
@@ -267,7 +267,7 @@ export const Home = () => {
                             </a>
                             <button 
                                 onClick={() => setShowWechatQR(true)}
-                                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', background: '#07C160', color: 'white', borderRadius: '50%', border: 'none', cursor: 'pointer', fontSize: '1.5rem', transition: 'transform 0.3s' }}
+                                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', background: '#07C160', color: 'white', borderRadius: '50%', border: 'none', outline: 'none', boxShadow: 'none', cursor: 'pointer', fontSize: '1.5rem', transition: 'transform 0.3s' }}
                             >
                                 <i className="fab fa-weixin"></i>
                             </button>
