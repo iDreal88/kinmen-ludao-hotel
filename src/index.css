@@ -928,7 +928,7 @@ footer {
 .booking-close-btn:hover { color: var(--primary); }
 
 .booking-form {
-  padding: 1.5rem 2rem 2.5rem;
+  padding: 1.5rem 2rem 3rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -980,6 +980,7 @@ footer {
   font-size: 1.1rem;
   border-radius: 12px;
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
