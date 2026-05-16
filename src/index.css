@@ -999,6 +999,7 @@ footer {
 }
 .success-btn:hover { transform: translateY(-2px); }
 .line-success-btn { background: #00B900; }
+.wechat-success-btn { background: #07C160; }
 .phone-success-btn { background: var(--primary); }
 
 @media (max-width: 600px) {
