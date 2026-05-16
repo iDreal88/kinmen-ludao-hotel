@@ -4,8 +4,13 @@ import { useLanguage } from '../context/LanguageContext';
 import { Lightbox } from '../components/Lightbox';
 
 export const Home = () => {
-    const { t } = useLanguage();
+    const { t, lang } = useLanguage();
     const [lightboxIndex, setLightboxIndex] = useState(null);
+    const [showWechatQR, setShowWechatQR] = useState(false);
+
+    const WECHAT_URL = 'https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg';
+    const WECHAT_QR = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(WECHAT_URL)}`;
+
 
     // Some mock gallery images based on vanilla implementation
     const galleryImages = [
@@ -258,9 +263,12 @@ export const Home = () => {
                             <a href="https://line.me/ti/p/KYU_P86UPK" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', background: '#00B900', color: 'white', borderRadius: '50%', textDecoration: 'none', fontSize: '1.5rem', transition: 'transform 0.3s', boxShadow: '0 4px 10px rgba(0, 185, 0, 0.2)' }}>
                                 <i className="fab fa-line"></i>
                             </a>
-                            <a href="https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', background: '#07C160', color: 'white', borderRadius: '50%', textDecoration: 'none', fontSize: '1.5rem', transition: 'transform 0.3s', boxShadow: '0 4px 10px rgba(7, 193, 96, 0.2)' }}>
+                            <button 
+                                onClick={() => setShowWechatQR(true)}
+                                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', background: '#07C160', color: 'white', borderRadius: '50%', border: 'none', cursor: 'pointer', fontSize: '1.5rem', transition: 'transform 0.3s' }}
+                            >
                                 <i className="fab fa-weixin"></i>
-                            </a>
+                            </button>
                             <a href="https://www.facebook.com/kmldh/" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '45px', height: '45px', background: '#1877F2', color: 'white', borderRadius: '50%', textDecoration: 'none', fontSize: '1.5rem', transition: 'transform 0.3s', boxShadow: '0 4px 10px rgba(24, 119, 242, 0.2)' }}>
                                 <i className="fab fa-facebook-f"></i>
                             </a>
@@ -284,6 +292,29 @@ export const Home = () => {
                     onPrev={() => setLightboxIndex(i => (i - 1 + galleryImages.length) % galleryImages.length)}
                     onNext={() => setLightboxIndex(i => (i + 1) % galleryImages.length)}
                 />
+            )}
+
+            {showWechatQR && createPortal(
+                <div className="wechat-qr-overlay" onClick={() => setShowWechatQR(false)}>
+                    <div className="wechat-qr-card" onClick={e => e.stopPropagation()}>
+                        <button className="wechat-qr-close" onClick={() => setShowWechatQR(false)}>
+                            <i className="fas fa-times"></i>
+                        </button>
+                        <i className="fab fa-weixin" style={{ fontSize: '2.5rem', color: '#07C160', marginBottom: '0.8rem' }}></i>
+                        <p style={{ fontWeight: '600', marginBottom: '1rem', color: 'var(--primary-dark)' }}>
+                            {lang === 'en' ? 'Scan this QR Code with WeChat' : 
+                             lang === 'ja' ? 'WeChatでQRコードをスキャンしてください' : 
+                             lang === 'cn' ? '请用微信扫描以下 QR Code' : '請用微信掃描以下 QR Code'}
+                        </p>
+                        <div style={{ background: 'white', padding: '12px', borderRadius: '12px', display: 'inline-block', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
+                            <img src={WECHAT_QR} alt="WeChat QR Code" style={{ width: '180px', height: '180px', display: 'block' }} />
+                        </div>
+                        <button className="btn-book" style={{ marginTop: '1.5rem', border: 'none', cursor: 'pointer' }} onClick={() => setShowWechatQR(false)}>
+                            {lang === 'en' ? 'Close' : lang === 'ja' ? '閉じる' : lang === 'cn' ? '关闭' : '關閉'}
+                        </button>
+                    </div>
+                </div>,
+                document.body
             )}
         </main>
     );

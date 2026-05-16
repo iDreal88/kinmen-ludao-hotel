@@ -76,7 +76,7 @@ export const BookingModal = () => {
         selectRoom: tr('-- 請選擇房型 --', '-- Select Room --', '-- 请选择房型 --', '-- 部屋を選択 --'),
         guests: tr('入住人數', 'Guests', '入住人数', '宿泊人数'),
         requests: tr('特殊需求', 'Special Requests', '特殊需求', 'ご要望'),
-        submit: tr('複製訂房資訊', 'Copy Booking Info', '复制订房资讯', '予約情報をコピー'),
+        submit: tr('立即預訂', 'Book Now', '立即预订', '今すぐ予約'),
         successTitle: tr('訂房資訊已複製！', 'Booking Info Copied!', '订房资讯已复制！', '予約情報がコピーされました！'),
         successMsg: tr('請選擇您偏好的聯絡方式，貼上訊息並傳送給我們：', 'Choose your preferred platform, paste and send the message to us:', '请选择您偏好的联络方式，粘贴消息并发送给我们：', 'ご希望の連絡方法を選択し、メッセージを貼り付けてお送りください：'),
         line: tr('開啟 LINE 聯絡', 'Open LINE', '打开 LINE 联络', 'LINEで連絡'),
@@ -154,7 +154,7 @@ export const BookingModal = () => {
                             <textarea name="requests" value={formData.requests} onChange={handleChange} rows={3} placeholder={tr('例：需要嬰兒床、素食早餐...', 'e.g. Need baby cot, vegetarian breakfast...', '例：需要婴儿床、素食早餐...', '例：ベビーベッド、ベジタリアン朝食...')}></textarea>
                         </div>
                         <button type="submit" className="btn-book booking-submit-btn">
-                            <i className="fab fa-line"></i> {T.submit}
+                            {T.submit}
                         </button>
                     </form>
                 )}

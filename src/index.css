@@ -865,7 +865,7 @@ footer {
 .chat-option-btn:hover { transform: translateX(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
 .chat-option-btn i { font-size: 1.2rem; }
 .line-btn { background: #00B900; }
-.wechat-btn { background: #07C160; }
+.wechat-btn { background: #07C160; box-shadow: none; }
 .phone-btn { background: var(--primary); }
 
 /* ==========================================
@@ -999,7 +999,7 @@ footer {
 }
 .success-btn:hover { transform: translateY(-2px); }
 .line-success-btn { background: #00B900; }
-.wechat-success-btn { background: #07C160; }
+.wechat-success-btn { background: #07C160; box-shadow: none; }
 .phone-success-btn { background: var(--primary); }
 
 @media (max-width: 600px) {
