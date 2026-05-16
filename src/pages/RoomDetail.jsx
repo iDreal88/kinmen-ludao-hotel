@@ -19,8 +19,9 @@ export const RoomDetail = () => {
         window.scrollTo(0, 0);
         if(room) {
             setFeaturedImg(room.images[0]);
+            document.title = `${tr(room.name_zh, room.name_en, room.name_cn, room.name_ja)} | Kinmen Ludao Hotel`;
         }
-    }, [id, room]);
+    }, [id, room, lang]);
 
     if (!room) {
         return (
@@ -32,7 +33,8 @@ export const RoomDetail = () => {
     }
 
     return (
-        <main id="roomDetailsMain" style={{ paddingTop: '200px', paddingBottom: '5rem', minHeight: 'calc(100vh - 200px)', backgroundColor: 'var(--bg)' }}>
+        <main id="roomDetailsMain" style={{ paddingBottom: '5rem', minHeight: 'calc(100vh - 200px)', backgroundColor: 'var(--bg)' }}>
+            <div style={{ height: '140px' }}></div> {/* Fixed spacer for header height */}
             <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 25px' }}>
                 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1.5rem' }}>
