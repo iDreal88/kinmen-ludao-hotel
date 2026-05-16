@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { roomData } from '../data/roomData';
+
+const WECHAT_URL = 'https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg';
+const WECHAT_QR = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(WECHAT_URL)}`;
+
 
 export const BookingModal = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [showWechatQR, setShowWechatQR] = useState(false);
     const { lang } = useLanguage();
     const [formData, setFormData] = useState({ name: '', phone: '', checkin: '', checkout: '', room: '', guests: '2', requests: '' });
 
@@ -80,6 +86,7 @@ export const BookingModal = () => {
     };
 
     return (
+        <>
         <div className="booking-overlay" onClick={() => setIsOpen(false)}>
             <div className="booking-modal" onClick={e => e.stopPropagation()}>
                 <div className="booking-modal-header">
@@ -96,9 +103,9 @@ export const BookingModal = () => {
                             <a href="https://line.me/ti/p/KYU_P86UPK" target="_blank" rel="noreferrer" className="success-btn line-success-btn">
                                 <i className="fab fa-line"></i> {T.line}
                             </a>
-                            <a href="https://u.wechat.com/IBaHOaNeCRs9YrZHnRoCttg" target="_blank" rel="noreferrer" className="success-btn wechat-success-btn">
+                            <button className="success-btn wechat-success-btn" onClick={() => setShowWechatQR(true)}>
                                 <i className="fab fa-weixin"></i> {T.wechat}
-                            </a>
+                            </button>
                             <a href="tel:+88682320048" className="success-btn phone-success-btn">
                                 <i className="fas fa-phone-alt"></i> {T.call}
                             </a>
@@ -153,5 +160,27 @@ export const BookingModal = () => {
                 )}
             </div>
         </div>
+
+        {showWechatQR && createPortal(
+            <div className="wechat-qr-overlay" onClick={() => setShowWechatQR(false)}>
+                <div className="wechat-qr-card" onClick={e => e.stopPropagation()}>
+                    <button className="wechat-qr-close" onClick={() => setShowWechatQR(false)}>
+                        <i className="fas fa-times"></i>
+                    </button>
+                    <i className="fab fa-weixin" style={{ fontSize: '2.5rem', color: '#07C160', marginBottom: '0.8rem' }}></i>
+                    <p style={{ fontWeight: '600', marginBottom: '1rem', color: 'var(--primary-dark)' }}>
+                        {tr('請用微信掃描以下 QR Code', 'Scan this QR Code with WeChat', '请用微信扫描以下 QR Code', 'WeChatでQRコードをスキャンしてください')}
+                    </p>
+                    <div style={{ background: 'white', padding: '12px', borderRadius: '12px', display: 'inline-block', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
+                        <img src={WECHAT_QR} alt="WeChat QR Code" style={{ width: '180px', height: '180px', display: 'block' }} />
+                    </div>
+                    <button className="btn-book" style={{ marginTop: '1.5rem', border: 'none', cursor: 'pointer' }} onClick={() => setShowWechatQR(false)}>
+                        {tr('關閉', 'Close', '关闭', '閉じる')}
+                    </button>
+                </div>
+            </div>,
+            document.body
+        )}
+        </>
     );
 };
