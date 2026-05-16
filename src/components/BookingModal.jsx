@@ -33,12 +33,32 @@ export const BookingModal = () => {
 
     const handleChange = e => setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
-    const handleSubmit = (e) => {
+    const [copied, setCopied] = useState(false);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const roomName = roomOptions.find(r => r.id === formData.room)?.name || formData.room;
-        const msg = `🏨 訂房申請 / Booking Request\n━━━━━━━━━━━━\n👤 ${formData.name}\n📞 ${formData.phone}\n📅 ${tr('入住', 'Check-in', '入住', 'チェックイン')}: ${formData.checkin}\n📅 ${tr('退房', 'Check-out', '退房', 'チェックアウト')}: ${formData.checkout}\n🛏 ${roomName}\n👥 ${formData.guests} ${tr('人', 'guests', '人', '名')}\n📝 ${formData.requests || tr('無', 'None', '无', 'なし')}\n━━━━━━━━━━━━`;
-        window.open(`https://api.whatsapp.com/send?phone=886911665175&text=${encodeURIComponent(msg)}`, '_blank');
+        const msg = `🏨 訂房申請 / Booking Request
+━━━━━━━━━━━━
+👤 ${formData.name}
+📞 ${formData.phone}
+📅 ${tr('入住', 'Check-in', '入住', 'チェックイン')}: ${formData.checkin}
+📅 ${tr('退房', 'Check-out', '退房', 'チェックアウト')}: ${formData.checkout}
+🛏 ${roomName}
+👥 ${formData.guests} ${tr('人', 'guests', '人', '名')}
+📝 ${formData.requests || tr('無', 'None', '无', 'なし')}
+━━━━━━━━━━━━`;
+        try {
+            await navigator.clipboard.writeText(msg);
+            setCopied(true);
+        } catch (e) {
+            // clipboard not available, still proceed
+        }
         setSubmitted(true);
+        // Open LINE after short delay so state updates first
+        setTimeout(() => {
+            window.open('https://line.me/ti/p/KYU_P86UPK', '_blank');
+        }, 300);
     };
 
     if (!isOpen) return null;
@@ -53,10 +73,10 @@ export const BookingModal = () => {
         selectRoom: tr('-- 請選擇房型 --', '-- Select Room --', '-- 请选择房型 --', '-- 部屋を選択 --'),
         guests: tr('入住人數', 'Guests', '入住人数', '宿泊人数'),
         requests: tr('特殊需求', 'Special Requests', '特殊需求', 'ご要望'),
-        submit: tr('送出訂房申請', 'Submit via WhatsApp', '送出订房申请', 'WhatsAppで送信'),
-        successTitle: tr('申請已送出！', 'Request Sent!', '申请已送出！', '送信完了！'),
-        successMsg: tr('WhatsApp已開啟，請傳送訊息給我們。也可透過以下方式聯絡：', 'WhatsApp has opened. Please send the message. You can also contact us via:', '已为您打开WhatsApp，请发送消息。也可通过以下方式联系：', 'WhatsAppが開きました。メッセージを送信してください。または以下でもご連絡いただけます：'),
-        line: 'LINE',
+        submit: tr('複製訊息並開啟 LINE', 'Copy & Open LINE', '复制消息并打开 LINE', 'コピーしてLINEを開く'),
+        successTitle: tr('已複製！LINE 已開啟', 'Copied! LINE is open', '已复制！LINE 已开启', 'コピー完了！LINEが開きました'),
+        successMsg: tr('您的訂房資訊已複製到剪貼板。請在 LINE 中貼上並傳送給我們！', 'Your booking info has been copied. Please paste it in LINE and send!', '您的订房资讯已复制到剪贴板。请在 LINE 中粘贴并发送给我们！', '予約情報がコピーされました。LINEに貼り付けてお送りください！'),
+        line: tr('再次開啟 LINE', 'Open LINE Again', '再次打开 LINE', 'LINEを再度開く'),
         call: tr('來電預訂', 'Call to Book', '来电预订', '電話予約'),
         close: tr('關閉', 'Close', '关闭', '閉じる'),
     };
@@ -126,7 +146,7 @@ export const BookingModal = () => {
                             <textarea name="requests" value={formData.requests} onChange={handleChange} rows={3} placeholder={tr('例：需要嬰兒床、素食早餐...', 'e.g. Need baby cot, vegetarian breakfast...', '例：需要婴儿床、素食早餐...', '例：ベビーベッド、ベジタリアン朝食...')}></textarea>
                         </div>
                         <button type="submit" className="btn-book booking-submit-btn">
-                            <i className="fab fa-whatsapp"></i> {T.submit}
+                            <i className="fab fa-line"></i> {T.submit}
                         </button>
                     </form>
                 )}

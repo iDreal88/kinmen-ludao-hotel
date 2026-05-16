@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 export const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => {
     useEffect(() => {
@@ -15,15 +16,20 @@ export const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => {
         };
     }, [onClose, onPrev, onNext]);
 
-    return (
+    return createPortal(
         <div className="lightbox-overlay" onClick={onClose}>
             <button className="lightbox-close" onClick={onClose}><i className="fas fa-times"></i></button>
-            <button className="lightbox-prev" onClick={e => { e.stopPropagation(); onPrev(); }}><i className="fas fa-chevron-left"></i></button>
+            <button className="lightbox-prev" onClick={e => { e.stopPropagation(); onPrev(); }}>
+                <i className="fas fa-chevron-left"></i>
+            </button>
             <div className="lightbox-content" onClick={e => e.stopPropagation()}>
                 <img src={images[currentIndex]} alt={`Photo ${currentIndex + 1}`} className="lightbox-img" />
             </div>
-            <button className="lightbox-next" onClick={e => { e.stopPropagation(); onNext(); }}><i className="fas fa-chevron-right"></i></button>
+            <button className="lightbox-next" onClick={e => { e.stopPropagation(); onNext(); }}>
+                <i className="fas fa-chevron-right"></i>
+            </button>
             <div className="lightbox-counter">{currentIndex + 1} / {images.length}</div>
-        </div>
+        </div>,
+        document.body
     );
 };
