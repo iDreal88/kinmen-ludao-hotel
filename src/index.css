@@ -867,8 +867,8 @@ footer {
 .chat-option-btn:hover { transform: translateX(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
 .chat-option-btn i { font-size: 1.2rem; }
 .line-btn { background: #00B900; }
-.wechat-btn { background: #07C160; box-shadow: none !important; }
-.wechat-btn:hover { box-shadow: none !important; }
+.wechat-btn { background: #07C160; box-shadow: none !important; border: none !important; outline: none !important; }
+.wechat-btn:hover { box-shadow: none !important; border: none !important; }
 .phone-btn { background: var(--primary); }
 
 /* ==========================================
@@ -979,11 +979,13 @@ footer {
   padding: 1rem;
   font-size: 1.05rem;
   border-radius: 12px;
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
+  border: none;
+  cursor: pointer;
 }
 
 /* Success State */
@@ -999,11 +1001,14 @@ footer {
   display: inline-flex; align-items: center; gap: 0.5rem;
   padding: 0.8rem 1.5rem; border-radius: 30px; color: white;
   font-weight: 600; text-decoration: none; transition: transform 0.2s;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 .success-btn:hover { transform: translateY(-2px); }
 .line-success-btn { background: #00B900; }
-.wechat-success-btn { background: #07C160; box-shadow: none !important; }
-.wechat-success-btn:hover { box-shadow: none !important; }
+.wechat-success-btn { background: #07C160; box-shadow: none !important; border: none !important; outline: none !important; }
+.wechat-success-btn:hover { box-shadow: none !important; border: none !important; }
 .phone-success-btn { background: var(--primary); }
 
 @media (max-width: 600px) {
