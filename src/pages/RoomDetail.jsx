@@ -32,23 +32,23 @@ export const RoomDetail = () => {
     }
 
     return (
-        <main id="roomDetailsMain" style={{ paddingTop: '100px', paddingBottom: '5rem', minHeight: 'calc(100vh - 200px)', backgroundColor: 'var(--bg)' }}>
-            <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 15px' }}>
+        <main id="roomDetailsMain" style={{ paddingTop: '140px', paddingBottom: '5rem', minHeight: 'calc(100vh - 200px)', backgroundColor: 'var(--bg)' }}>
+            <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
                 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
-                    <h1 className="traditional-font" style={{ fontSize: '2.2rem', color: 'var(--primary-dark)', margin: 0 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1.5rem' }}>
+                    <h1 className="traditional-font" style={{ fontSize: '2.5rem', color: 'var(--primary-dark)', margin: 0 }}>
                         {tr(room.name_zh, room.name_en, room.name_cn, room.name_ja)}
                     </h1>
-                    <Link to="/#rooms" style={{ textDecoration: 'none', padding: '0.6rem 1.2rem', backgroundColor: 'var(--bg)', borderRadius: '30px', color: 'var(--primary)', fontWeight: '600', fontSize: '0.95rem', border: '1px solid rgba(139,69,19,0.1)', transition: 'all 0.3s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseOver={e => {e.currentTarget.style.background='var(--primary)'; e.currentTarget.style.color='var(--btn-text)';}} onMouseOut={e => {e.currentTarget.style.background='var(--bg)'; e.currentTarget.style.color='var(--primary)';}}>
+                    <Link to="/#rooms" style={{ textDecoration: 'none', padding: '0.7rem 1.5rem', backgroundColor: 'var(--bg)', borderRadius: '30px', color: 'var(--primary)', fontWeight: '600', fontSize: '0.95rem', border: '1px solid rgba(139,69,19,0.1)', transition: 'all 0.3s', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }} onMouseOver={e => {e.currentTarget.style.background='var(--primary)'; e.currentTarget.style.color='var(--btn-text)';}} onMouseOut={e => {e.currentTarget.style.background='var(--bg)'; e.currentTarget.style.color='var(--primary)';}}>
                         {tr('← 返回列表', '← Back to Rooms', '← 返回列表', '← お部屋に戻る')}
                     </Link>
                 </div>
                 
                 {/* Gallery Section */}
-                <div className="room-gallery-container" style={{ marginBottom: '4rem' }}>
+                <div className="room-gallery-container" style={{ marginBottom: '5rem' }}>
                     {/* Main Image */}
-                    <div style={{ width: '100%', height: '500px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 8px 25px rgba(0,0,0,0.1)' }}>
-                        <img loading="lazy" src={featuredImg || room.images[0]} alt={room.name_zh} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s', opacity: 1 }} onMouseOver={e => e.currentTarget.style.transform='scale(1.02)'} onMouseOut={e => e.currentTarget.style.transform='scale(1)'} />
+                    <div className="main-featured-image" style={{ width: '100%', height: 'auto', aspectRatio: '16/9', maxHeight: '600px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 12px 40px rgba(0,0,0,0.15)' }}>
+                        <img loading="lazy" src={featuredImg || room.images[0]} alt={room.name_zh} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)', opacity: 1 }} onMouseOver={e => e.currentTarget.style.transform='scale(1.03)'} onMouseOut={e => e.currentTarget.style.transform='scale(1)'} />
                     </div>
                     {/* Thumbnails Grid */}
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', alignContent: 'start' }}>
