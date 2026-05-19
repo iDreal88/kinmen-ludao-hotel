@@ -19,6 +19,66 @@ export const Reviews = () => {
         ja: "お客様の声"
     };
 
+    const renderSourceBadge = (source) => {
+        if (source === 'Google') {
+            return (
+                <span style={{ 
+                    color: '#4285F4', 
+                    fontWeight: 'bold', 
+                    fontSize: '0.8rem',
+                    background: '#e8f0fe',
+                    padding: '4px 8px',
+                    borderRadius: '6px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    marginLeft: 'auto'
+                }}>
+                    <i className="fab fa-google" style={{ fontSize: '0.85rem' }}></i> Google
+                </span>
+            );
+        }
+        if (source === 'Agoda') {
+            return (
+                <span style={{ 
+                    color: '#e01a4f', 
+                    fontWeight: 'bold', 
+                    fontSize: '0.8rem',
+                    background: '#fff0f3',
+                    padding: '4px 8px',
+                    borderRadius: '6px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    marginLeft: 'auto'
+                }}>
+                    <span style={{ display: 'inline-flex', gap: '2px', alignItems: 'center' }}>
+                        <span style={{width:'5px', height:'5px', borderRadius:'50%', background:'#87c440'}}></span>
+                        <span style={{width:'5px', height:'5px', borderRadius:'50%', background:'#f5ab2d'}}></span>
+                        <span style={{width:'5px', height:'5px', borderRadius:'50%', background:'#e72826'}}></span>
+                    </span>
+                    Agoda
+                </span>
+            );
+        }
+        if (source === 'Booking.com') {
+            return (
+                <span style={{ 
+                    color: 'white', 
+                    fontWeight: 'bold', 
+                    fontSize: '0.8rem',
+                    background: '#003580',
+                    padding: '4px 8px',
+                    borderRadius: '6px',
+                    marginLeft: 'auto'
+                }}>
+                    Booking
+                </span>
+            );
+        }
+        return null;
+    };
+
     return (
         <section className="reviews-section reveal-up">
             <div className="section-title">
@@ -41,13 +101,7 @@ export const Reviews = () => {
                                         {'★'.repeat(review.rating)}
                                     </div>
                                 </div>
-                                <img 
-                                    src={review.source === 'Google' ? 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg' : 
-                                         review.source === 'Agoda' ? 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Agoda_transparent_logo.png' : 
-                                         'https://upload.wikimedia.org/wikipedia/commons/b/b5/Booking.com_Icon_2022.svg'} 
-                                    alt={review.source} 
-                                    className="review-source-logo"
-                                />
+                                {renderSourceBadge(review.source)}
                             </div>
                             <p className="review-text">"{review.text[lang] || review.text.zh}"</p>
                         </div>
