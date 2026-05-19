@@ -11,9 +11,16 @@ export const Footer = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                     <img src="/images/hotel_logo1.png" alt="Emblem" style={{ width: '100px', marginBottom: '1.5rem' }} />
                     <div className="footer-logo traditional-font">{t('footer_name')}</div>
-                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem' }}>
+                    <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
                         {t('footer_desc')}
                     </p>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'rgba(255,255,255,0.05)', padding: '0.8rem 1.2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <img src="/images/hotel_copyright.png" alt="合法旅館" style={{ height: '45px', objectFit: 'contain' }} />
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <span style={{ color: 'var(--primary-light)', fontSize: '0.8rem', fontWeight: 'bold', letterSpacing: '1px' }}>合法旅館</span>
+                            <span style={{ color: 'white', fontWeight: '600', fontSize: '1rem', letterSpacing: '0.5px' }}>交觀業字第1426號</span>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <h4 style={{ marginBottom: '1rem', color: 'var(--primary-light)' }}>{t('footer_links_title')}</h4>

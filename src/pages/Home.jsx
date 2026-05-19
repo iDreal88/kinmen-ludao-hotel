@@ -264,6 +264,12 @@ export const Home = () => {
                         <li style={{ marginBottom: '1rem' }}>📍 <strong>{t('address')}</strong><span>{t('address_val')}</span></li>
                         <li style={{ marginBottom: '1rem' }}>📞 <strong>{t('phone')}</strong><span>{t('phone_val')}</span> &nbsp;&nbsp;&nbsp;📠 <strong>{t('fax')}</strong><span>{t('fax_val')}</span></li>
                         <li style={{ marginBottom: '1rem' }}>📱 <strong>{t('mobile')}</strong><span>{t('mobile_val')}</span></li>
+                        <li style={{ marginTop: '2rem' }}>
+                            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.8rem', background: '#f5f5f5', padding: '0.8rem 1.2rem', borderRadius: '12px', border: '1px solid rgba(0,0,0,0.05)' }}>
+                                <img src="/images/hotel_copyright.png" alt="合法旅館" style={{ height: '45px', objectFit: 'contain' }} />
+                                <span style={{ color: '#2B579A', fontWeight: 'bold', fontSize: '1.2rem', letterSpacing: '1px' }}>交觀業字第1426號</span>
+                            </div>
+                        </li>
                     </ul>
                     <div style={{ marginTop: '2.5rem' }}>
                         <h4 style={{ marginBottom: '1rem', color: 'var(--primary-dark)', fontSize: '1.1rem' }}>{t('social_media')}</h4>
