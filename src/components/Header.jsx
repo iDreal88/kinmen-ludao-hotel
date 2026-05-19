@@ -36,15 +36,10 @@ export const Header = () => {
 
     return (
         <header id="header" className={scrolled || isRoomPage || menuOpen ? 'scrolled' : ''}>
-            <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+            <div className="logo">
                 <Link to="/">
                     <img src="/images/hotel_logo2.png" alt="Kinmen Ludao Hotel" />
                 </Link>
-                {weather !== null && (
-                    <div className="weather-widget">
-                        <i className="fas fa-sun" style={{ color: '#FFD700' }}></i> {weather}°C
-                    </div>
-                )}
             </div>
             <nav className={menuOpen ? 'open' : ''}>
                 <ul>
@@ -76,6 +71,11 @@ export const Header = () => {
                 </div>
             </nav>
             <div className="header-right">
+                {weather !== null && (
+                    <div className="weather-widget">
+                        <i className="fas fa-sun" style={{ color: '#FFD700' }}></i> {weather}°C
+                    </div>
+                )}
                 <div className="theme-toggle" onClick={toggleTheme} title={theme === 'light' ? 'Dark Mode' : 'Light Mode'}>
                     <i className={`fas ${theme === 'light' ? 'fa-moon' : 'fa-sun'}`}></i>
                 </div>
