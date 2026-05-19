@@ -3,7 +3,21 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Footer = () => {
-    const { t } = useLanguage();
+    const { t, lang } = useLanguage();
+
+    const legalHotelText = {
+        zh: '合法旅館',
+        cn: '合法旅馆',
+        en: 'Legal Hotel',
+        ja: '合法ホテル'
+    };
+
+    const registrationText = {
+        zh: '交觀業字第1426號',
+        cn: '交观业字第1426号',
+        en: 'Registration No. 1426',
+        ja: '登録番号 1426'
+    };
 
     return (
         <footer>
@@ -15,10 +29,10 @@ export const Footer = () => {
                         {t('footer_desc')}
                     </p>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', background: 'rgba(255,255,255,0.05)', padding: '0.8rem 1.2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <img src="/images/hotel_copyright.png" alt="合法旅館" style={{ height: '45px', objectFit: 'contain' }} />
+                        <img src="/images/hotel_copyright.png" alt="Legal Hotel" style={{ height: '45px', objectFit: 'contain' }} />
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <span style={{ color: 'var(--primary-light)', fontSize: '0.8rem', fontWeight: 'bold', letterSpacing: '1px' }}>合法旅館</span>
-                            <span style={{ color: 'white', fontWeight: '600', fontSize: '1rem', letterSpacing: '0.5px' }}>交觀業字第1426號</span>
+                            <span style={{ color: 'var(--primary-light)', fontSize: '0.8rem', fontWeight: 'bold', letterSpacing: '1px' }}>{legalHotelText[lang] || legalHotelText.zh}</span>
+                            <span style={{ color: 'white', fontWeight: '600', fontSize: '1rem', letterSpacing: '0.5px' }}>{registrationText[lang] || registrationText.zh}</span>
                         </div>
                     </div>
                 </div>
