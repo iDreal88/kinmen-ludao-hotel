@@ -6,6 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Lightbox } from '../components/Lightbox';
 import { VirtualTour } from '../components/VirtualTour';
 import { Attractions } from '../components/Attractions';
+import { Reviews } from '../components/Reviews';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export const Home = () => {
@@ -50,6 +51,11 @@ export const Home = () => {
         '/room-types/BREAKFAST/bf12.jpg',
     ];
 
+    const getBadgeText = (type) => {
+        if (type === 'high_demand') return lang === 'en' ? '🔥 High Demand' : lang === 'ja' ? '🔥 人気集中' : lang === 'cn' ? '🔥 需求量大' : '🔥 需求量大';
+        if (type === 'last_one') return lang === 'en' ? '⏳ Only 1 left!' : lang === 'ja' ? '⏳ 残り1室!' : lang === 'cn' ? '⏳ 仅剩1间!' : '⏳ 僅剩1間!';
+    };
+
     return (
         <main>
             {/* Hero Section */}
@@ -62,6 +68,27 @@ export const Home = () => {
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
                         <a href="#rooms" className="btn-book" style={{ background: 'var(--card-bg)', color: 'var(--primary)' }}>{t('hero_btn_explore')}</a>
                         <a href="#gallery" className="btn-book">{t('hero_btn_gallery')}</a>
+                    </div>
+                    
+                    <div className="booking-bar">
+                        <div className="booking-field">
+                            <label>{lang === 'en' ? 'Check In' : lang === 'ja' ? 'チェックイン' : '入住日期'}</label>
+                            <span>{new Date().toLocaleDateString(lang === 'en' ? 'en-US' : 'zh-TW', { month: 'short', day: 'numeric' })}</span>
+                        </div>
+                        <div className="booking-field">
+                            <label>{lang === 'en' ? 'Check Out' : lang === 'ja' ? 'チェックアウト' : '退房日期'}</label>
+                            <span>{new Date(Date.now() + 86400000).toLocaleDateString(lang === 'en' ? 'en-US' : 'zh-TW', { month: 'short', day: 'numeric' })}</span>
+                        </div>
+                        <div className="booking-field">
+                            <label>{lang === 'en' ? 'Guests' : lang === 'ja' ? '人数' : '旅客人數'}</label>
+                            <span>2 {lang === 'en' ? 'Adults' : lang === 'ja' ? '大人' : '位成人'}</span>
+                        </div>
+                        <button 
+                            className="booking-btn" 
+                            onClick={() => window.dispatchEvent(new CustomEvent('openBookingModal', {}))}
+                        >
+                            {lang === 'en' ? 'Check Availability' : lang === 'ja' ? '空室を検索' : '查看空房'} ➔
+                        </button>
                     </div>
                 </div>
             </section>
@@ -98,7 +125,8 @@ export const Home = () => {
                 <div className="rooms-grid">
                     {/* vip */}
                     <div className="room-card">
-                        <div className="room-img">
+                        <div className="room-img" style={{ position: 'relative' }}>
+                            <div className="scarcity-badge">{getBadgeText('high_demand')}</div>
                             <img loading="lazy" src="/room-types/VIP/vip1.jpg" alt="vip" />
                         </div>
                         <div className="room-info">
@@ -115,7 +143,8 @@ export const Home = () => {
 
                     {/* trp */}
                     <div className="room-card">
-                        <div className="room-img">
+                        <div className="room-img" style={{ position: 'relative' }}>
+                            <div className="scarcity-badge">{getBadgeText('last_one')}</div>
                             <img loading="lazy" src="/room-types/TRP/trp1.jpg" alt="trp" />
                         </div>
                         <div className="room-info">
@@ -255,6 +284,9 @@ export const Home = () => {
 
             {/* Attractions Section */}
             <Attractions />
+
+            {/* Reviews Marquee */}
+            <Reviews />
 
             {/* Contact Section */}
             <section id="contact" className="about reveal-up" style={{ paddingBottom: '8rem' }}>

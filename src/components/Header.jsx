@@ -8,6 +8,7 @@ export const Header = () => {
     const { theme, toggleTheme } = useTheme();
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [weather, setWeather] = useState(null);
     const location = useLocation();
 
     useEffect(() => {
@@ -17,6 +18,17 @@ export const Header = () => {
         window.addEventListener('scroll', handleScroll);
         // Initial check
         handleScroll();
+
+        // Fetch Kinmen weather
+        fetch('https://api.open-meteo.com/v1/forecast?latitude=24.4367&longitude=118.3186&current_weather=true')
+            .then(res => res.json())
+            .then(data => {
+                if(data && data.current_weather) {
+                    setWeather(Math.round(data.current_weather.temperature));
+                }
+            })
+            .catch(err => console.error(err));
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -24,10 +36,15 @@ export const Header = () => {
 
     return (
         <header id="header" className={scrolled || isRoomPage || menuOpen ? 'scrolled' : ''}>
-            <div className="logo">
+            <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                 <Link to="/">
                     <img src="/images/hotel_logo2.png" alt="Kinmen Ludao Hotel" />
                 </Link>
+                {weather !== null && (
+                    <div className="weather-widget">
+                        <i className="fas fa-sun" style={{ color: '#FFD700' }}></i> {weather}°C
+                    </div>
+                )}
             </div>
             <nav className={menuOpen ? 'open' : ''}>
                 <ul>
