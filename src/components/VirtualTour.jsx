@@ -18,7 +18,7 @@ export const VirtualTour = () => {
     return (
         <>
             {/* The trigger section on the page */}
-            <section className="virtual-tour-section">
+            <section id="virtual-tour" className="virtual-tour-section">
                 <div className="virtual-tour-banner">
                     <div className="virtual-tour-content">
                         <i className="fas fa-vr-cardboard" style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--primary)' }}></i>

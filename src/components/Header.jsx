@@ -31,11 +31,12 @@ export const Header = () => {
             </div>
             <nav className={menuOpen ? 'open' : ''}>
                 <ul>
-                    <li><Link to="/#home" onClick={() => setMenuOpen(false)}>{t('nav_home')}</Link></li>
                     <li><Link to="/#about" onClick={() => setMenuOpen(false)}>{t('nav_about')}</Link></li>
                     <li><Link to="/#rooms" onClick={() => setMenuOpen(false)}>{t('nav_rooms')}</Link></li>
-                    <li><Link to="/#gallery" onClick={() => setMenuOpen(false)}>{t('nav_gallery')}</Link></li>
+                    <li><Link to="/#amenities" onClick={() => setMenuOpen(false)}>{lang === 'en' ? 'Facilities' : lang === 'ja' ? '施設' : lang === 'cn' ? '饭店设施' : '飯店設施'}</Link></li>
+                    <li><Link to="/#virtual-tour" onClick={() => setMenuOpen(false)} style={{ color: 'var(--primary)' }}>{lang === 'en' ? '360° Tour' : lang === 'ja' ? '360° ツアー' : lang === 'cn' ? '360° 导览' : '360° 導覽'}</Link></li>
                     <li><Link to="/#attractions" onClick={() => setMenuOpen(false)}>{lang === 'en' ? 'Attractions' : lang === 'ja' ? '観光スポット' : lang === 'cn' ? '周边景点' : '周邊景點'}</Link></li>
+                    <li><Link to="/#gallery" onClick={() => setMenuOpen(false)}>{t('nav_gallery')}</Link></li>
                     <li><Link to="/#contact" onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link></li>
                 </ul>
                 <div className="mobile-nav-controls">
