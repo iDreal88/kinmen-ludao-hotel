@@ -15,7 +15,8 @@ export const Attractions = () => {
                 cn: '金门的象征地标，登高可远眺烈屿及厦门风光，是来金门必访的历史景点。',
                 en: 'An iconic landmark of Kinmen offering panoramic views of Little Kinmen and Xiamen.',
                 ja: '金門の象徴的なランドマーク。頂上からは小金門やアモイの景色を一望できます。'
-            }
+            },
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=莒光樓+金門"
         },
         {
             id: 2,
@@ -27,7 +28,8 @@ export const Attractions = () => {
                 cn: '壮观的A字型战备水道，花岗岩洞穴倒影如梦似幻，感受鬼斧神工的震撼。',
                 en: 'A majestic A-shaped military waterway reflecting Kinmen\'s unique wartime history.',
                 ja: '壮大なA字型の軍事用水路。花崗岩の洞窟の反射が幻想的な雰囲気を醸し出します。'
-            }
+            },
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=翟山坑道+金門"
         },
         {
             id: 3,
@@ -39,7 +41,8 @@ export const Attractions = () => {
                 cn: '保留最完整的闽南传统建筑与洋楼群，古色古香，充满浓厚的侨乡风情。',
                 en: 'Well-preserved traditional Minnan architecture and beautiful western-style mansions.',
                 ja: '保存状態の良い伝統的な閩南建築と美しい洋館が立ち並ぶノスタルジックな村。'
-            }
+            },
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=水頭聚落+金門"
         }
     ];
 
@@ -70,6 +73,19 @@ export const Attractions = () => {
                         <div className="attraction-content">
                             <h3 className="traditional-font">{item.title[lang] || item.title.zh}</h3>
                             <p>{item.desc[lang] || item.desc.zh}</p>
+                            <a 
+                                href={item.mapUrl} 
+                                target="_blank" 
+                                rel="noreferrer" 
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '1.2rem', padding: '0.5rem 1rem', background: '#f5f5f5', color: '#333', textDecoration: 'none', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', transition: 'background 0.2s' }}
+                                onMouseOver={(e) => { e.currentTarget.style.background = '#e0e0e0'; e.currentTarget.style.color = 'var(--primary)'; }}
+                                onMouseOut={(e) => { e.currentTarget.style.background = '#f5f5f5'; e.currentTarget.style.color = '#333'; }}
+                            >
+                                <i className="fas fa-map-marker-alt" style={{ color: '#EA4335' }}></i> 
+                                {lang === 'en' ? 'View on Map' : 
+                                 lang === 'ja' ? '地図で見る' : 
+                                 lang === 'cn' ? '在地图上查看' : '在地圖上查看'}
+                            </a>
                         </div>
                     </div>
                 ))}
