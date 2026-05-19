@@ -6,10 +6,50 @@ export const Reviews = () => {
     const { lang } = useLanguage();
 
     const reviews = [
-        { name: "John D.", rating: 5, source: "Google", text: { en: "Absolutely beautiful hotel! The traditional architecture mixed with modern luxury is perfect.", zh: "非常美麗的飯店！傳統建築與現代奢華的完美結合。", cn: "非常美丽的饭店！传统建筑与现代奢华的完美结合。", ja: "絶対に美しいホテル！伝統的な建築とモダンな豪華さの完璧な組み合わせ。" } },
-        { name: "Sarah L.", rating: 5, source: "Agoda", text: { en: "The 360° virtual tour convinced me to book, and seeing it in person was even better!", zh: "360°實境導覽讓我決定預訂，親眼看到更是驚豔！", cn: "360°实境导览让我决定预订，亲眼看到更是惊艳！", ja: "360°バーチャルツアーを見て予約しましたが、実際に見るとさらに良かったです！" } },
-        { name: "Chen W.", rating: 5, source: "Booking.com", text: { en: "Best location in Kinmen. The rooms are incredibly spacious and the staff is wonderful.", zh: "金門最佳住宿地點。房間非常寬敞，工作人員非常棒。", cn: "金门最佳住宿地点。房间非常宽敞，工作人员非常棒。", ja: "金門で最高のロケーション。部屋は信じられないほど広く、スタッフは素晴らしいです。" } },
-        { name: "Mika T.", rating: 5, source: "Google", text: { en: "A highly recommended experience. It feels like staying inside a living museum.", zh: "強烈推薦的住宿體驗。感覺就像住在活著的博物館裡。", cn: "强烈推荐的住宿体验。感觉就像住在活着的博物馆里。", ja: "強くお勧めする体験。生きている博物館の中に滞在しているような気分です。" } },
+        { 
+            name: "Sarah L.", 
+            rating: 5, 
+            source: "Agoda", 
+            text: { 
+                en: "Absolutely beautiful hotel! The traditional architecture mixed with modern luxury is perfect.", 
+                zh: "傳統閩南式建築與現代內部裝潢極具特色！寬敞又乾淨，極力推薦！", 
+                cn: "传统闽南式建筑与现代内部装潢极具特色！宽敞又干净，极力推荐！", 
+                ja: "伝統的な閩南様式の建築とモダンな内装がとてもユニーク！広くて清潔で、本当にお勧めです！" 
+            } 
+        },
+        { 
+            name: "Michael B.", 
+            rating: 5, 
+            source: "Trip.com", 
+            text: { 
+                en: "The room is incredibly spacious and family-friendly. Excellent service and prime location. Highly rated on Trip.com!", 
+                zh: "客房空間非常大，對家庭出遊非常友善。服務人員熱情，地理位置佳。在Trip.com上評價很高，名不虛傳！", 
+                cn: "客房空间非常大，对家庭出游非常友善。服务人员热情，地理位置佳。在Trip.com上评价很高，名不虚传！", 
+                ja: "客室は非常に広く、家族旅行にとても最適です。スタッフの対応も親切で、ロケーションも抜群です！" 
+            } 
+        },
+        { 
+            name: "陳建宏", 
+            rating: 5, 
+            source: "ezTravel", 
+            text: { 
+                en: "Booked through ezTravel for our Kinmen trip. Quiet courtyard, bright rooms, and the traditional breakfast was delicious!", 
+                zh: "用易遊網搭配高鐵跟行程來金門住陸島，非常滿意！庭院清幽，房間採光好，早餐傳統米粉湯很好吃！", 
+                cn: "用易游网搭配高铁跟行程来金门住陆岛，非常满意！庭院清幽，房间采光好，早餐传统米粉汤很好吃！", 
+                ja: "ezTravelで予約して金門島を訪れました。静かな中庭、明るい部屋、そして伝統的な朝食がとても美味しかったです！" 
+            } 
+        },
+        { 
+            name: "Mika T.", 
+            rating: 5, 
+            source: "Agoda", 
+            text: { 
+                en: "A highly recommended experience. It feels like staying inside a living museum with superb amenities.", 
+                zh: "強烈推薦的住宿體驗。感覺就像住在活著的博物館裡，設施一流，服務周到。", 
+                cn: "强烈推荐的住宿体验。感觉就像住在活着的博物馆里，设施一流，服务周到。", 
+                ja: "強くお勧めする体験。生きている博物館の中に滞在しているような気分で、設備も素晴らしいです！" 
+            } 
+        },
     ];
 
     const title = {
@@ -20,24 +60,6 @@ export const Reviews = () => {
     };
 
     const renderSourceBadge = (source) => {
-        if (source === 'Google') {
-            return (
-                <span style={{ 
-                    color: '#4285F4', 
-                    fontWeight: 'bold', 
-                    fontSize: '0.8rem',
-                    background: '#e8f0fe',
-                    padding: '4px 8px',
-                    borderRadius: '6px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    marginLeft: 'auto'
-                }}>
-                    <i className="fab fa-google" style={{ fontSize: '0.85rem' }}></i> Google
-                </span>
-            );
-        }
         if (source === 'Agoda') {
             return (
                 <span style={{ 
@@ -61,18 +83,39 @@ export const Reviews = () => {
                 </span>
             );
         }
-        if (source === 'Booking.com') {
+        if (source === 'Trip.com') {
             return (
                 <span style={{ 
-                    color: 'white', 
+                    color: '#1a73e8', 
                     fontWeight: 'bold', 
                     fontSize: '0.8rem',
-                    background: '#003580',
+                    background: '#e8f0fe',
                     padding: '4px 8px',
                     borderRadius: '6px',
-                    marginLeft: 'auto'
+                    marginLeft: 'auto',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px'
                 }}>
-                    Booking
+                    <i className="fas fa-plane" style={{ fontSize: '0.75rem' }}></i> Trip.com
+                </span>
+            );
+        }
+        if (source === 'ezTravel') {
+            return (
+                <span style={{ 
+                    color: '#f5222d', 
+                    fontWeight: 'bold', 
+                    fontSize: '0.8rem',
+                    background: '#fff1f0',
+                    padding: '4px 8px',
+                    borderRadius: '6px',
+                    marginLeft: 'auto',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                }}>
+                    <i className="fas fa-star" style={{ fontSize: '0.75rem' }}></i> ezTravel
                 </span>
             );
         }
