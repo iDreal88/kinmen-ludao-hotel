@@ -290,6 +290,18 @@ header.scrolled .dropdown-trigger {
   }
 }
 
+.mobile-only {
+  display: none !important;
+}
+@media (max-width: 991px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+}
+
 .btn-book {
   background: var(--primary);
   color: var(--btn-text);
