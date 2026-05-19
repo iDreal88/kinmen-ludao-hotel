@@ -69,27 +69,6 @@ export const Home = () => {
                         <a href="#rooms" className="btn-book" style={{ background: 'var(--card-bg)', color: 'var(--primary)' }}>{t('hero_btn_explore')}</a>
                         <a href="#gallery" className="btn-book">{t('hero_btn_gallery')}</a>
                     </div>
-                    
-                    <div className="booking-bar">
-                        <div className="booking-field">
-                            <label>{lang === 'en' ? 'Check In' : lang === 'ja' ? 'チェックイン' : '入住日期'}</label>
-                            <span>{new Date().toLocaleDateString(lang === 'en' ? 'en-US' : 'zh-TW', { month: 'short', day: 'numeric' })}</span>
-                        </div>
-                        <div className="booking-field">
-                            <label>{lang === 'en' ? 'Check Out' : lang === 'ja' ? 'チェックアウト' : '退房日期'}</label>
-                            <span>{new Date(Date.now() + 86400000).toLocaleDateString(lang === 'en' ? 'en-US' : 'zh-TW', { month: 'short', day: 'numeric' })}</span>
-                        </div>
-                        <div className="booking-field">
-                            <label>{lang === 'en' ? 'Guests' : lang === 'ja' ? '人数' : '旅客人數'}</label>
-                            <span>2 {lang === 'en' ? 'Adults' : lang === 'ja' ? '大人' : '位成人'}</span>
-                        </div>
-                        <button 
-                            className="booking-btn" 
-                            onClick={() => window.dispatchEvent(new CustomEvent('openBookingModal', {}))}
-                        >
-                            {lang === 'en' ? 'Check Availability' : lang === 'ja' ? '空室を検索' : '查看空房'} ➔
-                        </button>
-                    </div>
                 </div>
             </section>
 
