@@ -34,6 +34,7 @@ export const Header = () => {
                     <li><Link to="/#home" onClick={() => setMenuOpen(false)}>{t('nav_home')}</Link></li>
                     <li><Link to="/#about" onClick={() => setMenuOpen(false)}>{t('nav_about')}</Link></li>
                     <li><Link to="/#rooms" onClick={() => setMenuOpen(false)}>{t('nav_rooms')}</Link></li>
+                    <li><Link to="/#attractions" onClick={() => setMenuOpen(false)}>{lang === 'en' ? 'Attractions' : lang === 'ja' ? '観光スポット' : lang === 'cn' ? '周边景点' : '周邊景點'}</Link></li>
                     <li><Link to="/#gallery" onClick={() => setMenuOpen(false)}>{t('nav_gallery')}</Link></li>
                     <li><Link to="/#contact" onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link></li>
                 </ul>
