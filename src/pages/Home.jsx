@@ -5,6 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 import { Lightbox } from '../components/Lightbox';
 import { VirtualTour } from '../components/VirtualTour';
+import { Attractions } from '../components/Attractions';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export const Home = () => {
@@ -251,6 +252,9 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Attractions Section */}
+            <Attractions />
 
             {/* Contact Section */}
             <section id="contact" className="about reveal-up" style={{ paddingBottom: '8rem' }}>

@@ -1244,3 +1244,74 @@ button:focus, button:active, a:focus, a:active {
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   z-index: 100001;
 }
+
+/* ==========================================
+   ATTRACTIONS SECTION
+   ========================================== */
+.attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+}
+
+.attraction-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.attraction-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.attraction-img-wrapper {
+  position: relative;
+  height: 220px;
+}
+
+.attraction-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.attraction-card:hover .attraction-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.attraction-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+}
+
+.attraction-content {
+  padding: 1.5rem;
+}
+
+.attraction-content h3 {
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.8rem;
+}
+
+.attraction-content p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
