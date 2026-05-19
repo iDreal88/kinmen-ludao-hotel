@@ -4,8 +4,11 @@ import { createPortal } from 'react-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 import { Lightbox } from '../components/Lightbox';
+import { VirtualTour } from '../components/VirtualTour';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export const Home = () => {
+    useScrollReveal();
     const { t, lang } = useLanguage();
     const [lightboxIndex, setLightboxIndex] = useState(null);
     const [showWechatQR, setShowWechatQR] = useState(false);
@@ -62,8 +65,11 @@ export const Home = () => {
                 </div>
             </section>
 
+            {/* Virtual Tour Prototype */}
+            <VirtualTour />
+
             {/* About Section */}
-            <section id="about" className="about">
+            <section id="about" className="about reveal-up">
                 <div className="about-img">
                     <img loading="lazy" src="/images/lobby_sky.jpg" alt="Lobby Sky View" />
                 </div>
@@ -82,7 +88,7 @@ export const Home = () => {
             </section>
 
             {/* Rooms Section */}
-            <section id="rooms">
+            <section id="rooms" className="reveal-up">
                 <div className="section-title">
                     <h2>{t('rooms_title')}</h2>
                     <div className="underline"></div>
@@ -217,7 +223,7 @@ export const Home = () => {
             </section>
 
             {/* Amenities Section */}
-            <section id="amenities" style={{ background: '#f4f1ea' }}>
+            <section id="amenities" className="reveal-up" style={{ background: '#f4f1ea' }}>
                 <div className="section-title">
                     <h2>{t('amenities_title')}</h2>
                     <div className="underline"></div>
@@ -247,7 +253,7 @@ export const Home = () => {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="about" style={{ paddingBottom: '8rem' }}>
+            <section id="contact" className="about reveal-up" style={{ paddingBottom: '8rem' }}>
                 <div className="about-content">
                     <div className="section-title" style={{ textAlign: 'left', marginBottom: '2rem' }}>
                         <h2>{t('contact_title')}</h2>
