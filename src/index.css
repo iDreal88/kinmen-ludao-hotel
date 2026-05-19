@@ -193,6 +193,103 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
+/* Dropdown Menu Styles */
+.nav-dropdown {
+  position: relative;
+}
+.dropdown-trigger {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: var(--transition);
+}
+header.scrolled .dropdown-trigger {
+  color: var(--primary);
+  text-shadow: none;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  border: 1px solid rgba(0,0,0,0.05);
+  z-index: 2000;
+}
+[data-theme='dark'] .dropdown-menu {
+  background: #1e1e1e;
+  border-color: rgba(255,255,255,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(5px);
+}
+.dropdown-menu li a {
+  color: #333 !important;
+  padding: 0.6rem 1.2rem;
+  display: block;
+  font-size: 0.9rem !important;
+  text-shadow: none !important;
+  text-align: left;
+  transition: var(--transition);
+}
+[data-theme='dark'] .dropdown-menu li a {
+  color: #ccc !important;
+}
+.dropdown-menu li a:hover {
+  background: rgba(0,0,0,0.03);
+  color: var(--primary) !important;
+  padding-left: 1.5rem;
+}
+[data-theme='dark'] .dropdown-menu li a:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+@media (max-width: 991px) {
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: none;
+    background: transparent !important;
+    border: none;
+    padding: 0.5rem 0 0 1rem;
+    display: none;
+    width: 100%;
+    align-items: center;
+  }
+  .nav-dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+  .dropdown-trigger {
+    color: var(--primary) !important;
+    text-shadow: none !important;
+  }
+  .dropdown-menu li a {
+    color: var(--primary) !important;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+}
+
 .btn-book {
   background: var(--primary);
   color: var(--btn-text);

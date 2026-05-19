@@ -123,7 +123,7 @@ export const Reviews = () => {
     };
 
     return (
-        <section className="reviews-section reveal-up">
+        <section id="reviews" className="reviews-section reveal-up">
             <div className="section-title">
                 <h2>{title[lang] || title.zh}</h2>
                 <div className="underline"></div>
