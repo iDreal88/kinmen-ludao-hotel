@@ -7,7 +7,7 @@ export const Attractions = () => {
     const data = [
         {
             id: 1,
-            image: "https://images.unsplash.com/photo-1590059955404-58ea287346ac?q=80&w=2000&auto=format&fit=crop", 
+            image: "/images/hotel_exterior.jpg", 
             title: { zh: '莒光樓', cn: '莒光楼', en: 'Juguang Tower', ja: '莒光楼' },
             distance: { zh: '車程 10 分鐘', cn: '车程 10 分钟', en: '10 min drive', ja: '車で10分' },
             desc: {
@@ -20,7 +20,7 @@ export const Attractions = () => {
         },
         {
             id: 2,
-            image: "https://images.unsplash.com/photo-1563242691-bf91ff499645?q=80&w=2000&auto=format&fit=crop", 
+            image: "/images/hotel_beside.jpg", 
             title: { zh: '翟山坑道', cn: '翟山坑道', en: 'Zhaishan Tunnel', ja: '翟山坑道' },
             distance: { zh: '車程 15 分鐘', cn: '车程 15 分钟', en: '15 min drive', ja: '車で15分' },
             desc: {
@@ -33,7 +33,7 @@ export const Attractions = () => {
         },
         {
             id: 3,
-            image: "https://images.unsplash.com/photo-1610334863956-655f00100c5c?q=80&w=2000&auto=format&fit=crop", 
+            image: "/images/lobby_sky.jpg", 
             title: { zh: '水頭聚落', cn: '水头聚落', en: 'Shuitou Village', ja: '水頭集落' },
             distance: { zh: '車程 12 分鐘', cn: '车程 12 分钟', en: '12 min drive', ja: '車で12分' },
             desc: {
