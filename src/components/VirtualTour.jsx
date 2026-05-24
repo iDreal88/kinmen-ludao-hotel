@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Pannellum } from 'pannellum-react';
+import { PannellumVideo } from 'pannellum-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const VirtualTour = () => {
@@ -38,28 +38,20 @@ export const VirtualTour = () => {
                         <i className="fas fa-times"></i> {l.close}
                     </button>
                     <div className="vt-modal-content">
-                        <Pannellum
+                        <PannellumVideo
+                            video="/images/hotel_video.MP4"
+                            loop
+                            autoplay
+                            muted
+                            controls
                             width="100%"
                             height="100%"
-                            image="https://pannellum.org/images/alma.jpg"
                             pitch={10}
                             yaw={180}
                             hfov={110}
-                            autoLoad
-                            showZoomCtrl={false}
-                            onLoad={() => console.log("panorama loaded")}
-                        >
-                            <Pannellum.Hotspot
-                                type="info"
-                                pitch={11}
-                                yaw={-167}
-                                text="Information Hotspot"
-                                URL="https://github.com/farminf/pannellum-react"
-                            />
-                        </Pannellum>
-                        <div className="vt-demo-badge">
-                            Prototype Demonstration - Replace with actual hotel 360° images
-                        </div>
+                            minHfov={50}
+                            maxHfov={150}
+                        />
                     </div>
                 </div>,
                 document.body
