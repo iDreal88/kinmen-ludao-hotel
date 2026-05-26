@@ -1283,7 +1283,6 @@ button:focus, button:active, a:focus, a:active {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/hotel_front1.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   border-radius: 20px;
   padding: 5rem 2rem;
   text-align: center;
@@ -1310,6 +1309,22 @@ button:focus, button:active, a:focus, a:active {
   z-index: 100000; /* Extremely high to cover everything */
   display: flex;
   flex-direction: column;
+}
+
+/* Force Video.js controls on top of Pannellum WebGL Canvas */
+.video-js .vjs-control-bar {
+  z-index: 100 !important;
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.video-js .vjs-big-play-button {
+  z-index: 100 !important;
+}
+
+.video-js .pnlm-container {
+  z-index: 1 !important;
 }
 
 .vt-close-btn {

@@ -49,6 +49,7 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
                         controls
                         preload="auto"
                         autoPlay
+                        playsInline
                         loop
                         muted
                         crossOrigin="anonymous"
