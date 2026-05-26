@@ -1,17 +1,60 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { PannellumVideo } from 'pannellum-react';
 import { useLanguage } from '../context/LanguageContext';
 
-// Import required CSS for videojs and pannellum since Vite ignores require() in CJS modules
-import 'pannellum-react/lib/pannellum/css/video-js.css';
-import 'pannellum-react/lib/pannellum/css/pannellum.css';
+const PannellumVideoPlayer = ({ videoSrc, close }) => {
+    const videoRef = useRef(null);
+    const playerRef = useRef(null);
 
-// Ensure videojs is global so that the pannellum plugin can attach itself
-import videojs from 'video.js';
-if (typeof window !== 'undefined') {
-    window.videojs = videojs;
-}
+    useEffect(() => {
+        if (!videoRef.current) return;
+
+        // Initialize video.js with pannellum plugin
+        if (window.videojs) {
+            playerRef.current = window.videojs(videoRef.current, {
+                plugins: {
+                    pannellum: {
+                        yaw: 180,
+                        pitch: 10,
+                        hfov: 110,
+                        minHfov: 50,
+                        maxHfov: 150
+                    }
+                }
+            });
+        }
+
+        return () => {
+            if (playerRef.current) {
+                playerRef.current.dispose();
+            }
+        };
+    }, []);
+
+    return (
+        <div className="vt-modal-overlay">
+            <button className="vt-close-btn" onClick={close}>
+                <i className="fas fa-times"></i> 關閉
+            </button>
+            <div className="vt-modal-content" style={{ width: '100%', height: '100%' }}>
+                <video 
+                    ref={videoRef}
+                    id="panorama"
+                    className="video-js vjs-default-skin vjs-big-play-centered"
+                    controls
+                    preload="auto"
+                    autoPlay
+                    loop
+                    muted
+                    crossOrigin="anonymous"
+                    style={{ width: '100%', height: '100%' }}
+                >
+                    <source src={videoSrc} type="video/mp4" />
+                </video>
+            </div>
+        </div>
+    );
+};
 
 export const VirtualTour = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +70,6 @@ export const VirtualTour = () => {
 
     return (
         <>
-            {/* The trigger section on the page */}
             <section id="virtual-tour" className="virtual-tour-section">
                 <div className="virtual-tour-banner">
                     <div className="virtual-tour-content">
@@ -41,29 +83,8 @@ export const VirtualTour = () => {
                 </div>
             </section>
 
-            {/* The fullscreen Pannellum modal */}
             {isOpen && typeof document !== 'undefined' && createPortal(
-                <div className="vt-modal-overlay">
-                    <button className="vt-close-btn" onClick={() => setIsOpen(false)}>
-                        <i className="fas fa-times"></i> {l.close}
-                    </button>
-                    <div className="vt-modal-content">
-                        <PannellumVideo
-                            video="/images/hotel_video.MP4"
-                            loop
-                            autoplay
-                            muted
-                            controls
-                            width="100%"
-                            height="100%"
-                            pitch={10}
-                            yaw={180}
-                            hfov={110}
-                            minHfov={50}
-                            maxHfov={150}
-                        />
-                    </div>
-                </div>,
+                <PannellumVideoPlayer videoSrc="/images/hotel_video.MP4" close={() => setIsOpen(false)} />,
                 document.body
             )}
         </>
