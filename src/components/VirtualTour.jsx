@@ -33,6 +33,9 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
                             }
                         }
                     });
+                    playerRef.current.ready(function() {
+                        this.userActive(true);
+                    });
                 } catch (error) {
                     console.error("VideoJS/Pannellum initialization failed:", error);
                 }
@@ -66,7 +69,6 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
                         ref={videoRef}
                         id="panorama"
                         className="video-js vjs-default-skin vjs-big-play-centered"
-                        controls
                         preload="auto"
                         autoPlay
                         playsInline
