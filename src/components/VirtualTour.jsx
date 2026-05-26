@@ -9,49 +9,33 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
     useEffect(() => {
         if (!videoRef.current) return;
 
-        let interval;
-        const initPlayer = () => {
-            if (window.videojs) {
-                clearInterval(interval);
-                try {
-                    playerRef.current = window.videojs(videoRef.current, {
-                        controls: true,
-                        autoplay: true,
-                        muted: true,
-                        loop: false,
-                        inactivityTimeout: 0, // Keep controls visible always
-                        html5: {
-                            nativeControlsForTouch: false
-                        },
-                        plugins: {
-                            pannellum: {
-                                yaw: 180,
-                                pitch: 10,
-                                hfov: 110,
-                                minHfov: 50,
-                                maxHfov: 150
-                            }
+        // Initialize video.js with pannellum plugin
+        if (window.videojs) {
+            try {
+                playerRef.current = window.videojs(videoRef.current, {
+                    controls: true,
+                    autoplay: true,
+                    muted: true,
+                    loop: true,
+                    html5: {
+                        nativeControlsForTouch: false
+                    },
+                    plugins: {
+                        pannellum: {
+                            yaw: 180,
+                            pitch: 10,
+                            hfov: 110,
+                            minHfov: 50,
+                            maxHfov: 150
                         }
-                    });
-                    playerRef.current.ready(function() {
-                        this.userActive(true);
-                    });
-                } catch (error) {
-                    console.error("VideoJS/Pannellum initialization failed:", error);
-                }
+                    }
+                });
+            } catch (error) {
+                console.error("VideoJS/Pannellum initialization failed:", error);
             }
-        };
-
-        // Try immediately
-        initPlayer();
-
-        // If window.videojs is not loaded yet, poll for it
-        if (!playerRef.current) {
-            interval = setInterval(initPlayer, 100);
         }
 
         return () => {
-            clearInterval(interval);
             if (playerRef.current) {
                 playerRef.current.dispose();
             }
@@ -69,9 +53,11 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
                         ref={videoRef}
                         id="panorama"
                         className="video-js vjs-default-skin vjs-big-play-centered"
+                        controls
                         preload="auto"
                         autoPlay
                         playsInline
+                        loop
                         muted
                         crossOrigin="anonymous"
                         style={{ width: '100%', height: '100%' }}
@@ -86,7 +72,21 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
 
 export const VirtualTour = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [shouldPreload, setShouldPreload] = useState(false);
     const { lang } = useLanguage();
+
+    useEffect(() => {
+        // Preload video after 2 seconds to avoid blocking main content rendering on initial load
+        const timer = setTimeout(() => {
+            setShouldPreload(true);
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const handleMouseEnter = () => {
+        setShouldPreload(true);
+    };
 
     const labels = {
         zh: { title: '360° 實境導覽', subtitle: '身歷其境，探索我們的客房與設施', btn: '開始導覽', close: '關閉' },
@@ -104,12 +104,30 @@ export const VirtualTour = () => {
                         <i className="fas fa-vr-cardboard" style={{ fontSize: '3rem', marginBottom: '1rem', color: 'white', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}></i>
                         <h2 className="traditional-font">{l.title}</h2>
                         <p>{l.subtitle}</p>
-                        <button className="btn-book" style={{ marginTop: '1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--primary-dark)', color: 'white' }} onClick={() => setIsOpen(true)}>
+                        <button 
+                            className="btn-book" 
+                            style={{ marginTop: '1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--primary-dark)', color: 'white' }} 
+                            onClick={() => setIsOpen(true)}
+                            onMouseEnter={handleMouseEnter}
+                            onTouchStart={handleMouseEnter}
+                        >
                             <i className="fas fa-play-circle"></i> {l.btn}
                         </button>
                     </div>
                 </div>
             </section>
+
+            {/* Hidden video element to trigger background preloading/caching */}
+            {shouldPreload && !isOpen && (
+                <video 
+                    preload="auto" 
+                    muted 
+                    playsInline 
+                    style={{ display: 'none' }}
+                >
+                    <source src="/images/hotel_video.MP4" type="video/mp4" />
+                </video>
+            )}
 
             {isOpen && typeof document !== 'undefined' && createPortal(
                 <PannellumVideoPlayer videoSrc="/images/hotel_video.MP4" close={() => setIsOpen(false)} />,
