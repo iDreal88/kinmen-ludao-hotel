@@ -13,6 +13,10 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
         if (window.videojs) {
             try {
                 playerRef.current = window.videojs(videoRef.current, {
+                    controls: true,
+                    autoplay: true,
+                    loop: true,
+                    muted: true,
                     plugins: {
                         pannellum: {
                             yaw: 180,
