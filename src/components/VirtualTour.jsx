@@ -5,8 +5,6 @@ import { useLanguage } from '../context/LanguageContext';
 const PannellumVideoPlayer = ({ videoSrc, close }) => {
     const videoRef = useRef(null);
     const playerRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(true);
-    const [isMuted, setIsMuted] = useState(true);
 
     useEffect(() => {
         if (!videoRef.current) return;
@@ -15,10 +13,6 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
         if (window.videojs) {
             try {
                 playerRef.current = window.videojs(videoRef.current, {
-                    controls: false, // We will use our own custom controls
-                    autoplay: true,
-                    loop: true,
-                    muted: true,
                     plugins: {
                         pannellum: {
                             yaw: 180,
@@ -29,10 +23,6 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
                         }
                     }
                 });
-                
-                // Keep react state in sync if video pauses/plays natively
-                playerRef.current.on('play', () => setIsPlaying(true));
-                playerRef.current.on('pause', () => setIsPlaying(false));
             } catch (error) {
                 console.error("VideoJS/Pannellum initialization failed:", error);
             }
@@ -45,87 +35,28 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
         };
     }, []);
 
-    const togglePlay = (e) => {
-        e.stopPropagation();
-        if (playerRef.current) {
-            if (isPlaying) {
-                playerRef.current.pause();
-            } else {
-                playerRef.current.play();
-            }
-        }
-    };
-
-    const toggleMute = (e) => {
-        e.stopPropagation();
-        if (playerRef.current) {
-            const currentlyMuted = playerRef.current.muted();
-            playerRef.current.muted(!currentlyMuted);
-            setIsMuted(!currentlyMuted);
-        }
-    };
-
     return (
         <div className="vt-modal-overlay">
             <button className="vt-close-btn" onClick={close}>
                 <i className="fas fa-times"></i> 關閉
             </button>
             <div className="vt-modal-content" style={{ width: '100%', height: '100%' }}>
-                <style>{`
-                    .pnlm-container {
-                        z-index: 1 !important;
-                    }
-                `}</style>
                 <div data-vjs-player style={{ width: '100%', height: '100%' }}>
                     <video 
                         ref={videoRef}
                         id="panorama"
                         className="video-js vjs-default-skin vjs-big-play-centered"
+                        controls
                         preload="auto"
                         autoPlay
                         loop
                         muted
-                        playsInline
-                        webkit-playsinline="true"
                         crossOrigin="anonymous"
                         style={{ width: '100%', height: '100%' }}
                     >
                         <source src={videoSrc} type="video/mp4" />
                     </video>
                 </div>
-            </div>
-            
-            {/* Custom Floating Controls */}
-            <div 
-                onPointerDown={(e) => e.stopPropagation()}
-                onMouseDown={(e) => e.stopPropagation()}
-                onTouchStart={(e) => e.stopPropagation()}
-                style={{
-                    position: 'absolute', 
-                    bottom: '30px', 
-                    left: '50%', 
-                    transform: 'translateX(-50%)',
-                    display: 'flex', 
-                    gap: '20px', 
-                    zIndex: 10000,
-                    background: 'rgba(0, 0, 0, 0.6)', 
-                    padding: '12px 24px', 
-                    borderRadius: '50px',
-                    backdropFilter: 'blur(5px)'
-                }}
-            >
-                <button 
-                    onClick={togglePlay} 
-                    style={{ background: 'transparent', border: 'none', color: 'white', fontSize: '1.5rem', cursor: 'pointer', width: '40px' }}
-                >
-                    <i className={`fas ${isPlaying ? 'fa-pause' : 'fa-play'}`}></i>
-                </button>
-                <button 
-                    onClick={toggleMute} 
-                    style={{ background: 'transparent', border: 'none', color: 'white', fontSize: '1.5rem', cursor: 'pointer', width: '40px' }}
-                >
-                    <i className={`fas ${isMuted ? 'fa-volume-mute' : 'fa-volume-up'}`}></i>
-                </button>
             </div>
         </div>
     );
