@@ -79,7 +79,7 @@ export const VirtualTour = () => {
             <section id="virtual-tour" className="virtual-tour-section">
                 <div className="virtual-tour-banner">
                     <div className="virtual-tour-content">
-                        <i className="fas fa-vr-cardboard" style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--primary)' }}></i>
+                        <i className="fas fa-vr-cardboard" style={{ fontSize: '3rem', marginBottom: '1rem', color: 'white', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}></i>
                         <h2 className="traditional-font">{l.title}</h2>
                         <p>{l.subtitle}</p>
                         <button className="btn-book" style={{ marginTop: '1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--primary-dark)', color: 'white' }} onClick={() => setIsOpen(true)}>
