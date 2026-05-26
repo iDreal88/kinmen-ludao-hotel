@@ -9,33 +9,46 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
     useEffect(() => {
         if (!videoRef.current) return;
 
-        // Initialize video.js with pannellum plugin
-        if (window.videojs) {
-            try {
-                playerRef.current = window.videojs(videoRef.current, {
-                    controls: true,
-                    autoplay: true,
-                    muted: true,
-                    loop: true,
-                    html5: {
-                        nativeControlsForTouch: false
-                    },
-                    plugins: {
-                        pannellum: {
-                            yaw: 180,
-                            pitch: 10,
-                            hfov: 110,
-                            minHfov: 50,
-                            maxHfov: 150
+        let interval;
+        const initPlayer = () => {
+            if (window.videojs) {
+                clearInterval(interval);
+                try {
+                    playerRef.current = window.videojs(videoRef.current, {
+                        controls: true,
+                        autoplay: true,
+                        muted: true,
+                        loop: true,
+                        inactivityTimeout: 0, // Keep controls visible always
+                        html5: {
+                            nativeControlsForTouch: false
+                        },
+                        plugins: {
+                            pannellum: {
+                                yaw: 180,
+                                pitch: 10,
+                                hfov: 110,
+                                minHfov: 50,
+                                maxHfov: 150
+                            }
                         }
-                    }
-                });
-            } catch (error) {
-                console.error("VideoJS/Pannellum initialization failed:", error);
+                    });
+                } catch (error) {
+                    console.error("VideoJS/Pannellum initialization failed:", error);
+                }
             }
+        };
+
+        // Try immediately
+        initPlayer();
+
+        // If window.videojs is not loaded yet, poll for it
+        if (!playerRef.current) {
+            interval = setInterval(initPlayer, 100);
         }
 
         return () => {
+            clearInterval(interval);
             if (playerRef.current) {
                 playerRef.current.dispose();
             }
