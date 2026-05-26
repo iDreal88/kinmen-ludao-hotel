@@ -85,6 +85,8 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
                         autoPlay
                         loop
                         muted
+                        playsInline
+                        webkit-playsinline="true"
                         crossOrigin="anonymous"
                         style={{ width: '100%', height: '100%' }}
                     >
