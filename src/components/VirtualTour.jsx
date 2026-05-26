@@ -45,6 +45,18 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
                 <i className="fas fa-times"></i> 關閉
             </button>
             <div className="vt-modal-content" style={{ width: '100%', height: '100%' }}>
+                <style>{`
+                    .video-js .vjs-control-bar {
+                        display: flex !important;
+                        opacity: 1 !important;
+                        visibility: visible !important;
+                        z-index: 9999 !important;
+                        bottom: 0 !important;
+                    }
+                    .pnlm-container {
+                        z-index: 1 !important;
+                    }
+                `}</style>
                 <div data-vjs-player style={{ width: '100%', height: '100%' }}>
                     <video 
                         ref={videoRef}
