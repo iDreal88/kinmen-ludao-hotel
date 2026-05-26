@@ -1,7 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { PannellumVideo } from 'pannellum-react';
 import { useLanguage } from '../context/LanguageContext';
+
+// Import required CSS for videojs and pannellum since Vite ignores require() in CJS modules
+import 'pannellum-react/lib/pannellum/css/video-js.css';
+import 'pannellum-react/lib/pannellum/css/pannellum.css';
+
+// Ensure videojs is global so that the pannellum plugin can attach itself
+import videojs from 'video.js';
+if (typeof window !== 'undefined') {
+    window.videojs = videojs;
+}
 
 export const VirtualTour = () => {
     const [isOpen, setIsOpen] = useState(false);
