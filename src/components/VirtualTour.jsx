@@ -94,23 +94,34 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
             </div>
             
             {/* Custom Floating Controls */}
-            <div style={{
-                position: 'absolute', 
-                bottom: '30px', 
-                left: '50%', 
-                transform: 'translateX(-50%)',
-                display: 'flex', 
-                gap: '20px', 
-                zIndex: 10000,
-                background: 'rgba(0, 0, 0, 0.6)', 
-                padding: '12px 24px', 
-                borderRadius: '50px',
-                backdropFilter: 'blur(5px)'
-            }}>
-                <button onClick={togglePlay} style={{ background: 'transparent', border: 'none', color: 'white', fontSize: '1.5rem', cursor: 'pointer', width: '40px' }}>
+            <div 
+                onPointerDown={(e) => e.stopPropagation()}
+                onMouseDown={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
+                style={{
+                    position: 'absolute', 
+                    bottom: '30px', 
+                    left: '50%', 
+                    transform: 'translateX(-50%)',
+                    display: 'flex', 
+                    gap: '20px', 
+                    zIndex: 10000,
+                    background: 'rgba(0, 0, 0, 0.6)', 
+                    padding: '12px 24px', 
+                    borderRadius: '50px',
+                    backdropFilter: 'blur(5px)'
+                }}
+            >
+                <button 
+                    onClick={togglePlay} 
+                    style={{ background: 'transparent', border: 'none', color: 'white', fontSize: '1.5rem', cursor: 'pointer', width: '40px' }}
+                >
                     <i className={`fas ${isPlaying ? 'fa-pause' : 'fa-play'}`}></i>
                 </button>
-                <button onClick={toggleMute} style={{ background: 'transparent', border: 'none', color: 'white', fontSize: '1.5rem', cursor: 'pointer', width: '40px' }}>
+                <button 
+                    onClick={toggleMute} 
+                    style={{ background: 'transparent', border: 'none', color: 'white', fontSize: '1.5rem', cursor: 'pointer', width: '40px' }}
+                >
                     <i className={`fas ${isMuted ? 'fa-volume-mute' : 'fa-volume-up'}`}></i>
                 </button>
             </div>
