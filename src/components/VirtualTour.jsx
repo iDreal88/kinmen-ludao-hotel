@@ -66,7 +66,7 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
     };
 
     return (
-        <div className="vt-modal-overlay" style={{ position: 'relative' }}>
+        <div className="vt-modal-overlay">
             <button className="vt-close-btn" onClick={close}>
                 <i className="fas fa-times"></i> 關閉
             </button>
