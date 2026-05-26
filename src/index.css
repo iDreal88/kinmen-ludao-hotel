@@ -1280,7 +1280,7 @@ button:focus, button:active, a:focus, a:active {
 }
 
 .virtual-tour-banner {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/hotel_exterior.jpg');
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/lobby_sky.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
