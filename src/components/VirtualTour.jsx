@@ -11,17 +11,21 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
 
         // Initialize video.js with pannellum plugin
         if (window.videojs) {
-            playerRef.current = window.videojs(videoRef.current, {
-                plugins: {
-                    pannellum: {
-                        yaw: 180,
-                        pitch: 10,
-                        hfov: 110,
-                        minHfov: 50,
-                        maxHfov: 150
+            try {
+                playerRef.current = window.videojs(videoRef.current, {
+                    plugins: {
+                        pannellum: {
+                            yaw: 180,
+                            pitch: 10,
+                            hfov: 110,
+                            minHfov: 50,
+                            maxHfov: 150
+                        }
                     }
-                }
-            });
+                });
+            } catch (error) {
+                console.error("VideoJS/Pannellum initialization failed:", error);
+            }
         }
 
         return () => {
@@ -37,20 +41,22 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
                 <i className="fas fa-times"></i> 關閉
             </button>
             <div className="vt-modal-content" style={{ width: '100%', height: '100%' }}>
-                <video 
-                    ref={videoRef}
-                    id="panorama"
-                    className="video-js vjs-default-skin vjs-big-play-centered"
-                    controls
-                    preload="auto"
-                    autoPlay
-                    loop
-                    muted
-                    crossOrigin="anonymous"
-                    style={{ width: '100%', height: '100%' }}
-                >
-                    <source src={videoSrc} type="video/mp4" />
-                </video>
+                <div data-vjs-player style={{ width: '100%', height: '100%' }}>
+                    <video 
+                        ref={videoRef}
+                        id="panorama"
+                        className="video-js vjs-default-skin vjs-big-play-centered"
+                        controls
+                        preload="auto"
+                        autoPlay
+                        loop
+                        muted
+                        crossOrigin="anonymous"
+                        style={{ width: '100%', height: '100%' }}
+                    >
+                        <source src={videoSrc} type="video/mp4" />
+                    </video>
+                </div>
             </div>
         </div>
     );
