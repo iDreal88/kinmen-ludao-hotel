@@ -18,7 +18,7 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
                         controls: true,
                         autoplay: true,
                         muted: true,
-                        loop: true,
+                        loop: false,
                         inactivityTimeout: 0, // Keep controls visible always
                         html5: {
                             nativeControlsForTouch: false
@@ -70,7 +70,6 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
                         preload="auto"
                         autoPlay
                         playsInline
-                        loop
                         muted
                         crossOrigin="anonymous"
                         style={{ width: '100%', height: '100%' }}
