@@ -1335,26 +1335,33 @@ button:focus, button:active, a:focus, a:active {
 .vt-modal-overlay {
   position: fixed;
   inset: 0;
-  background: #000;
-  z-index: 100000; /* Extremely high to cover everything */
+  background: rgba(0, 0, 0, 0.85); /* Semi-translucent dark background */
+  backdrop-filter: blur(10px);     /* Gorgeous modern glassmorphic blur */
+  z-index: 100000;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transition: all 0.3s ease;
 }
 
-/* Force Video.js controls on top of Pannellum WebGL Canvas */
-.video-js .vjs-control-bar {
-  z-index: 100 !important;
-  display: flex !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+.vt-modal-content {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.video-js .vjs-big-play-button {
-  z-index: 100 !important;
-}
-
-.video-js .pnlm-container {
-  z-index: 1 !important;
+.vt-standard-video {
+  width: 100%;
+  max-height: 80vh;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
 }
 
 .vt-close-btn {

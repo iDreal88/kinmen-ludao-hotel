@@ -4,102 +4,37 @@ import { useLanguage } from '../context/LanguageContext';
 
 const PannellumVideoPlayer = ({ videoSrc, close }) => {
     const videoRef = useRef(null);
-    const playerRef = useRef(null);
 
     useEffect(() => {
-        if (!videoRef.current) return;
-
-        let isMounted = true;
-        let checkInterval = null;
-        let player = null;
-
-        const initPlayer = () => {
-            if (!isMounted || !videoRef.current) return;
-
-            if (window.videojs) {
-                try {
-                    player = window.videojs(videoRef.current, {
-                        controls: true,
-                        autoplay: true,
-                        muted: true,
-                        loop: true,
-                        html5: {
-                            nativeControlsForTouch: false
-                        },
-                        plugins: {
-                            pannellum: {
-                                yaw: 180,
-                                pitch: 10,
-                                hfov: 110,
-                                minHfov: 50,
-                                maxHfov: 150
-                            }
-                        }
-                    });
-                    playerRef.current = player;
-                    
-                    // Successfully initialized! Stop polling.
-                    if (checkInterval) {
-                        clearInterval(checkInterval);
-                        checkInterval = null;
-                    }
-                    console.log("VideoJS/Pannellum player successfully initialized.");
-                } catch (error) {
-                    // Log warning and keep polling if plugin is not registered yet
-                    console.warn("VideoJS/Pannellum player initialization delayed, retrying...", error);
+        if (videoRef.current) {
+            // Unmute and play when opened
+            videoRef.current.muted = false;
+            videoRef.current.play().catch(err => {
+                // If browser blocks unmuted autoplay, fallback to muted autoplay
+                console.log("Unmuted autoplay blocked, retrying muted...", err);
+                if (videoRef.current) {
+                    videoRef.current.muted = true;
+                    videoRef.current.play().catch(e => console.error("Autoplay failed:", e));
                 }
-            }
-        };
-
-        // Try initializing immediately
-        initPlayer();
-
-        // If not ready, poll every 100ms until both videojs and the pannellum plugin are loaded and successfully initialized
-        if (!playerRef.current) {
-            checkInterval = setInterval(() => {
-                initPlayer();
-            }, 100);
+            });
         }
-
-        return () => {
-            isMounted = false;
-            if (checkInterval) {
-                clearInterval(checkInterval);
-            }
-            if (playerRef.current) {
-                try {
-                    playerRef.current.dispose();
-                } catch (e) {
-                    console.error("Error disposing Video.js player:", e);
-                }
-                playerRef.current = null;
-            }
-        };
     }, []);
 
     return (
-        <div className="vt-modal-overlay">
+        <div className="vt-modal-overlay" onClick={close}>
             <button className="vt-close-btn" onClick={close}>
                 <i className="fas fa-times"></i> 關閉
             </button>
-            <div className="vt-modal-content" style={{ width: '100%', height: '100%' }}>
-                <div data-vjs-player style={{ width: '100%', height: '100%' }}>
-                    <video 
-                        ref={videoRef}
-                        id="panorama"
-                        className="video-js vjs-default-skin vjs-big-play-centered"
-                        controls
-                        preload="auto"
-                        autoPlay
-                        playsInline
-                        loop
-                        muted
-                        crossOrigin="anonymous"
-                        style={{ width: '100%', height: '100%' }}
-                    >
-                        <source src={videoSrc} type="video/mp4" />
-                    </video>
-                </div>
+            <div className="vt-modal-content" onClick={e => e.stopPropagation()}>
+                <video 
+                    ref={videoRef}
+                    src={videoSrc}
+                    className="vt-standard-video"
+                    controls
+                    playsInline
+                    loop
+                    crossOrigin="anonymous"
+                />
             </div>
         </div>
     );
