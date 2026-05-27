@@ -9,35 +9,70 @@ const PannellumVideoPlayer = ({ videoSrc, close }) => {
     useEffect(() => {
         if (!videoRef.current) return;
 
-        // Initialize video.js with pannellum plugin
-        if (window.videojs) {
-            try {
-                playerRef.current = window.videojs(videoRef.current, {
-                    controls: true,
-                    autoplay: true,
-                    muted: true,
-                    loop: true,
-                    html5: {
-                        nativeControlsForTouch: false
-                    },
-                    plugins: {
-                        pannellum: {
-                            yaw: 180,
-                            pitch: 10,
-                            hfov: 110,
-                            minHfov: 50,
-                            maxHfov: 150
+        let isMounted = true;
+        let checkInterval = null;
+        let player = null;
+
+        const initPlayer = () => {
+            if (!isMounted || !videoRef.current) return;
+
+            if (window.videojs) {
+                try {
+                    player = window.videojs(videoRef.current, {
+                        controls: true,
+                        autoplay: true,
+                        muted: true,
+                        loop: true,
+                        html5: {
+                            nativeControlsForTouch: false
+                        },
+                        plugins: {
+                            pannellum: {
+                                yaw: 180,
+                                pitch: 10,
+                                hfov: 110,
+                                minHfov: 50,
+                                maxHfov: 150
+                            }
                         }
+                    });
+                    playerRef.current = player;
+                    
+                    // Successfully initialized! Stop polling.
+                    if (checkInterval) {
+                        clearInterval(checkInterval);
+                        checkInterval = null;
                     }
-                });
-            } catch (error) {
-                console.error("VideoJS/Pannellum initialization failed:", error);
+                    console.log("VideoJS/Pannellum player successfully initialized.");
+                } catch (error) {
+                    // Log warning and keep polling if plugin is not registered yet
+                    console.warn("VideoJS/Pannellum player initialization delayed, retrying...", error);
+                }
             }
+        };
+
+        // Try initializing immediately
+        initPlayer();
+
+        // If not ready, poll every 100ms until both videojs and the pannellum plugin are loaded and successfully initialized
+        if (!playerRef.current) {
+            checkInterval = setInterval(() => {
+                initPlayer();
+            }, 100);
         }
 
         return () => {
+            isMounted = false;
+            if (checkInterval) {
+                clearInterval(checkInterval);
+            }
             if (playerRef.current) {
-                playerRef.current.dispose();
+                try {
+                    playerRef.current.dispose();
+                } catch (e) {
+                    console.error("Error disposing Video.js player:", e);
+                }
+                playerRef.current = null;
             }
         };
     }, []);
