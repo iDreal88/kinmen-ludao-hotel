@@ -66,8 +66,8 @@ export const Home = () => {
                     <h1 className="traditional-font">{t('hero_title')}</h1>
                     <p>{t('hero_subtitle')}</p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-                        <a href="#rooms" className="btn-book" style={{ background: 'var(--card-bg)', color: 'var(--primary)' }}>{t('hero_btn_explore')}</a>
-                        <a href="#gallery" className="btn-book">{t('hero_btn_gallery')}</a>
+                        <a href="#rooms" className="btn-book btn-primary-hero">{t('hero_btn_explore')}</a>
+                        <a href="#gallery" className="btn-book btn-secondary-hero">{t('hero_btn_gallery')}</a>
                     </div>
                 </div>
             </section>

@@ -135,9 +135,14 @@ header.scrolled {
 
 header.scrolled .lang-switcher {
   background: var(--glass-dark);
-  color: var(--text);
-  border-color: rgba(0,0,0,0.05);
+  color: rgba(255, 255, 255, 0.7); /* Improved contrast: light text over dark translucent glass */
+  border-color: rgba(255, 255, 255, 0.15);
 }
+
+header.scrolled .lang-btn:not(.active):hover {
+  color: #FFFFFF;
+}
+
 
 [data-theme='dark'] header.scrolled .lang-switcher {
   background: rgba(255,255,255,0.05);
@@ -318,6 +323,31 @@ header.scrolled .dropdown-trigger {
 .btn-book:hover {
   background: transparent;
   color: var(--primary);
+}
+
+/* Premium Hero & Dark Banner Buttons with Perfect Contrast */
+.btn-primary-hero {
+  background: var(--card-bg) !important;
+  color: var(--primary) !important;
+  border-color: var(--card-bg) !important;
+}
+
+.btn-primary-hero:hover {
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+}
+
+.btn-secondary-hero {
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.btn-secondary-hero:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
 }
 
 /* Hero Section */

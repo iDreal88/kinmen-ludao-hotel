@@ -105,8 +105,8 @@ export const VirtualTour = () => {
                         <h2 className="traditional-font">{l.title}</h2>
                         <p>{l.subtitle}</p>
                         <button 
-                            className="btn-book" 
-                            style={{ marginTop: '1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--primary-dark)', color: 'white' }} 
+                            className="btn-book btn-primary-hero" 
+                            style={{ marginTop: '1.5rem', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }} 
                             onClick={() => setIsOpen(true)}
                             onMouseEnter={handleMouseEnter}
                             onTouchStart={handleMouseEnter}

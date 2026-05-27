@@ -125,15 +125,15 @@ export const RoomDetail = () => {
                         <div>
                             <h4 style={{ color: 'var(--primary)', fontSize: '1.1rem', fontWeight: '700', marginBottom: '1rem' }}>{tr('【平日、假日定義】', '【Weekday & Holiday】', '【平日、假日定义】', '【平日と休日の定義】')}</h4>
                             <ul style={{ listStyleType: 'none', paddingLeft: 0, marginBottom: '2rem', color: 'var(--text-light)', lineHeight: '1.8' }}>
-                                <li style={{ position: 'relative', paddingLeft: '1.2rem', marginBottom: '0.5rem' }}><span style={{ position: 'absolute', left: 0, color: 'var(--accent)' }}>•</span> {tr('平日：星期日至星期四', 'Weekday: Sunday to Thursday', '平日：星期日至星期四', '平日：日曜日から木曜日')}</li>
-                                <li style={{ position: 'relative', paddingLeft: '1.2rem', marginBottom: '0.5rem' }}><span style={{ position: 'absolute', left: 0, color: 'var(--accent)' }}>•</span> {tr('假日：星期五至星期六', 'Holiday: Friday to Saturday', '假日：星期五至星期六', '休日：金曜日から土曜日')}</li>
-                                <li style={{ position: 'relative', paddingLeft: '1.2rem', marginBottom: '0.5rem' }}><span style={{ position: 'absolute', left: 0, color: 'var(--accent)' }}>•</span> {tr('定價：農曆春節期間、跨年、國定連續假日', 'Fixed Price: Chinese New Year, New Year\'s Eve, National Holidays', '定价：农历春节期间、跨年、国定连续假日', '定価：旧正月、大晦日、国定連休')}</li>
+                                <li style={{ position: 'relative', paddingLeft: '1.2rem', marginBottom: '0.5rem' }}><span style={{ position: 'absolute', left: 0, color: 'var(--primary)' }}>•</span> {tr('平日：星期日至星期四', 'Weekday: Sunday to Thursday', '平日：星期日至星期四', '平日：日曜日から木曜日')}</li>
+                                <li style={{ position: 'relative', paddingLeft: '1.2rem', marginBottom: '0.5rem' }}><span style={{ position: 'absolute', left: 0, color: 'var(--primary)' }}>•</span> {tr('假日：星期五至星期六', 'Holiday: Friday to Saturday', '假日：星期五至星期六', '休日：金曜日から土曜日')}</li>
+                                <li style={{ position: 'relative', paddingLeft: '1.2rem', marginBottom: '0.5rem' }}><span style={{ position: 'absolute', left: 0, color: 'var(--primary)' }}>•</span> {tr('定價：農曆春節期間、跨年、國定連續假日', 'Fixed Price: Chinese New Year, New Year\'s Eve, National Holidays', '定价：农历春节期间、跨年、国定连续假日', '定価：旧正月、大晦日、国定連休')}</li>
                             </ul>
 
                             <h4 style={{ color: 'var(--primary)', fontSize: '1.1rem', fontWeight: '700', marginBottom: '1rem' }}>{tr('【進退房時間】', '【Check-in & Check-out】', '【进退房时间】', '【チェックイン・チェックアウト時間】')}</h4>
                             <ul style={{ listStyleType: 'none', paddingLeft: 0, marginBottom: '2rem', color: 'var(--text-light)', lineHeight: '1.8' }}>
-                                <li style={{ position: 'relative', paddingLeft: '1.2rem', marginBottom: '0.5rem' }}><span style={{ position: 'absolute', left: 0, color: 'var(--accent)' }}>•</span> {tr('進房時間：下午03:00以後', 'Check-in: After 03:00 PM', '进房时间：下午03:00以后', 'チェックイン：午後03:00以降')}</li>
-                                <li style={{ position: 'relative', paddingLeft: '1.2rem', marginBottom: '0.5rem' }}><span style={{ position: 'absolute', left: 0, color: 'var(--accent)' }}>•</span> {tr('退房時間：上午11:00以前', 'Check-out: Before 11:00 AM', '退房时间：上午11:00以前', 'チェックアウト：午前11:00以前')}</li>
+                                <li style={{ position: 'relative', paddingLeft: '1.2rem', marginBottom: '0.5rem' }}><span style={{ position: 'absolute', left: 0, color: 'var(--primary)' }}>•</span> {tr('進房時間：下午03:00以後', 'Check-in: After 03:00 PM', '进房时间：下午03:00以后', 'チェックイン：午後03:00以降')}</li>
+                                <li style={{ position: 'relative', paddingLeft: '1.2rem', marginBottom: '0.5rem' }}><span style={{ position: 'absolute', left: 0, color: 'var(--primary)' }}>•</span> {tr('退房時間：上午11:00以前', 'Check-out: Before 11:00 AM', '退房时间：上午11:00以前', 'チェックアウト：午前11:00以前')}</li>
                             </ul>
 
                             <h4 style={{ color: 'var(--primary)', fontSize: '1.1rem', fontWeight: '700', marginBottom: '1rem' }}>{tr('【匯款資訊－ATM轉帳/匯款】', '【Remittance Information】', '【汇款资讯－ATM转帐/汇款】', '【お振込情報】')}</h4>
