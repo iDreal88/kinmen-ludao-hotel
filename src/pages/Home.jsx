@@ -7,6 +7,8 @@ import { Lightbox } from '../components/Lightbox';
 import { VirtualTour } from '../components/VirtualTour';
 import { Attractions } from '../components/Attractions';
 import { Reviews } from '../components/Reviews';
+import { TulouExperience } from '../components/TulouExperience';
+import { TelephoneBox } from '../components/TelephoneBox';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export const Home = () => {
@@ -93,6 +95,9 @@ export const Home = () => {
                     </a>
                 </div>
             </section>
+
+            {/* Tulou Clay Roundhouse Experience */}
+            <TulouExperience />
 
             {/* Rooms Section */}
             <section id="rooms" className="reveal-up">
@@ -230,6 +235,9 @@ export const Home = () => {
                     ))}
                 </div>
             </section>
+
+            {/* Red Telephone Box Postcard Experience */}
+            <TelephoneBox />
 
             {/* Amenities Section */}
             <section id="amenities" className="reveal-up" style={{ background: '#f4f1ea' }}>

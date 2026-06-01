@@ -70,7 +70,34 @@ export const translations = {
         footer_service_title: "顧客服務",
         footer_policy: "訂房政策",
         footer_faq: "常見問題",
-        footer_copyright: "金門陸島酒店 Kinmen Ludao Hotel. All rights reserved."
+        footer_copyright: "金門陸島酒店 Kinmen Ludao Hotel. All rights reserved.",
+        
+        // Tulou Architectural Experience
+        tulou_section_title: "傳奇土樓 匠心設計",
+        tulou_section_subtitle: "探索福建土樓的防禦美學與南洋藤藝奢華的完美交融",
+        tulou_card1_title: "圓樓凝聚結構",
+        tulou_card1_desc: "以傳奇福建圓形土樓為靈感，環形中空結構促進空氣對流與自然採光，象徵圓滿與家族的向心凝聚力。",
+        tulou_card2_title: "自然綠能空調",
+        tulou_card2_desc: "冬暖夏涼的厚實外牆，搭配中庭巨型天井的空氣對流，是一座擁有千年智慧的天然綠色空調建築。",
+        tulou_card3_title: "南洋藤藝禪風",
+        tulou_card3_desc: "精選高品質南洋天然藤製家具，在典雅的中式院落中融入熱帶奢華放鬆感，營造極致的度假禪意。",
+
+        // Telephone Box Postcard Generator
+        tb_title: "陸島紅色郵筒",
+        tb_subtitle: "造訪屋頂著名的「金門電話亭」，為您的金門之旅寄出一張虛擬明信片吧！",
+        tb_sender_label: "寄件人姓名",
+        tb_sender_placeholder: "您的名字",
+        tb_msg_label: "明信片內容",
+        tb_msg_placeholder: "寫下您在金門陸島酒店的美好回憶、心願或想對親友說的話...",
+        tb_stamp_label: "選擇明信片郵票",
+        tb_stamp1: "陸島酒店限定戳章",
+        tb_stamp2: "金門守護神風獅爺",
+        tb_stamp3: "經典金門紅色電話亭",
+        tb_send_btn: "投遞明信片",
+        tb_success_title: "明信片投遞成功！",
+        tb_success_desc: "您的祝福已寫入明信片，可在下方預覽並長按/右鍵下載分享這份喜悅！",
+        tb_postcard_title: "來自金門的問候",
+        tb_postcard_hotel: "金門陸島酒店 留念"
     },
     cn: {
         nav_home: "首页",
@@ -143,7 +170,34 @@ export const translations = {
         footer_service_title: "顾客服务",
         footer_policy: "订房政策",
         footer_faq: "常见问题",
-        footer_copyright: "金门陆岛酒店 Kinmen Ludao Hotel. All rights reserved."
+        footer_copyright: "金门陆岛酒店 Kinmen Ludao Hotel. All rights reserved.",
+
+        // Tulou Architectural Experience
+        tulou_section_title: "传奇土楼 匠心设计",
+        tulou_section_subtitle: "探索福建土楼的防御美学与南洋藤艺奢华的完美交融",
+        tulou_card1_title: "圆楼凝聚结构",
+        tulou_card1_desc: "以传奇福建圆形土楼为灵感，环形中空结构促进空气对流与自然采光，象征圆满与家族的向心凝聚力。",
+        tulou_card2_title: "自然绿能空调",
+        tulou_card2_desc: "冬暖夏凉的厚实外墙，搭配中庭巨型天井的空气对流，是一座拥有千年智慧的天然绿色空调建筑。",
+        tulou_card3_title: "南洋藤艺禅风",
+        tulou_card3_desc: "精选高质量南洋天然藤制家具，在典雅的中式院落中融入热带奢华放松感，营造极致的度假禅意。",
+
+        // Telephone Box Postcard Generator
+        tb_title: "陆岛红色邮筒",
+        tb_subtitle: "造访屋顶著名的「金门电话亭」，为您的金门之旅寄出一张虚拟明信片吧！",
+        tb_sender_label: "寄件人姓名",
+        tb_sender_placeholder: "您的名字",
+        tb_msg_label: "明信片内容",
+        tb_msg_placeholder: "写下您在金门陆岛酒店的美好回忆、心愿或想对亲友说的话...",
+        tb_stamp_label: "选择明信片邮票",
+        tb_stamp1: "陆岛酒店限定戳章",
+        tb_stamp2: "金门守护神风狮爷",
+        tb_stamp3: "经典金门红色电话亭",
+        tb_send_btn: "投递明信片",
+        tb_success_title: "明信片投递成功！",
+        tb_success_desc: "您的祝福已写入明信片，可在下方预览并长按/右键下载分享这份喜悦！",
+        tb_postcard_title: "来自金门的问候",
+        tb_postcard_hotel: "金门陆岛酒店 留念"
     },
     en: {
         nav_home: "Home",
@@ -216,7 +270,34 @@ export const translations = {
         footer_service_title: "Customer Service",
         footer_policy: "Booking Policy",
         footer_faq: "FAQ",
-        footer_copyright: "Kinmen Ludao Hotel. All rights reserved."
+        footer_copyright: "Kinmen Ludao Hotel. All rights reserved.",
+
+        // Tulou Architectural Experience
+        tulou_section_title: "Legendary Tulou Architectural Masterpiece",
+        tulou_section_subtitle: "Explore the perfect fusion of defensive aesthetics and Nanyang rattan luxury",
+        tulou_card1_title: "Circular Structure",
+        tulou_card1_desc: "Inspired by legendary circular Fujian Clay Roundhouses, the ring structure maximizes air convection, light, and fosters warm family unity.",
+        tulou_card2_title: "Eco Green Cooling",
+        tulou_card2_desc: "Thick earthen walls keep it warm in winter and cool in summer. Combined with a giant central courtyard, it operates as a natural ecological AC.",
+        tulou_card3_title: "Nanyang Rattan Zen",
+        tulou_card3_desc: "Exquisite hand-woven natural rattan furniture adds a tropical resort luxury and a calming Zen feel to our elegant traditional courtyard.",
+
+        // Telephone Box Postcard Generator
+        tb_title: "Rooftop Red Postbox",
+        tb_subtitle: "Visit our famous rooftop 'Kinmen Telephone Box' landmark and send a virtual postcard of your journey!",
+        tb_sender_label: "Your Name",
+        tb_sender_placeholder: "Enter name",
+        tb_msg_label: "Postcard Message",
+        tb_msg_placeholder: "Write down your beautiful memories, wishes, or warm messages from Kinmen...",
+        tb_stamp_label: "Choose Postcard Stamp",
+        tb_stamp1: "Ludao Hotel Exclusive Seal",
+        tb_stamp2: "Kinmen Guardian Wind Lion God",
+        tb_stamp3: "Iconic Kinmen Red Telephone Box",
+        tb_send_btn: "Send Postcard",
+        tb_success_title: "Postcard Sent Successfully!",
+        tb_success_desc: "Your travel wish is sealed! Preview your custom postcard below. Right-click/long-press to download and share!",
+        tb_postcard_title: "Greetings from Kinmen",
+        tb_postcard_hotel: "Memories at Kinmen Ludao Hotel"
     },
     ja: {
         nav_home: "ホーム",
@@ -289,6 +370,33 @@ export const translations = {
         footer_service_title: "カスタマーサービス",
         footer_policy: "予約ポリシー",
         footer_faq: "よくあるご質問",
-        footer_copyright: "Kinmen Ludao Hotel. All rights reserved."
+        footer_copyright: "Kinmen Ludao Hotel. All rights reserved.",
+
+        // Tulou Architectural Experience
+        tulou_section_title: "伝説の土楼 匠の設計",
+        tulou_section_subtitle: "福建土楼の堅牢な美学と南洋ラタンの贅沢が織りなす極上の融合",
+        tulou_card1_title: "円楼の団らん構造",
+        tulou_card1_desc: "伝説的な円形福建土楼にインスパイアされた環状構造は、自然の光と風を取り込み、家族の絆と円満を象徴します。",
+        tulou_card2_title: "自然のグリーン空調",
+        tulou_card2_desc: "冬は暖かく夏は涼しい頑丈な土壁と、巨大な中庭がもたらす空気の対流。千年の知恵が息づくエコロジカルな設計です。",
+        tulou_card3_title: "南洋ラタンの禅風",
+        tulou_card3_desc: "選び抜かれた南洋の天然ラタン家具が、伝統的な中華風の庭園に南国のリゾートのような開放感と禅の静寂を与えます。",
+
+        // Telephone Box Postcard Generator
+        tb_title: "屋上の赤い郵便ポスト",
+        tb_subtitle: "屋上の有名な「金門電話ボックス」を訪ねて、金門の旅からバーチャル絵葉書を送ってみませんか？",
+        tb_sender_label: "お名前",
+        tb_sender_placeholder: "お名前を入力",
+        tb_msg_label: "メッセージ",
+        tb_msg_placeholder: "ホテルでの思い出や、大切な人へのメッセージ、または願い事を書いてください...",
+        tb_stamp_label: "切手の選択",
+        tb_stamp1: "陸島ホテル限定スタンプ",
+        tb_stamp2: "金門の守り神風獅爺",
+        tb_stamp3: "伝説の金門赤い電話ボックス",
+        tb_send_btn: "ハガキを送る",
+        tb_success_title: "絵葉書が送信されました！",
+        tb_success_desc: "あなたの願いがハガキに刻まれました！下にプレビューが表示されます。長押しまたは右クリックでダウンロードしてシェアしてください！",
+        tb_postcard_title: "金門からの便り",
+        tb_postcard_hotel: "金門陸島ホテル 記念"
     }
 };
