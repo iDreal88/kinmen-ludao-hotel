@@ -34,21 +34,26 @@ export const Header = () => {
                 <ul>
                     <li><Link to="/#about" onClick={() => setMenuOpen(false)}>{t('nav_about')}</Link></li>
                     <li><Link to="/#rooms" onClick={() => setMenuOpen(false)}>{t('nav_rooms')}</Link></li>
+                    <li><Link to="/#tulou-experience" onClick={() => setMenuOpen(false)}>{t('nav_tulou')}</Link></li>
                     <li><Link to="/#gallery" onClick={() => setMenuOpen(false)}>{t('nav_gallery')}</Link></li>
-                    <li><Link to="/#amenities" onClick={() => setMenuOpen(false)}>{lang === 'en' ? 'Facilities' : lang === 'ja' ? '施設' : lang === 'cn' ? '饭店设施' : '飯店設施'}</Link></li>
-                    <li><Link to="/#attractions" onClick={() => setMenuOpen(false)}>{lang === 'en' ? 'Attractions' : lang === 'ja' ? '観光スポット' : lang === 'cn' ? '周边景点' : '周邊景點'}</Link></li>
                     <li className="nav-dropdown desktop-only">
                         <span className="dropdown-trigger">
-                            {lang === 'en' ? 'More...' : lang === 'ja' ? 'その他' : lang === 'cn' ? '更多资讯' : '更多資訊'} <i className="fas fa-chevron-down" style={{ fontSize: '0.75rem', marginLeft: '4px' }}></i>
+                            {t('nav_more')} <i className="fas fa-chevron-down" style={{ fontSize: '0.75rem', marginLeft: '4px' }}></i>
                         </span>
                         <ul className="dropdown-menu">
-                            <li><Link to="/#virtual-tour" onClick={() => setMenuOpen(false)}>{lang === 'en' ? '360° Virtual Tour' : lang === 'ja' ? '360° バーチャルツアー' : lang === 'cn' ? '360° 实境导览' : '360° 實境導覽'}</Link></li>
-                            <li><Link to="/#reviews" onClick={() => setMenuOpen(false)}>{lang === 'en' ? 'Guest Reviews' : lang === 'ja' ? 'お客様の声' : lang === 'cn' ? '旅客真实评价' : '旅客真實評價'}</Link></li>
+                            <li><Link to="/#telephone-box" onClick={() => setMenuOpen(false)}>{t('nav_postbox')}</Link></li>
+                            <li><Link to="/#amenities" onClick={() => setMenuOpen(false)}>{t('nav_facilities')}</Link></li>
+                            <li><Link to="/#attractions" onClick={() => setMenuOpen(false)}>{t('nav_attractions')}</Link></li>
+                            <li><Link to="/#virtual-tour" onClick={() => setMenuOpen(false)}>{t('nav_virtual_tour')}</Link></li>
+                            <li><Link to="/#reviews" onClick={() => setMenuOpen(false)}>{t('nav_reviews')}</Link></li>
                             <li><Link to="/#contact" onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link></li>
                         </ul>
                     </li>
-                    <li className="mobile-only"><Link to="/#virtual-tour" onClick={() => setMenuOpen(false)}>{lang === 'en' ? '360° Virtual Tour' : lang === 'ja' ? '360° バーチャルツアー' : lang === 'cn' ? '360° 实境导览' : '360° 實境導覽'}</Link></li>
-                    <li className="mobile-only"><Link to="/#reviews" onClick={() => setMenuOpen(false)}>{lang === 'en' ? 'Guest Reviews' : lang === 'ja' ? 'お客様の声' : lang === 'cn' ? '旅客真实评价' : '旅客真實評價'}</Link></li>
+                    <li className="mobile-only"><Link to="/#telephone-box" onClick={() => setMenuOpen(false)}>{t('nav_postbox')}</Link></li>
+                    <li className="mobile-only"><Link to="/#amenities" onClick={() => setMenuOpen(false)}>{t('nav_facilities')}</Link></li>
+                    <li className="mobile-only"><Link to="/#attractions" onClick={() => setMenuOpen(false)}>{t('nav_attractions')}</Link></li>
+                    <li className="mobile-only"><Link to="/#virtual-tour" onClick={() => setMenuOpen(false)}>{t('nav_virtual_tour')}</Link></li>
+                    <li className="mobile-only"><Link to="/#reviews" onClick={() => setMenuOpen(false)}>{t('nav_reviews')}</Link></li>
                     <li className="mobile-only"><Link to="/#contact" onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link></li>
                 </ul>
                 <div className="mobile-nav-controls">
