@@ -1886,8 +1886,25 @@ button:focus, button:active, a:focus, a:active {
   border-radius: 12px;
   font-family: inherit;
   font-size: 1rem;
-  background: rgba(139, 69, 19, 0.01);
+  background: rgba(139, 69, 19, 0.02);
+  color: var(--text);
   transition: var(--transition);
+}
+
+[data-theme='dark'] .postcard-form .form-group input, 
+[data-theme='dark'] .postcard-form .form-group textarea {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.postcard-form .form-group input::placeholder, 
+.postcard-form .form-group textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .postcard-form .form-group input::placeholder, 
+[data-theme='dark'] .postcard-form .form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .postcard-form .form-group input:focus, 
@@ -1895,7 +1912,15 @@ button:focus, button:active, a:focus, a:active {
   outline: none;
   border-color: var(--primary);
   background: #FFF;
+  color: #2F2F2F; /* Ensure typed text is dark and highly readable when background is pure white */
   box-shadow: 0 0 0 4px rgba(139, 69, 19, 0.08);
+}
+
+[data-theme='dark'] .postcard-form .form-group input:focus, 
+[data-theme='dark'] .postcard-form .form-group textarea:focus {
+  background: #2C2C2C;
+  color: var(--text);
+  box-shadow: 0 0 0 4px rgba(210, 180, 140, 0.15);
 }
 
 .stamp-selector {
@@ -1914,14 +1939,23 @@ button:focus, button:active, a:focus, a:active {
   font-size: 0.95rem;
   font-weight: 500;
   font-family: inherit;
+  color: var(--text); /* Force inherit theme text color to override browser default button text color */
   transition: var(--transition);
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
+[data-theme='dark'] .stamp-opt {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
 .stamp-opt:hover {
   background: rgba(139, 69, 19, 0.04);
+}
+
+[data-theme='dark'] .stamp-opt:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .stamp-opt.active {
@@ -1930,6 +1964,12 @@ button:focus, button:active, a:focus, a:active {
   color: var(--primary-dark);
   font-weight: 600;
   box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.08);
+}
+
+[data-theme='dark'] .stamp-opt.active {
+  background: rgba(210, 180, 140, 0.15);
+  color: var(--primary-dark);
+  box-shadow: 0 0 0 3px rgba(210, 180, 140, 0.08);
 }
 
 /* Rendered Postcard CSS */
