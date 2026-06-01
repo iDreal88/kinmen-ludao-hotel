@@ -1,6 +1,6 @@
 .reviews-section {
     padding: 5rem 0 3rem 0;
-    background: #faf9f7;
+    background: var(--bg-alt);
     overflow: hidden;
 }
 
@@ -25,11 +25,11 @@
 }
 .reviews-marquee-container::before {
     left: 0;
-    background: linear-gradient(to right, #faf9f7, transparent);
+    background: linear-gradient(to right, var(--bg-alt), transparent);
 }
 .reviews-marquee-container::after {
     right: 0;
-    background: linear-gradient(to left, #faf9f7, transparent);
+    background: linear-gradient(to left, var(--bg-alt), transparent);
 }
 
 .reviews-marquee {
@@ -51,7 +51,7 @@
 .review-card {
     display: inline-block;
     width: 350px;
-    background: white;
+    background: var(--card-bg);
     padding: 1.5rem;
     border-radius: 16px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -88,7 +88,7 @@
 .review-meta h4 {
     margin: 0 0 5px 0;
     font-size: 1rem;
-    color: #333;
+    color: var(--text);
 }
 
 .stars {
@@ -97,17 +97,67 @@
     letter-spacing: 2px;
 }
 
-.review-source-logo {
-    margin-left: auto;
-    height: 20px;
-    object-fit: contain;
-    max-width: 80px;
-}
-
 .review-text {
     font-style: italic;
-    color: #666;
+    color: var(--text-light);
     line-height: 1.6;
     font-size: 0.95rem;
     margin: 0;
+}
+
+/* ==========================================================
+   REVIEW SOURCE BADGES
+   ========================================================== */
+.source-badge {
+    font-weight: bold; 
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+}
+
+.agoda-dots {
+    display: flex; 
+    gap: 2px; 
+    align-items: center;
+}
+
+.dot {
+    width: 5px; 
+    height: 5px; 
+    border-radius: 50%;
+}
+.dot-green { background: #87c440; }
+.dot-orange { background: #f5ab2d; }
+.dot-red { background: #e72826; }
+
+/* Light Mode Badges */
+.badge-agoda {
+    color: #e01a4f;
+    background: #fff0f3;
+}
+.badge-trip {
+    color: #1a73e8;
+    background: #e8f0fe;
+}
+.badge-eztravel {
+    color: #f5222d;
+    background: #fff1f0;
+}
+
+/* Dark Mode Badges */
+[data-theme='dark'] .badge-agoda {
+    color: #ff4d7d;
+    background: rgba(224, 26, 79, 0.15);
+}
+[data-theme='dark'] .badge-trip {
+    color: #66a3ff;
+    background: rgba(26, 115, 232, 0.15);
+}
+[data-theme='dark'] .badge-eztravel {
+    color: #ff4d4f;
+    background: rgba(245, 34, 45, 0.15);
 }

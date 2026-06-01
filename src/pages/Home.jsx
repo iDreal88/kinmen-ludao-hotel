@@ -240,7 +240,7 @@ export const Home = () => {
             <TelephoneBox />
 
             {/* Amenities Section */}
-            <section id="amenities" className="reveal-up" style={{ background: '#f4f1ea' }}>
+            <section id="amenities" className="reveal-up" style={{ background: 'var(--bg-alt)' }}>
                 <div className="section-title">
                     <h2>{t('amenities_title')}</h2>
                     <div className="underline"></div>

@@ -54,7 +54,7 @@ export const Attractions = () => {
     };
 
     return (
-        <section id="attractions" className="reveal-up" style={{ backgroundColor: '#fff', paddingBottom: '6rem' }}>
+        <section id="attractions" className="reveal-up" style={{ backgroundColor: 'var(--bg)', paddingBottom: '6rem' }}>
             <div className="section-title">
                 <h2>{sectionTitle[lang] || sectionTitle.zh}</h2>
                 <div className="underline"></div>
@@ -77,9 +77,9 @@ export const Attractions = () => {
                                 href={item.mapUrl} 
                                 target="_blank" 
                                 rel="noreferrer" 
-                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '1.2rem', padding: '0.5rem 1rem', background: '#f5f5f5', color: '#333', textDecoration: 'none', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', transition: 'background 0.2s' }}
-                                onMouseOver={(e) => { e.currentTarget.style.background = '#e0e0e0'; e.currentTarget.style.color = 'var(--primary)'; }}
-                                onMouseOut={(e) => { e.currentTarget.style.background = '#f5f5f5'; e.currentTarget.style.color = '#333'; }}
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '1.2rem', padding: '0.5rem 1rem', background: 'var(--bg-alt)', color: 'var(--text)', textDecoration: 'none', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', transition: 'all 0.2s', border: '1px solid rgba(139, 69, 19, 0.15)' }}
+                                onMouseOver={(e) => { e.currentTarget.style.background = 'var(--primary)'; e.currentTarget.style.color = 'var(--btn-text)'; }}
+                                onMouseOut={(e) => { e.currentTarget.style.background = 'var(--bg-alt)'; e.currentTarget.style.color = 'var(--text)'; }}
                             >
                                 <i className="fas fa-map-marker-alt" style={{ color: '#EA4335' }}></i> 
                                 {lang === 'en' ? 'View on Map' : 

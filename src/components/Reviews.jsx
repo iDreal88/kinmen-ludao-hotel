@@ -62,22 +62,11 @@ export const Reviews = () => {
     const renderSourceBadge = (source) => {
         if (source === 'Agoda') {
             return (
-                <span style={{ 
-                    color: '#e01a4f', 
-                    fontWeight: 'bold', 
-                    fontSize: '0.8rem',
-                    background: '#fff0f3',
-                    padding: '4px 8px',
-                    borderRadius: '6px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    marginLeft: 'auto'
-                }}>
-                    <span style={{ display: 'inline-flex', gap: '2px', alignItems: 'center' }}>
-                        <span style={{width:'5px', height:'5px', borderRadius:'50%', background:'#87c440'}}></span>
-                        <span style={{width:'5px', height:'5px', borderRadius:'50%', background:'#f5ab2d'}}></span>
-                        <span style={{width:'5px', height:'5px', borderRadius:'50%', background:'#e72826'}}></span>
+                <span className="source-badge badge-agoda">
+                    <span className="agoda-dots">
+                        <span className="dot dot-green"></span>
+                        <span className="dot dot-orange"></span>
+                        <span className="dot dot-red"></span>
                     </span>
                     Agoda
                 </span>
@@ -85,36 +74,14 @@ export const Reviews = () => {
         }
         if (source === 'Trip.com') {
             return (
-                <span style={{ 
-                    color: '#1a73e8', 
-                    fontWeight: 'bold', 
-                    fontSize: '0.8rem',
-                    background: '#e8f0fe',
-                    padding: '4px 8px',
-                    borderRadius: '6px',
-                    marginLeft: 'auto',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px'
-                }}>
+                <span className="source-badge badge-trip">
                     <i className="fas fa-plane" style={{ fontSize: '0.75rem' }}></i> Trip.com
                 </span>
             );
         }
         if (source === 'ezTravel') {
             return (
-                <span style={{ 
-                    color: '#f5222d', 
-                    fontWeight: 'bold', 
-                    fontSize: '0.8rem',
-                    background: '#fff1f0',
-                    padding: '4px 8px',
-                    borderRadius: '6px',
-                    marginLeft: 'auto',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px'
-                }}>
+                <span className="source-badge badge-eztravel">
                     <i className="fas fa-star" style={{ fontSize: '0.75rem' }}></i> ezTravel
                 </span>
             );

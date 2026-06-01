@@ -9,6 +9,7 @@ html {
   --primary-dark: #5D2E0A;
   --accent: #D2B48C; /* Tan */
   --bg: #FDFBF7; /* Off white / Beige */
+  --bg-alt: #F4F1EA; /* Alternate section background in light mode */
   --text: #2F2F2F;
   --text-light: #666;
   --glass: rgba(255, 255, 255, 0.7);
@@ -25,6 +26,7 @@ html {
   --primary-dark: #E6D0B3; 
   --accent: #8B4513; 
   --bg: #1A1A1A; 
+  --bg-alt: #1A1A1A; /* Alternate section background in dark mode, matches photo 4 exactly */
   --text: #FDFBF7;
   --text-light: #AAAAAA;
   --glass: rgba(30, 30, 30, 0.85); 
@@ -1444,7 +1446,7 @@ button:focus, button:active, a:focus, a:active {
 }
 
 .attraction-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
