@@ -182,11 +182,11 @@ export const TelephoneBox = () => {
                             </div>
 
                             <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', width: '100%' }}>
-                                <button className="btn-book btn-secondary-hero" style={{ flex: 1, cursor: 'pointer', border: '1px solid var(--primary)', color: 'var(--primary)' }} onClick={() => window.print()}>
-                                    🖨️ Print Card
+                                <button className="btn-outline" style={{ flex: 1 }} onClick={() => window.print()}>
+                                    🖨️ {t('tb_print_btn')}
                                 </button>
                                 <button className="btn-book" style={{ flex: 1, border: 'none', cursor: 'pointer' }} onClick={handleReset}>
-                                    ✍️ Create Another
+                                    ✍️ {t('tb_create_another')}
                                 </button>
                             </div>
                         </div>

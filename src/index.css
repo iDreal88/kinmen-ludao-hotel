@@ -325,6 +325,30 @@ header.scrolled .dropdown-trigger {
   color: var(--primary);
 }
 
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+  border: 2px solid var(--primary);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--btn-text);
+  border-color: var(--primary);
+}
+
 /* Premium Hero & Dark Banner Buttons with Perfect Contrast */
 .btn-primary-hero {
   background: var(--card-bg) !important;

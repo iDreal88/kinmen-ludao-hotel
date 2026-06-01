@@ -97,7 +97,14 @@ export const translations = {
         tb_success_title: "明信片投遞成功！",
         tb_success_desc: "您的祝福已寫入明信片，可在下方預覽並長按/右鍵下載分享這份喜悅！",
         tb_postcard_title: "來自金門的問候",
-        tb_postcard_hotel: "金門陸島酒店 留念"
+        tb_postcard_hotel: "金門陸島酒店 留念",
+        tb_print_btn: "列印明信片",
+        tulou_banner_title: "「天圓地方，大美陸島」",
+        tulou_banner_desc: "融合千年的福建土樓堅固防禦美學與熱帶藤製工藝的自然氣息，我們打造了一個兼具守護、家族凝聚與寧靜禪修的避世之地。",
+        tulou_card1_tag: "美學傳承",
+        tulou_card2_tag: "綠色建築",
+        tulou_card3_tag: "印尼藤藝",
+        tb_create_another: "再製作一張"
     },
     cn: {
         nav_home: "首页",
@@ -195,9 +202,16 @@ export const translations = {
         tb_stamp3: "经典金门红色电话亭",
         tb_send_btn: "投递明信片",
         tb_success_title: "明信片投递成功！",
-        tb_success_desc: "您的祝福已写入明信片，可在下方预览并长按/右键下载分享这份喜悦！",
+        tb_success_desc: "您的祝福已写入明信片，可在下方预览并长按/键下载分享这份喜悦！",
         tb_postcard_title: "来自金门的问候",
-        tb_postcard_hotel: "金门陆岛酒店 留念"
+        tb_postcard_hotel: "金门陆岛酒店 留念",
+        tb_print_btn: "打印明信片",
+        tulou_banner_title: "「天圆地方，大美陆岛」",
+        tulou_banner_desc: "融合千年的福建土楼坚固防御美学与热带藤制工艺的自然气息，我们打造了一个兼具守护、家族凝聚与宁静禅修的避世之地。",
+        tulou_card1_tag: "美学传承",
+        tulou_card2_tag: "绿色建筑",
+        tulou_card3_tag: "印尼藤艺",
+        tb_create_another: "再制作一张"
     },
     en: {
         nav_home: "Home",
@@ -297,7 +311,14 @@ export const translations = {
         tb_success_title: "Postcard Sent Successfully!",
         tb_success_desc: "Your travel wish is sealed! Preview your custom postcard below. Right-click/long-press to download and share!",
         tb_postcard_title: "Greetings from Kinmen",
-        tb_postcard_hotel: "Memories at Kinmen Ludao Hotel"
+        tb_postcard_hotel: "Memories at Kinmen Ludao Hotel",
+        tb_print_btn: "Print Postcard",
+        tulou_banner_title: "“Heavenly Circle, Earthly Square — Majestic Ludao”",
+        tulou_banner_desc: "Blending a thousand years of traditional Clay Roundhouse fortified clay wall architecture with the breath of tropical rattan craft, we create an escape that speaks of protection, family, and peaceful meditation.",
+        tulou_card1_tag: "Aesthetic Heritage",
+        tulou_card2_tag: "Green Architecture",
+        tulou_card3_tag: "Indonesian Rattan",
+        tb_create_another: "Create Another"
     },
     ja: {
         nav_home: "ホーム",
@@ -397,6 +418,13 @@ export const translations = {
         tb_success_title: "絵葉書が送信されました！",
         tb_success_desc: "あなたの願いがハガキに刻まれました！下にプレビューが表示されます。長押しまたは右クリックでダウンロードしてシェアしてください！",
         tb_postcard_title: "金門からの便り",
-        tb_postcard_hotel: "金門陸島ホテル 記念"
+        tb_postcard_hotel: "金門陸島酒店 記念",
+        tb_print_btn: "絵葉書を印刷",
+        tulou_banner_title: "「天円地方、美しき陸島」",
+        tulou_banner_desc: "千年の歴史を持つ伝統的な円形土楼の堅牢な防御美学と、熱帯のラタン工芸がもたらす自然の息吹。私たちは、守護、家族の絆、そして静かな瞑想を感じられる安らぎの地を創造します。",
+        tulou_card1_tag: "美学の継承",
+        tulou_card2_tag: "グリーン建築",
+        tulou_card3_tag: "インドネシアラタン",
+        tb_create_another: "もう一枚作成"
     }
 };

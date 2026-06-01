@@ -9,19 +9,19 @@ export const TulouExperience = () => {
             icon: '⭕',
             titleKey: 'tulou_card1_title',
             descKey: 'tulou_card1_desc',
-            tag: 'Aesthetic Heritage'
+            tagKey: 'tulou_card1_tag'
         },
         {
             icon: '🍃',
             titleKey: 'tulou_card2_title',
             descKey: 'tulou_card2_desc',
-            tag: 'Green Architecture'
+            tagKey: 'tulou_card2_tag'
         },
         {
             icon: '🪑',
             titleKey: 'tulou_card3_title',
             descKey: 'tulou_card3_desc',
-            tag: 'Indonesian Rattan'
+            tagKey: 'tulou_card3_tag'
         }
     ];
 
@@ -39,7 +39,7 @@ export const TulouExperience = () => {
                 {features.map((feat, index) => (
                     <div className="tulou-exp-card" key={index}>
                         <div className="tulou-card-header">
-                            <span className="tulou-card-tag">{feat.tag}</span>
+                            <span className="tulou-card-tag">{t(feat.tagKey)}</span>
                             <span className="tulou-card-number">0{index + 1}</span>
                         </div>
                         <div className="tulou-card-body">
@@ -55,9 +55,9 @@ export const TulouExperience = () => {
             <div className="tulou-visual-banner">
                 <div className="tulou-visual-content">
                     <div className="tulou-visual-glass">
-                        <h3 className="traditional-font">「天圓地方，大美陸島」</h3>
+                        <h3 className="traditional-font">{t('tulou_banner_title')}</h3>
                         <p style={{ fontStyle: 'italic', opacity: 0.95 }}>
-                            Blending a thousand years of traditional Clay Roundhouse fortified clay wall architecture with the breath of tropical rattan craft, we create an escape that speaks of protection, family, and peaceful meditation.
+                            {t('tulou_banner_desc')}
                         </p>
                     </div>
                 </div>
