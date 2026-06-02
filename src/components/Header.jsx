@@ -34,25 +34,25 @@ export const Header = () => {
                 <ul>
                     <li><Link to="/#about" onClick={() => setMenuOpen(false)}>{t('nav_about')}</Link></li>
                     <li><Link to="/#rooms" onClick={() => setMenuOpen(false)}>{t('nav_rooms')}</Link></li>
-                    <li><Link to="/#tulou-experience" onClick={() => setMenuOpen(false)}>{t('nav_tulou')}</Link></li>
+                    <li><Link to="/#virtual-tour" onClick={() => setMenuOpen(false)}>{t('nav_virtual_tour')}</Link></li>
                     <li><Link to="/#gallery" onClick={() => setMenuOpen(false)}>{t('nav_gallery')}</Link></li>
                     <li className="nav-dropdown desktop-only">
                         <span className="dropdown-trigger">
                             {t('nav_more')} <i className="fas fa-chevron-down" style={{ fontSize: '0.75rem', marginLeft: '4px' }}></i>
                         </span>
                         <ul className="dropdown-menu">
+                            <li><Link to="/#tulou-experience" onClick={() => setMenuOpen(false)}>{t('nav_tulou')}</Link></li>
                             <li><Link to="/#telephone-box" onClick={() => setMenuOpen(false)}>{t('nav_postbox')}</Link></li>
                             <li><Link to="/#amenities" onClick={() => setMenuOpen(false)}>{t('nav_facilities')}</Link></li>
                             <li><Link to="/#attractions" onClick={() => setMenuOpen(false)}>{t('nav_attractions')}</Link></li>
-                            <li><Link to="/#virtual-tour" onClick={() => setMenuOpen(false)}>{t('nav_virtual_tour')}</Link></li>
                             <li><Link to="/#reviews" onClick={() => setMenuOpen(false)}>{t('nav_reviews')}</Link></li>
                             <li><Link to="/#contact" onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link></li>
                         </ul>
                     </li>
+                    <li className="mobile-only"><Link to="/#tulou-experience" onClick={() => setMenuOpen(false)}>{t('nav_tulou')}</Link></li>
                     <li className="mobile-only"><Link to="/#telephone-box" onClick={() => setMenuOpen(false)}>{t('nav_postbox')}</Link></li>
                     <li className="mobile-only"><Link to="/#amenities" onClick={() => setMenuOpen(false)}>{t('nav_facilities')}</Link></li>
                     <li className="mobile-only"><Link to="/#attractions" onClick={() => setMenuOpen(false)}>{t('nav_attractions')}</Link></li>
-                    <li className="mobile-only"><Link to="/#virtual-tour" onClick={() => setMenuOpen(false)}>{t('nav_virtual_tour')}</Link></li>
                     <li className="mobile-only"><Link to="/#reviews" onClick={() => setMenuOpen(false)}>{t('nav_reviews')}</Link></li>
                     <li className="mobile-only"><Link to="/#contact" onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link></li>
                 </ul>
